@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260925050938">
+<link rel="stylesheet" href="assets/css/style.css?v=20260925051658">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -20,7 +20,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20260925050938" defer></script>
+<script src="assets/js/channel.js?v=20260925051658" defer></script>
 </head>
 <body>
 
@@ -261,31 +261,6 @@ window.LP_CHANNEL = {
       しかも、この目減りは<br><span class="mk-g" style="color:#fff">通帳には1円も記録されません</span>。<br>
       だから、ほとんどの人が<span class="mk-g" style="color:#fff">気づかないまま損をしています。</span>
     </p>
-
-    <!-- 時代対比 -->
-    <div class="card mb40">
-      <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2010年代と2020年代の対比">
-        <g font-family="'Noto Sans JP',sans-serif">
-          <rect x="8" y="8" width="296" height="284" rx="12" fill="#ffffff" fill-opacity=".05" stroke="#6f7a8c" stroke-opacity=".5"/>
-          <text x="156" y="48" text-anchor="middle" font-size="26" font-weight="900" fill="#8d97a8">2010年代</text>
-          <line x1="40" y1="64" x2="272" y2="64" stroke="#6f7a8c" stroke-opacity=".4"/>
-          <text x="156" y="104" text-anchor="middle" font-size="19" fill="#b9c2d1">物価は ほぼ横ばい</text>
-          <text x="156" y="146" text-anchor="middle" font-size="19" fill="#b9c2d1">預金金利 0.001%でも</text>
-          <text x="156" y="176" text-anchor="middle" font-size="19" fill="#b9c2d1">元本は目減りしない</text>
-          <text x="156" y="222" text-anchor="middle" font-size="19" fill="#b9c2d1">「貯金」が正解だった</text>
-          <text x="156" y="268" text-anchor="middle" font-size="30" font-weight="900" fill="#8d97a8">守りの時代</text>
-
-          <rect x="336" y="8" width="296" height="284" rx="12" fill="#c79d24" fill-opacity=".1" stroke="#c79d24"/>
-          <text x="484" y="48" text-anchor="middle" font-size="26" font-weight="900" fill="#f3dd92">2020年代</text>
-          <line x1="368" y1="64" x2="600" y2="64" stroke="#c79d24" stroke-opacity=".5"/>
-          <text x="484" y="104" text-anchor="middle" font-size="19" fill="#ffffff">物価は 上がり続ける</text>
-          <text x="484" y="146" text-anchor="middle" font-size="19" fill="#ffffff">預けているだけで</text>
-          <text x="484" y="176" text-anchor="middle" font-size="19" fill="#ffffff">実質的に目減りする</text>
-          <text x="484" y="222" text-anchor="middle" font-size="19" fill="#ffffff">「運用」が前提になった</text>
-          <text x="484" y="268" text-anchor="middle" font-size="30" font-weight="900" fill="#f3dd92">攻めの時代</text>
-        </g>
-      </svg>
-    </div>
 
     <!-- グラフ1：物価 vs 賃金 -->
     <p class="lead big mb16" style="color:#fff;font-weight:700;font-size:20px;text-align:center">
@@ -850,7 +825,8 @@ window.LP_CHANNEL = {
         </div>
       </article>
 
-      <article class="rc">
+      <div class="more-wrap" id="moreRank" hidden>
+<article class="rc">
         <div class="rc-hd"><span class="rc-no">6</span><span class="rc-nm">村田製作所<span>証券コード 6981</span></span></div>
         <div class="rc-chart">
           <svg viewBox="0 0 320 104" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
@@ -1019,6 +995,13 @@ window.LP_CHANNEL = {
           <span class="v to">336<i>万円</i></span>
         </div>
       </article>
+      </div>
+      <button type="button" class="more-btn" id="moreBtn" aria-expanded="false" aria-controls="moreRank">
+        残り<b>5銘柄</b>の実績も見る
+        <span class="more-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </span>
+      </button>
 
     </div>
 
@@ -1290,17 +1273,6 @@ window.LP_CHANNEL = {
 
       <div class="voice-c">
         <div class="st">★★★★★</div>
-        <div class="v-tag">まとまった時間が取れない</div>
-        <div class="tt">1日15分しかなくても、<br>置いていかれる感じがありません</div>
-        <div class="tx">
-          子どもを寝かしつけたあとの15分が、私の時間です。チャートを一日中見るなんて、とても無理でした。<br><br>
-          届いたものに目を通すだけなので、この15分で足ります。分からないことはアドバイザーの方に聞けるので、<strong>置いていかれる感じがありません</strong>。投資は完全にはじめてでしたが、なんとかついていけています。
-        </div>
-        <div class="nm">— 〈30代・主婦〉</div>
-      </div>
-
-      <div class="voice-c">
-        <div class="st">★★★★★</div>
         <div class="v-tag">退職金の一部で、慎重に</div>
         <div class="tt">「今回は見送ったほうがいい」と<br>言われたときに、信用できました</div>
         <div class="tx">
@@ -1490,9 +1462,17 @@ window.LP_CHANNEL = {
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
-<script src="assets/js/slots.js?v=20260925050938"></script>
+<script src="assets/js/slots.js?v=20260925051658"></script>
 <script>
 (function(){
+  // 実績の続きを開く
+  var mb = document.getElementById('moreBtn'), mw = document.getElementById('moreRank');
+  if (mb && mw) mb.addEventListener('click', function(){
+    mw.hidden = false;
+    mb.hidden = true;
+    mb.setAttribute('aria-expanded','true');
+  });
+
   // 追従CTA：ファーストビューを抜けたら表示
   var bar = document.getElementById('fixcta');
   var hero = document.querySelector('.hero');
