@@ -15,7 +15,15 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--tx);background:var(--paper);line-height:1.85;font-size:16px;overflow-x:hidden;font-feature-settings:"palt"}
+body{font-family:var(--sans);color:var(--tx);background:var(--paper);line-height:1.85;font-size:16px;overflow-x:hidden;
+  font-feature-settings:"palt";
+  /* 日本語の折り返しをスマホで読みやすく */
+  word-break:auto-phrase;      /* 文節単位で折り返す（Chrome/Edge・Android） */
+  line-break:strict;           /* 行頭禁則を厳格に */
+  text-wrap:pretty;            /* 行末に1文字だけ残るのを防ぐ */
+  letter-spacing:.01em}
+/* 文節を途中で割らせないためのユーティリティ（全ブラウザ対応） */
+.nb{display:inline-block}
 img,svg{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 
