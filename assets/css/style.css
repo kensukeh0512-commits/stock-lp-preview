@@ -14,6 +14,7 @@
   --wrap:720px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%}
+[hidden]{display:none !important}  /* display指定に hidden 属性が負けないように */
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--tx);background:var(--paper);line-height:1.85;font-size:16px;overflow-x:hidden;
   font-feature-settings:"palt";
