@@ -452,8 +452,8 @@ a{color:inherit;text-decoration:none}
   background:#fdf6f5;border:1px solid rgba(143,29,22,.3);border-radius:6px;padding:16px 14px}
 
 /* 受付終了（2回目のアクセス） */
-.expired{min-height:100vh;display:flex;align-items:center;justify-content:center;
-  background:var(--slate);color:#fff;text-align:center;padding:40px 24px}
+.expired{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+  background:var(--slate);color:#fff;text-align:center;padding:40px 24px;overflow-y:auto}
 .expired .e1{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.7;letter-spacing:.03em}
 .expired .e2{margin-top:18px;font-size:14.5px;line-height:2.05;color:#8891a1}
 .expired .e-ic{width:54px;margin:0 auto 24px;color:#4a5261}

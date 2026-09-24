@@ -11,6 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
+<!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
+     mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
+     遷移先URLがページ全体でまとめて切り替わります。 -->
+<script>
+window.LP_CHANNEL = {
+  mode: 'line',   // 'line' か 'mail'
+  url : ''        // LINE友だち追加URL または メール登録フォームURL
+};
+</script>
+<script src="assets/js/channel.js" defer></script>
 </head>
 <body>
 
@@ -45,13 +55,13 @@
     <h1 class="tv-t">ご登録、<br class="sp-br">ありがとうございます</h1>
     <p class="tv-s">
       <span class="nb">「今すぐ急騰する銘柄5選」は、</span><br>
-      <span class="nb">たったいまLINEにお送りしました。</span>
+      <span class="nb">たったいま<span class="ch" data-line="LINE" data-mail="メール">LINE</span>にお送りしました。</span>
     </p>
 
     <div class="tv-rule"><span>そして</span></div>
 
     <p class="tv-lead">
-      <span class="nb">この続きは、</span><span class="nb">LINEには書けません。</span>
+      <span class="nb">この続きは、</span><span class="nb"><span class="ch" data-line="LINE" data-mail="メール">LINE</span>には書けません。</span>
     </p>
   </div>
 </section>
@@ -75,7 +85,7 @@
     <p class="once-note">
       <span class="nb">ブックマークしても、</span><span class="nb">URLを控えても、</span><br>
       <span class="nb">次に開いたときには</span><span class="nb">この案内は消えています。</span><br>
-      <span class="nb">LINEに登録し直しても、</span><span class="nb">二度目は表示されません。</span>
+      <span class="nb"><span class="ch" data-line="LINE" data-mail="メール">LINE</span>に登録し直しても、</span><span class="nb">二度目は表示されません。</span>
     </p>
   </div>
 </section>
@@ -152,7 +162,7 @@
     <ul class="ben mb32">
       <li><b>01｜あなたの状況をうかがうため</b><span>投資できる資金も、使える時間も、人それぞれです。3銘柄のうちどれが合うのか、どう動くべきなのかは、お話をうかがわないと判断できません。</span></li>
       <li><b>02｜本気の方にだけお渡しするため</b><span>「とりあえずもらっておこう」という方に渡してしまうと、枠が埋まり、本当に必要としている方に届かなくなります。</span></li>
-      <li><b>03｜文字では伝えきれないため</b><span>なぜ今なのか、どの水準を見るべきか。この銘柄の核心部分は、LINEの文章では到底お伝えしきれません。</span></li>
+      <li><b>03｜文字では伝えきれないため</b><span>なぜ今なのか、どの水準を見るべきか。この銘柄の核心部分は、<span class="ch" data-line="LINE" data-mail="メール">LINE</span>の文章では到底お伝えしきれません。</span></li>
     </ul>
 
     <!-- 残枠 -->
@@ -369,7 +379,7 @@
     <p class="e1">このご案内は<br>終了いたしました</p>
     <p class="e2">
       <span class="nb">3銘柄のご案内は、</span><span class="nb">一度きりの表示でした。</span><br>
-      <span class="nb">引き続き、</span><span class="nb">LINEにて情報をお届けします。</span>
+      <span class="nb">引き続き、</span><span class="nb"><span class="ch" data-line="LINE" data-mail="メール">LINE</span>にて情報をお届けします。</span>
     </p>
   </div>
 </div>
@@ -381,7 +391,8 @@
    ※ここでは端末内（localStorage）で判定しています。
      厳密に1回だけにする場合は、LINE側で発行する使い捨てURLと
      サーバー側のトークン失効を組み合わせてください。 */
-var ONE_TIME = true;
+/* ▼▼ 確認期間中は false。本番公開時に true にしてください ▼▼ */
+var ONE_TIME = false;
 
 (function(){
   if (!ONE_TIME) return;

@@ -11,6 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
+<!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
+     mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
+     遷移先URLがページ全体でまとめて切り替わります。 -->
+<script>
+window.LP_CHANNEL = {
+  mode: 'line',   // 'line' か 'mail'
+  url : ''        // LINE友だち追加URL または メール登録フォームURL
+};
+</script>
+<script src="assets/js/channel.js" defer></script>
 </head>
 <body>
 
@@ -115,7 +125,7 @@
       <div class="arrows">▼▼▼</div>
       <a href="#entry" class="btn" style="margin-top:12px">
         <small>＼ たった1分・誰でも無料で受け取れます ／</small>
-        LINEで銘柄を受け取る
+        <span data-cta-label>LINEで銘柄を受け取る</span>
         <span class="fee">今だけ 0円</span>
       </a>
       <p class="btn-note">※ご登録後、すぐに「急騰期待の5銘柄」をお届けします</p>
@@ -637,7 +647,7 @@
     <div class="cta-zone">
       <a href="#entry" class="btn">
         <small>＼ たった1分・誰でも無料で受け取れます ／</small>
-        LINEで銘柄を受け取る
+        <span data-cta-label>LINEで銘柄を受け取る</span>
         <span class="fee">今だけ 0円</span>
       </a>
     </div>
@@ -1014,7 +1024,7 @@
     <div class="cta-zone">
       <a href="#entry" class="btn">
         <small>＼ 誰でも無料・たった1分で受け取れます ／</small>
-        LINEで銘柄を受け取る
+        <span data-cta-label>LINEで銘柄を受け取る</span>
         <span class="fee">今だけ 0円</span>
       </a>
     </div>
@@ -1124,7 +1134,7 @@
     <div class="cta-zone">
       <a href="#entry" class="btn">
         <small>＼ たった1分・誰でも無料で受け取れます ／</small>
-        LINEで銘柄を受け取る
+        <span data-cta-label>LINEで銘柄を受け取る</span>
         <span class="fee">今だけ 0円</span>
       </a>
     </div>
@@ -1372,7 +1382,7 @@
       <details><summary>忙しくて、相場を見る時間がありません。</summary>
         <div class="a">だからこそ、AIと専門チームにお任せください。お届けした情報にお目通しいただくだけで、投資判断に必要な材料が揃います。</div></details>
       <details><summary>配信が不要になった場合は？</summary>
-        <div class="a">いつでもブロック・配信停止が可能です。手続きに費用や違約金は一切かかりません。</div></details>
+        <div class="a">いつでも<span class="ch" data-line="ブロック・配信停止" data-mail="配信停止">ブロック・配信停止</span>が可能です。手続きに費用や違約金は一切かかりません。</div></details>
       <details><summary>紹介された銘柄は、必ず上がりますか？</summary>
         <div class="a">いいえ。株式投資は価格変動により<strong>元本を割り込む可能性</strong>があります。当サービスは情報提供を行うものであり、利益や元本を保証するものではありません。最終的な投資判断は、お客様ご自身の責任においてお願いいたします。</div></details>
     </div>
@@ -1392,7 +1402,7 @@
     </svg>
 
     <ol class="step mb40">
-      <li><b>下のボタンから友だち追加</b><p>かかる時間は<strong>たった10秒</strong>。面倒な入力項目は一切ありません。</p></li>
+      <li><b>下のボタンから<span class="ch" data-line="友だち追加" data-mail="アドレスを登録">友だち追加</span></b><p>かかる時間は<strong>たった10秒</strong>。面倒な入力項目は一切ありません。</p></li>
       <li><b>かんたんな質問に回答</b><p>投資経験や関心のあるテーマをお伺いします。<strong>たった1分</strong>で終わります。</p></li>
       <li><b>「急騰期待の5銘柄」が即日届く</b><p>根拠つきのレポート形式でお届けします。あとは、目を通すだけ。誰でも、その日のうちに受け取れます。</p></li>
     </ol>
@@ -1407,7 +1417,7 @@
          現在はクライアント確認用に、サンキューページへ直接リンクしています。
          本来の導線： このボタン → LINE友だち追加 → thanks.html
     -->
-    <a href="thanks.html" class="btn" id="mainCta">
+    <a href="thanks.html" class="btn" id="mainCta" data-cta>
       <small>＼ たった1分・誰でも無料で受け取れます ／</small>
       LINEで銘柄を受け取る
       <span class="fee">今だけ 0円</span>
@@ -1468,7 +1478,7 @@
 
 <!-- 追従CTA -->
 <div class="fixcta" id="fixcta">
-  <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small>LINEで銘柄を受け取る</a>
+  <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
 <script src="assets/js/slots.js"></script>
