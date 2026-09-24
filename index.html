@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260925050602">
+<link rel="stylesheet" href="assets/css/style.css?v=20260925050938">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -20,7 +20,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20260925050602" defer></script>
+<script src="assets/js/channel.js?v=20260925050938" defer></script>
 </head>
 <body>
 
@@ -128,7 +128,10 @@ window.LP_CHANNEL = {
         <span data-cta-label>LINEで銘柄を受け取る</span>
         <span class="fee">今だけ 0円</span>
       </a>
-      <p class="btn-note">※ご登録後、すぐに「急騰期待の5銘柄」をお届けします</p>
+      <p class="btn-note">
+        <strong style="color:#e8d08a">投資がはじめての方も、いま負けている方も大丈夫です。</strong><br>
+        ※ご登録後、すぐに「急騰期待の5銘柄」をお届けします
+      </p>
     </div>
     <div style="height:38px"></div>
   </div>
@@ -170,12 +173,16 @@ window.LP_CHANNEL = {
       <li>気づけば含み損。損切りできずに、そのまま<span class="mk">塩漬け</span>になっている</li>
       <li>仕事や家事に追われ、<span class="mk">チャートを見る時間がない</span></li>
       <li>情報が多すぎて、<span class="mk">どれが本物の情報なのか判断できない</span></li>
+      <li><span class="mk">これまでの損を、なんとか取り返したい</span></li>
       <li>将来のお金は不安。でも、<span class="mk">何から手をつければいいか分からない</span></li>
     </ul>
 
     <div class="bubble" style="max-width:600px;margin:0 auto">
       ……ひとつでも当てはまった方へ。<br>
-      <span class="big-red" style="font-size:19px">それは、あなたの実力不足ではありません。</span>
+      <span class="big-red" style="font-size:19px">それは、あなたの実力不足ではありません。</span><br>
+      <span style="font-size:15px;color:var(--tx2);font-weight:500;display:inline-block;margin-top:10px">
+        はじめたばかりの方も、負けが続いている方も、<br>理由は同じところにあります。
+      </span>
     </div>
   </div>
 </section>
@@ -548,7 +555,7 @@ window.LP_CHANNEL = {
       <div class="why-c">
         <div class="why-n">01</div>
         <h4><span class="nb">人間が一生かけても、</span><span class="nb">追いきれない情報量</span></h4>
-        <p>約4,000社 × 決算・適時開示・出来高・信用需給・テーマ資金の流れ。これを<strong>毎営業日、全件</strong>です。<br>
+        <p>約4,000社の決算、日々の発表、取引量、株の売られ具合、お金の流れ。これを<strong>毎営業日、全部</strong>です。<br>
         人間のアナリストが1日に精査できるのは、どれだけ優秀でも数十社が限界。<span class="mk-g">見ていない銘柄は、当てられません。</span></p>
       </div>
       <div class="why-c">
@@ -568,11 +575,11 @@ window.LP_CHANNEL = {
     <div class="sig mb32">
       <div class="sig-hd">AIが毎日チェックしている「急騰の前兆」</div>
       <ol class="sig-l">
-        <li><b>出来高の異常な膨張</b><span>平常時と比べ、明らかに売買が増え始めた瞬間</span></li>
-        <li><b>大口の買い集めの痕跡</b><span>価格を上げずに、静かに買われ続けている動き</span></li>
-        <li><b>需給の引き締まり</b><span>売りたい人が減り、浮いている株が少なくなる状態</span></li>
-        <li><b>業績の変化の初動</b><span>決算に出る前の、受注・稼働・単価の変化</span></li>
-        <li><b>テーマ資金の流入初期</b><span>市場の関心が、そのセクターに向き始めた最初期</span></li>
+        <li><b>売買が、急に増え始める</b><span>ふだんと比べて、その銘柄の取引量がはっきり増えてきたとき</span></li>
+        <li><b>大きな資金が、静かに買っている</b><span>値段を吊り上げないように、少しずつ買い集められている動き</span></li>
+        <li><b>売りたい人が、減っていく</b><span>市場に出回る株が少なくなり、値が上がりやすくなった状態</span></li>
+        <li><b>決算より先に、業績が動く</b><span>決算発表の前に表れる、受注や生産の増加といった変化</span></li>
+        <li><b>お金の流れが、向き始める</b><span>その業界に、投資家の資金が入り始めた最初のタイミング</span></li>
       </ol>
       <p class="sig-ft"><span class="nb">この5つが<strong>重なった銘柄</strong>だけが、</span><span class="nb">候補として残ります。</span></p>
     </div>
@@ -580,7 +587,7 @@ window.LP_CHANNEL = {
     <div class="bubble" style="border-color:var(--gold)">
       ただし、<span class="big-red">AIだけでは足りません。</span><br>
       最終判断を下すのは、大手証券会社と世界最高峰のヘッジファンドを経て、いまも相場の最前線に立ち続ける<span class="mk-g">現役プロトレーダー</span>です。<br>
-      <span style="font-size:15px;color:var(--tx2);font-weight:500;display:inline-block;margin-top:8px">AIが「候補」を出し、人が「意味」を読む。<br>この二段構えが、精度の正体です。<br><strong style="color:var(--tx)">だから、はじめての方でも、誰でも同じ精度の情報が受け取れます。</strong></span>
+      <span style="font-size:15px;color:var(--tx2);font-weight:500;display:inline-block;margin-top:8px">AIが「候補」を出し、人が「意味」を読む。<br>この二段構えが、精度の正体です。<br><strong style="color:var(--tx)">だから、はじめての方でも、これまで結果が出ていない方でも、受け取れる情報はまったく同じです。</strong></span>
     </div>
   </div>
 </section>
@@ -1127,7 +1134,7 @@ window.LP_CHANNEL = {
       </svg>
       <p class="cap">
         ※上記は、前掲の実績価格をもとにした<strong style="color:#c8cfdd">単純な試算</strong>です。売買手数料・税金・スリッページ等は考慮していません。<br>
-        ※実際の売買タイミングや保有数量により結果は変動します。将来の成果を保証・示唆するものではありません。
+        ※実際に売買したタイミングや株数によって結果は変わります。将来の成果を保証・示唆するものではありません。
       </p>
     </div>
 
@@ -1227,7 +1234,7 @@ window.LP_CHANNEL = {
     <ul class="ben mb32">
       <li><b>01｜AI厳選「急騰期待」銘柄</b><span>約4,000社を毎日スキャンし、条件を満たした銘柄だけをお届け。探す作業から解放されます。</span></li>
       <li><b>02｜「なぜ今か」の根拠つき解説</b><span>銘柄名だけでは再現性がありません。選定理由・想定シナリオ・注視すべき水準まで、言葉にしてお渡しします。</span></li>
-      <li><b>03｜相場の急変アラート</b><span>地合いが変わったとき、黙って見過ごしません。会員様へ即時にご連絡します。</span></li>
+      <li><b>03｜相場の急変アラート</b><span>相場の流れが変わったとき、黙って見過ごしません。会員様へ即時にご連絡します。</span></li>
       <li><b>04｜専任アドバイザーへの相談窓口</b><span>「この情報をどう使えばいいか」を、その場で聞ける。ひとりで抱え込まないための窓口です。</span></li>
       <li><b>05｜会員限定レポート</b><span>一般には出回らない切り口の分析を、会員様だけの環境で共有します。</span></li>
     </ul>
@@ -1322,6 +1329,8 @@ window.LP_CHANNEL = {
     </svg>
 
     <ul class="nd mb32">
+      <li>投資をはじめたばかりで、何を買えばいいか分からない方</li>
+      <li>これまで思うような結果が出ず、やり方を変えたい方</li>
       <li>証券口座はあるが、次の一歩を踏み出せていない方</li>
       <li>銘柄を「探す時間」を、他のことに使いたい方</li>
       <li>根拠のある情報をもとに、自分で判断したい方</li>
@@ -1332,7 +1341,7 @@ window.LP_CHANNEL = {
     <ul class="nd ng mb40">
       <li>元本保証や「絶対に儲かる話」をお求めの方</li>
       <li>損失が出た際に、他者の責任にされる方</li>
-      <li>余剰資金ではなく、生活資金での投資をお考えの方</li>
+      <li>生活に必要なお金で投資をお考えの方（余裕資金の範囲でお願いしています）</li>
       <li>届いた情報を、外部へ転載・共有される方</li>
     </ul>
 
@@ -1378,7 +1387,7 @@ window.LP_CHANNEL = {
       <details><summary>投資はまったくの初心者ですが、大丈夫でしょうか？</summary>
         <div class="a">はい。銘柄名だけでなく「なぜ今その銘柄なのか」という根拠まで解説しています。ご不明な点は専任アドバイザーにご相談いただけますので、初めての方でも安心してご活用いただけます。</div></details>
       <details><summary>まとまった資金がありません。少額でも始められますか？</summary>
-        <div class="a">はい。まずは必ず<strong>余剰資金の範囲</strong>でお考えください。単元未満株に対応する証券会社であれば、数千円から始めることも可能です。</div></details>
+        <div class="a">はい。まずは必ず<strong>余裕資金（なくなっても生活に困らないお金）の範囲</strong>でお考えください。1株から買える証券会社であれば、数千円から始めることもできます。</div></details>
       <details><summary>忙しくて、相場を見る時間がありません。</summary>
         <div class="a">だからこそ、AIと専門チームにお任せください。お届けした情報にお目通しいただくだけで、投資判断に必要な材料が揃います。</div></details>
       <details><summary>配信が不要になった場合は？</summary>
@@ -1481,7 +1490,7 @@ window.LP_CHANNEL = {
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
-<script src="assets/js/slots.js?v=20260925050602"></script>
+<script src="assets/js/slots.js?v=20260925050938"></script>
 <script>
 (function(){
   // 追従CTA：ファーストビューを抜けたら表示
