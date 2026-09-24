@@ -318,10 +318,17 @@ a{color:inherit;text-decoration:none}
 /* ===== voice ===== */
 .voice{display:grid;gap:12px}
 .voice-c{background:#fff;border-radius:14px;padding:18px;box-shadow:0 4px 14px rgba(10,20,40,.07)}
-.voice-c .st{color:var(--gold);font-size:13px;letter-spacing:.14em;margin-bottom:6px}
-.voice-c .tt{font-size:16px;font-weight:900;line-height:1.6;margin-bottom:8px}
-.voice-c .tx{font-size:14px;color:var(--tx2);line-height:1.9}
-.voice-c .nm{font-size:12px;color:var(--muted);margin-top:10px;text-align:right}
+.voice-c{border:1px solid var(--line);position:relative}
+.voice-c .st{color:var(--gold);font-size:13px;letter-spacing:.14em;margin-bottom:8px}
+.voice-c .v-tag{display:inline-block;background:var(--paper2);border:1px solid var(--line);
+  color:var(--tx2);font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px}
+.voice-c .tt{font-size:16.5px;font-weight:900;line-height:1.65;margin-bottom:12px;
+  padding-left:13px;border-left:4px solid var(--gold)}
+.voice-c .tx{font-size:14px;color:var(--tx2);line-height:1.95}
+.voice-c .tx strong{color:var(--tx);font-weight:900;
+  background:linear-gradient(transparent 64%,rgba(212,175,55,.35) 0)}
+.voice-c .nm{font-size:12.5px;color:var(--muted);margin-top:14px;text-align:right;
+  padding-top:10px;border-top:1px dashed var(--line)}
 
 /* =========================================================
    thanks.html 用
