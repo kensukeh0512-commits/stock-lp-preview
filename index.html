@@ -1227,8 +1227,16 @@
       <div class="limit-hd">本キャンペーンについて</div>
       <div class="limit-bd">
         <p class="k">アドバイザーが対応できる人数には限りがあります</p>
-        <p class="v" id="slot">先着たった<span class="ph" style="font-size:12px;vertical-align:middle">要設定</span>名様</p>
-        <p class="k">受付締切</p>
+
+        <!-- data-total:定員 / data-min:下限 / data-open・data-close:受付時間帯 -->
+        <div class="slots" data-total="300" data-min="7" data-open="9" data-close="23">
+          <p class="slots-k">先着たった<b>300</b>名様のうち</p>
+          <p class="slots-v">残り <span class="slots-n">--</span><small>名様</small></p>
+          <div class="gauge"><i class="slots-bar"></i></div>
+          <p class="slots-few">残りわずかです</p>
+        </div>
+
+        <p class="k" style="margin-top:20px">受付締切</p>
         <p class="v"><span id="deadline">本日 23:59</span><small> まで</small></p>
         <p class="lead" style="font-size:14px;margin-top:6px">
           定員に達し次第、予告なく受付を終了いたします。<br>
@@ -1360,6 +1368,7 @@
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small>LINEで銘柄を受け取る</a>
 </div>
 
+<script src="assets/js/slots.js"></script>
 <script>
 (function(){
   // 追従CTA：ファーストビューを抜けたら表示

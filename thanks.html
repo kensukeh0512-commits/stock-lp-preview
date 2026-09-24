@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="format-detection" content="telephone=no">
-<title>【重要】残り100名様へのご案内</title>
+<title>【重要】残り300名様へのご案内</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
 
     <p class="center mb24" style="color:#f3dd92;font-size:15px;font-weight:900;letter-spacing:.2em">— ここからが、本題です —</p>
 
-    <svg class="h-img" viewBox="0 0 660 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="先着100名様限定 これから爆発的に上昇する3銘柄をプレゼント">
+    <svg class="h-img" viewBox="0 0 660 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="先着300名様限定 これから爆発的に上昇する3銘柄をプレゼント">
       <defs>
         <linearGradient id="tgold" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#fdf4cc"/><stop offset="38%" stop-color="#ebd27a"/>
@@ -61,7 +61,7 @@
         </filter>
       </defs>
       <rect x="182" y="0" width="296" height="40" rx="20" fill="#e0342a"/>
-      <text x="330" y="28" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="23" font-weight="900" fill="#ffffff" letter-spacing="1">先着100名様 限定</text>
+      <text x="330" y="28" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="23" font-weight="900" fill="#ffffff" letter-spacing="1">先着300名様 限定</text>
       <text x="330" y="86" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="30" font-weight="700" fill="#ffffff">今のうちに仕込んでおきたい</text>
       <text x="330" y="146" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="52" font-weight="900" fill="url(#tgold)" filter="url(#tsh)">爆発前夜の<tspan font-size="64" fill="#ffffff">3</tspan>銘柄</text>
       <text x="330" y="182" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="26" font-weight="900" fill="#ff6a52">を、無料でお渡しします</text>
@@ -84,7 +84,7 @@
         </p>
         <p class="r4">
           だから私たちは、お渡しする人数を<br>
-          <b>先着100名様</b>までと決めています。
+          <b>先着300名様</b>までと決めています。
         </p>
       </div>
     </div>
@@ -108,11 +108,14 @@
     <div class="limit mb32">
       <div class="limit-hd">本日の残り枠</div>
       <div class="limit-bd">
-        <p class="k">先着100名様のうち</p>
-        <p class="v">残り <span id="slotN">12</span><small>名様</small></p>
-        <div class="gauge"><i id="gaugeBar" style="width:88%"></i></div>
-        <p class="lead" style="font-size:13px;margin-top:10px">
-          <span class="ph">要設定</span>残り枠の初期値は下部のスクリプトで調整できます。<br>
+        <!-- data-total:定員 / data-min:下限 / data-open・data-close:受付時間帯 -->
+        <div class="slots" data-total="300" data-min="7" data-open="9" data-close="23">
+          <p class="slots-k">先着<b>300</b>名様のうち</p>
+          <p class="slots-v">残り <span class="slots-n">--</span><small>名様</small></p>
+          <div class="gauge"><i class="slots-bar"></i></div>
+          <p class="slots-few">残りわずかです</p>
+        </div>
+        <p class="lead" style="font-size:13px;margin-top:14px">
           定員に達し次第、このページは予告なく閉じられます。
         </p>
       </div>
@@ -203,7 +206,7 @@
       </div>
 
       <button type="submit" class="btn" id="submitBtn">
-        <small>＼ 先着100名様・完全無料 ／</small>
+        <small>＼ 先着300名様・完全無料 ／</small>
         3銘柄を受け取る
         <span class="fee">入力30秒</span>
       </button>
@@ -242,7 +245,7 @@
       <details><summary>電話番号を伝えるのに抵抗があります</summary>
         <div class="a">ご入力いただいた情報は、今回のご案内以外の目的には使用いたしません。第三者への提供も行いません。詳細は<a href="#" style="text-decoration:underline">個人情報の取扱い</a>をご確認ください。</div></details>
       <details><summary>先ほどの5銘柄とは何が違うのですか？</summary>
-        <div class="a">5銘柄は、すでに動きが出始めている銘柄です。今回の3銘柄は、<strong>まだ動く前の仕込み段階</strong>にあるため、公開範囲を100名様に絞っています。</div></details>
+        <div class="a">5銘柄は、すでに動きが出始めている銘柄です。今回の3銘柄は、<strong>まだ動く前の仕込み段階</strong>にあるため、公開範囲を300名様に絞っています。</div></details>
       <details><summary>すぐに電話に出られないのですが</summary>
         <div class="a">ご都合のよい時間帯をお選びいただければ、その時間にご連絡いたします。出られなかった場合は、改めておかけ直しいたします。</div></details>
     </div>
@@ -293,22 +296,12 @@
 
 <!-- 追従CTA -->
 <div class="fixcta" id="fixcta">
-  <a href="#form" class="btn"><small>＼ 先着100名様・完全無料 ／</small>3銘柄を受け取る</a>
+  <a href="#form" class="btn"><small>＼ 先着300名様・完全無料 ／</small>3銘柄を受け取る</a>
 </div>
 
+<script src="assets/js/slots.js"></script>
 <script>
 (function(){
-  /* ── 残り枠の表示 ───────────────────────────────
-     ▼ 運用に合わせて調整してください
-       TOTAL  : 定員
-       LEFT   : 残り枠（固定値で運用する場合はここを書き換える） */
-  var TOTAL = 100, LEFT = 12;
-
-  var slotN = document.getElementById('slotN');
-  var bar   = document.getElementById('gaugeBar');
-  if (slotN) slotN.textContent = LEFT;
-  if (bar)   bar.style.width = Math.max(0, Math.min(100, (TOTAL - LEFT) / TOTAL * 100)) + '%';
-
   /* ── 追従CTA ───────────────────────────────── */
   var fix = document.getElementById('fixcta');
   var form = document.getElementById('form');

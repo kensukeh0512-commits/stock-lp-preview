@@ -314,7 +314,32 @@ a{color:inherit;text-decoration:none}
 
 /* 残り枠ゲージ */
 .gauge{margin:14px auto 0;max-width:340px;height:12px;border-radius:100px;background:var(--paper3);overflow:hidden}
-.gauge i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,#ff8a5c,var(--red))}
+.gauge i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,#ff8a5c,var(--red));
+  width:0;transition:width .9s cubic-bezier(.22,1,.36,1)}
+
+/* 残り枠カウンター */
+.slots{margin:4px 0 0}
+.slots-k{font-size:14px;font-weight:700;color:var(--tx2);line-height:1.7}
+.slots-k b{color:var(--tx);font-size:18px;font-weight:900;margin:0 2px}
+.slots-v{font-size:16px;font-weight:700;color:var(--tx2);line-height:1.25;margin-top:4px}
+.slots-v .slots-n{display:inline-block;min-width:1.6em;font-size:52px;font-weight:900;color:var(--red);
+  letter-spacing:-.02em;font-family:'Helvetica Neue',Arial,sans-serif;vertical-align:-2px}
+.slots-v small{font-size:17px;font-weight:900;color:var(--red)}
+.slots-few{display:none;margin-top:10px;font-size:13px;font-weight:900;letter-spacing:.06em;color:var(--red)}
+.slots.few .slots-few{display:block;animation:blink 1.1s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+.slots.bump .slots-n{animation:bump .6s cubic-bezier(.22,1,.36,1)}
+@keyframes bump{
+  0%{transform:translateY(-14px) scale(1.18);opacity:0}
+  45%{transform:translateY(0) scale(1.08);opacity:1}
+  100%{transform:translateY(0) scale(1)}
+}
+/* 濃色背景の上に直接置く場合 */
+.dark .slots-k,.ink2 .slots-k,.dark .slots-v,.ink2 .slots-v{color:#c8cfdd}
+.dark .slots-k b,.ink2 .slots-k b{color:#fff}
+/* ただし .limit（白いカード）の中では濃色文字に戻す */
+.limit .slots-k,.limit .slots-v,.limit .lead{color:var(--tx2)}
+.limit .slots-k b{color:var(--tx)}
 
 /* フォーム */
 .fm{display:grid;gap:18px;max-width:560px;margin:0 auto}
