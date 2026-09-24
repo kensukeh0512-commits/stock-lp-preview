@@ -17,10 +17,10 @@
 <!-- ============================================================
      HEADER
      ============================================================ -->
-<header class="hd">
+<header class="hd hd-t">
   <div class="hd-in">
     <div class="hd-logo">〈サービス名〉<small>AI STOCK INTELLIGENCE</small></div>
-    <a href="#form" class="hd-cta">残り枠を確認</a>
+    <a href="#form" class="hd-cta hd-cta-g">残り枠を見る</a>
   </div>
 </header>
 
@@ -28,16 +28,55 @@
 <!-- ============================================================
      登録完了
      ============================================================ -->
-<section class="done">
-  <div class="wrap">
-    <div class="done-ic">
+<section class="tv">
+  <div class="tv-bg" aria-hidden="true"></div>
+  <div class="wrap tv-in">
+
+    <p class="tv-kicker">REGISTRATION COMPLETE</p>
+
+    <div class="tv-ic">
       <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="40" cy="40" r="37" fill="none" stroke="#06c755" stroke-width="5"/>
-        <path d="M23 41 L35 53 L58 28" fill="none" stroke="#06c755" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="36" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/>
+        <circle cx="40" cy="40" r="28" fill="none" stroke="currentColor" stroke-width="3"/>
+        <path d="M27 40.5 L36.5 50 L54 31" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <p class="done-t">ご登録、ありがとうございます</p>
-    <p class="done-s">「今すぐ急騰する銘柄5選」は、<br>たったいまLINEにお送りしました。<br>まずはそちらをご確認ください。</p>
+
+    <h1 class="tv-t">ご登録、<br class="sp-br">ありがとうございます</h1>
+    <p class="tv-s">
+      <span class="nb">「今すぐ急騰する銘柄5選」は、</span><br>
+      <span class="nb">たったいまLINEにお送りしました。</span>
+    </p>
+
+    <div class="tv-rule"><span>そして</span></div>
+
+    <p class="tv-lead">
+      <span class="nb">この続きは、</span><span class="nb">LINEには書けません。</span>
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     一度きりの警告
+     ============================================================ -->
+<section class="once">
+  <div class="wrap">
+    <div class="once-bar">
+      <span class="once-ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3 L22 20 H2 Z"/><path d="M12 10v4"/><circle cx="12" cy="17.4" r=".9" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="once-tx">
+        このページが表示されるのは、<b>この一度きり</b>です。
+      </span>
+    </div>
+    <p class="once-note">
+      <span class="nb">ブックマークしても、</span><span class="nb">URLを控えても、</span><br>
+      <span class="nb">次に開いたときには</span><span class="nb">この案内は消えています。</span><br>
+      <span class="nb">LINEに登録し直しても、</span><span class="nb">二度目は表示されません。</span>
+    </p>
   </div>
 </section>
 
@@ -48,28 +87,40 @@
 <section class="sec ink2" id="offer" style="padding-top:44px">
   <div class="wrap">
 
-    <p class="center mb24" style="color:#f3dd92;font-size:15px;font-weight:900;letter-spacing:.2em">— ここからが、本題です —</p>
+    <p class="ofr-kicker">— ここからが、本題です —</p>
 
-    <svg class="h-img" viewBox="0 0 660 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="先着300名様限定 これから爆発的に上昇する3銘柄をプレゼント">
-      <defs>
-        <linearGradient id="tgold" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#fdf4cc"/><stop offset="38%" stop-color="#ebd27a"/>
-          <stop offset="62%" stop-color="#c79d24"/><stop offset="100%" stop-color="#f7e8ad"/>
-        </linearGradient>
-        <filter id="tsh" x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity=".7"/>
-        </filter>
-      </defs>
-      <rect x="182" y="0" width="296" height="40" rx="20" fill="#e0342a"/>
-      <text x="330" y="28" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="23" font-weight="900" fill="#ffffff" letter-spacing="1">先着300名様 限定</text>
-      <text x="330" y="86" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="30" font-weight="700" fill="#ffffff">今のうちに仕込んでおきたい</text>
-      <text x="330" y="146" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="52" font-weight="900" fill="url(#tgold)" filter="url(#tsh)">爆発前夜の<tspan font-size="64" fill="#ffffff">3</tspan>銘柄</text>
-      <text x="330" y="182" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="26" font-weight="900" fill="#ff6a52">を、無料でお渡しします</text>
-    </svg>
+    <figure class="shot mb28">
+      <img src="assets/img/sealed.jpg" alt="封をした3通の封筒" width="1400" height="1050" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="sfade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#05070d" stop-opacity=".82"/>
+            <stop offset="42%" stop-color="#05070d" stop-opacity=".18"/>
+            <stop offset="72%" stop-color="#05070d" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#05070d" stop-opacity=".95"/>
+          </linearGradient>
+          <filter id="ssh" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="640" height="480" fill="url(#sfade)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle" filter="url(#ssh)">
+          <rect x="196" y="52" width="248" height="34" rx="2" fill="#8f1d16"/>
+          <text x="320" y="76" font-size="19" font-weight="700" fill="#f0e2e0" letter-spacing="3">先着300名様 限定</text>
+          <text x="320" y="358" font-size="25" font-weight="700" fill="#e8d08a">今のうちに仕込んでおきたい</text>
+          <text x="320" y="412" font-size="46" font-weight="900" fill="#ffffff">爆発前夜の<tspan font-size="58" fill="#e8d08a">3</tspan>銘柄</text>
+        </g>
+      </svg>
+    </figure>
 
-    <p class="lead big center mb32" style="color:#e8ecf3">
-      先ほどお送りした5銘柄とは、<span class="mk-g" style="color:#fff">まったく別枠</span>です。<br>
-      まだ株価が動き出す前の、<span class="mk-g" style="color:#fff">仕込み段階の3銘柄</span>になります。
+    <p class="ofr-lead">
+      <span class="nb">先ほどお送りした5銘柄とは、</span><span class="nb">まったくの別枠です。</span><br>
+      <span class="nb">まだ株価が動き出す前の、</span><span class="nb">仕込み段階の3銘柄。</span>
+    </p>
+
+    <p class="ofr-strike">
+      <span class="nb">この3銘柄の名前は、</span><span class="nb">どこにも出していません。</span><br>
+      <span class="nb">サイトにも、</span><span class="nb">LINEにも、</span><span class="nb">メールにも。</span>
     </p>
 
     <!-- なぜ全員に出せないのか -->
@@ -90,12 +141,12 @@
     </div>
 
     <!-- なぜ電話なのか -->
-    <p class="center mb16" style="color:#fff;font-size:20px;font-weight:900;line-height:1.7">
-      そして、お渡しする前に<br><span class="gold">かならずお電話を1本</span>いただきます。
+    <p class="ofr-h2">
+      <span class="nb">お渡しする前に、</span><br>
+      <span class="nb">かならず</span><span class="nb">お電話を1本いただきます。</span>
     </p>
-    <p class="lead center mb24" style="color:#c8cfdd">
-      本気で取り組む方にだけお渡ししたい。<br>
-      その見極めのための、かんたんなヒアリングです。
+    <p class="ofr-sub">
+      <span class="nb">本気で取り組む方にだけ、</span><span class="nb">お渡ししたいからです。</span>
     </p>
 
     <ul class="ben mb32">
@@ -116,7 +167,8 @@
           <p class="slots-few">残りわずかです</p>
         </div>
         <p class="lead" style="font-size:13px;margin-top:14px">
-          定員に達し次第、このページは予告なく閉じられます。
+          定員に達し次第、この受付は予告なく終了します。<br>
+          そして<strong style="color:var(--ox-l)">このページ自体、二度と開きません。</strong>
         </p>
       </div>
     </div>
@@ -138,9 +190,13 @@
       <rect x="276" y="106" width="108" height="5" rx="2.5" fill="#d4af37"/>
     </svg>
 
-    <p class="lead center mb32">
+    <p class="lead center mb24">
       入力は<span class="mk">たった30秒</span>。<br>
       折り返し、担当アドバイザーよりお電話いたします。
+    </p>
+    <p class="last-call mb32">
+      <span class="nb">このページを閉じた時点で、</span><br>
+      <span class="nb">この3銘柄を受け取る方法は</span><span class="nb">なくなります。</span>
     </p>
 
     <!-- ▼ action属性を自社フォーム／CRMのエンドポイントに差し替えてください -->
@@ -212,7 +268,8 @@
       </button>
       <p class="btn-note">
         ※お電話は〈市外局番を記載〉より発信いたします<br>
-        ※しつこい勧誘は一切いたしません
+        ※しつこい勧誘は一切いたしません<br>
+        ※このご案内は、今回かぎりの表示です
       </p>
     </form>
 
@@ -296,8 +353,56 @@
 
 <!-- 追従CTA -->
 <div class="fixcta" id="fixcta">
-  <a href="#form" class="btn"><small>＼ 先着300名様・完全無料 ／</small>3銘柄を受け取る</a>
+  <a href="#form" class="btn"><small>＼ 今回かぎり・先着300名様 ／</small>3銘柄を受け取る</a>
 </div>
+
+<!-- ============================================================
+     一度きり表示の制御
+     ============================================================ -->
+<div class="expired" id="expiredScreen" hidden>
+  <div>
+    <div class="e-ic">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <circle cx="24" cy="24" r="19"/><path d="M15 15 L33 33 M33 15 L15 33"/>
+      </svg>
+    </div>
+    <p class="e1">このご案内は<br>終了いたしました</p>
+    <p class="e2">
+      <span class="nb">3銘柄のご案内は、</span><span class="nb">一度きりの表示でした。</span><br>
+      <span class="nb">引き続き、</span><span class="nb">LINEにて情報をお届けします。</span>
+    </p>
+  </div>
+</div>
+
+<script>
+/* ── 一度きり表示 ───────────────────────────────
+   ONE_TIME を false にすると、この制御は無効になります。
+   URL に ?again=1 を付けて開くと、記録をリセットして再表示します（確認用）。
+   ※ここでは端末内（localStorage）で判定しています。
+     厳密に1回だけにする場合は、LINE側で発行する使い捨てURLと
+     サーバー側のトークン失効を組み合わせてください。 */
+var ONE_TIME = true;
+
+(function(){
+  if (!ONE_TIME) return;
+  var KEY = 'offer3_seen_v1';
+  var q = new URLSearchParams(location.search);
+  if (q.get('again') === '1') { try { localStorage.removeItem(KEY); } catch(e){} return; }
+  var seen = false;
+  try { seen = localStorage.getItem(KEY) === '1'; } catch(e){}
+  if (seen) {
+    document.getElementById('expiredScreen').hidden = false;
+    document.body.style.overflow = 'hidden';
+    return;
+  }
+  /* 離脱した時点で「見た」と記録する */
+  var mark = function(){ try { localStorage.setItem(KEY, '1'); } catch(e){} };
+  window.addEventListener('pagehide', mark);
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'hidden') mark();
+  });
+})();
+</script>
 
 <script src="assets/js/slots.js"></script>
 <script>
