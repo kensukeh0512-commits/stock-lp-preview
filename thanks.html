@@ -11,6 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
+<!-- ▼▼ 「一度きり表示」の ON / OFF ▼▼
+     false … 機能も、関連する文言も、まとめて非表示になります（現在の設定）
+     true  … 一度開いた端末では二度目に「受付終了」画面になります
+     集客を開始するタイミングで true に変更してください。
+     確認用に ?again=1 を付けて開くと記録をリセットできます。 -->
+<script>
+var ONE_TIME = false;
+document.documentElement.setAttribute('data-once', ONE_TIME ? 'on' : 'off');
+</script>
+
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
      遷移先URLがページ全体でまとめて切り替わります。 -->
@@ -70,7 +80,7 @@ window.LP_CHANNEL = {
 <!-- ============================================================
      一度きりの警告
      ============================================================ -->
-<section class="once">
+<section class="once once-only">
   <div class="wrap">
     <div class="once-bar">
       <span class="once-ic">
@@ -177,8 +187,8 @@ window.LP_CHANNEL = {
           <p class="slots-few">残りわずかです</p>
         </div>
         <p class="lead" style="font-size:13px;margin-top:14px">
-          定員に達し次第、この受付は予告なく終了します。<br>
-          そして<strong style="color:var(--ox-l)">このページ自体、二度と開きません。</strong>
+          定員に達し次第、この受付は予告なく終了します。<span class="once-only"><br>
+          そして<strong style="color:var(--ox-l)">このページ自体、二度と開きません。</strong></span>
         </p>
       </div>
     </div>
@@ -204,7 +214,7 @@ window.LP_CHANNEL = {
       入力は<span class="mk">たった30秒</span>。<br>
       折り返し、担当アドバイザーよりお電話いたします。
     </p>
-    <p class="last-call mb32">
+    <p class="last-call mb32 once-only">
       <span class="nb">このページを閉じた時点で、</span><br>
       <span class="nb">この3銘柄を受け取る方法は</span><span class="nb">なくなります。</span>
     </p>
@@ -278,8 +288,8 @@ window.LP_CHANNEL = {
       </button>
       <p class="btn-note">
         ※お電話は〈市外局番を記載〉より発信いたします<br>
-        ※しつこい勧誘は一切いたしません<br>
-        ※このご案内は、今回かぎりの表示です
+        ※しつこい勧誘は一切いたしません<span class="once-only"><br>
+        ※このご案内は、今回かぎりの表示です</span>
       </p>
     </form>
 
@@ -363,7 +373,7 @@ window.LP_CHANNEL = {
 
 <!-- 追従CTA -->
 <div class="fixcta" id="fixcta">
-  <a href="#form" class="btn"><small>＼ 今回かぎり・先着300名様 ／</small>3銘柄を受け取る</a>
+  <a href="#form" class="btn"><small><span class="once-only">＼ 今回かぎり・先着300名様 ／</span><span class="once-off">＼ 先着300名様・完全無料 ／</span></small>3銘柄を受け取る</a>
 </div>
 
 <!-- ============================================================
@@ -385,14 +395,9 @@ window.LP_CHANNEL = {
 </div>
 
 <script>
-/* ── 一度きり表示 ───────────────────────────────
-   ONE_TIME を false にすると、この制御は無効になります。
-   URL に ?again=1 を付けて開くと、記録をリセットして再表示します（確認用）。
-   ※ここでは端末内（localStorage）で判定しています。
-     厳密に1回だけにする場合は、LINE側で発行する使い捨てURLと
-     サーバー側のトークン失効を組み合わせてください。 */
-/* ▼▼ 確認期間中は false。本番公開時に true にしてください ▼▼ */
-var ONE_TIME = false;
+/* 一度きり表示の制御本体（ON/OFF の設定は <head> にあります）
+   ※端末内（localStorage）で判定しています。厳密に1回だけにする場合は、
+     LINE側で発行する使い捨てURLとサーバー側のトークン失効を組み合わせてください。 */
 
 (function(){
   if (!ONE_TIME) return;
