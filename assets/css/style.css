@@ -197,6 +197,37 @@ a{color:inherit;text-decoration:none}
 .vs-sum b{display:inline-block;font-size:44px;font-weight:900;color:#ff6a52;line-height:1.2;margin:0 4px}
 .vs-sum p{margin-top:12px;font-size:15px;line-height:1.95;color:#c8cfdd}
 
+/* ===== 監修者メッセージ ===== */
+.fdr{margin:0 0 28px;text-align:center}
+.fdr-ph{position:relative;width:186px;height:186px;margin:0 auto;border-radius:50%;overflow:hidden;
+  border:3px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.fdr-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 34%}
+.fdr-tmp{position:absolute;left:0;right:0;bottom:0;padding:5px 4px;font-size:10px;font-weight:700;
+  background:rgba(224,52,42,.9);color:#fff;letter-spacing:.02em}
+.fdr-cap{margin-top:16px;display:block}
+.fdr-role{display:block;font-size:12.5px;font-weight:700;line-height:1.75;color:var(--gold-l);letter-spacing:.04em}
+.fdr-name{display:block;margin-top:6px;font-size:22px;font-weight:900;color:#fff}
+
+.letter{position:relative;border-left:3px solid rgba(212,175,55,.5);padding:4px 0 4px 18px}
+.letter p{font-size:15.5px;line-height:2.15;color:#d6dce7;margin-bottom:20px}
+.letter p:last-child{margin-bottom:0}
+.letter strong{color:#fff;font-weight:900}
+.letter .l-lead{font-size:20px;font-weight:900;line-height:1.85;color:#fff}
+.letter .l-items{font-size:17px;font-weight:700;color:var(--gold-l);letter-spacing:.02em}
+.letter .l-strong{font-size:18px;font-weight:900;line-height:1.9;color:#fff}
+.letter .l-last{font-size:19px;font-weight:900;line-height:1.85;color:#fff}
+.l-quote{margin:26px 0;padding:22px 16px;border:none;border-radius:14px;text-align:center;
+  background:linear-gradient(180deg,rgba(212,175,55,.16),rgba(212,175,55,.04));
+  border-top:1px solid rgba(212,175,55,.5);border-bottom:1px solid rgba(212,175,55,.5);
+  font-size:24px;font-weight:900;line-height:1.8;color:var(--gold-l)}
+.l-sign{text-align:right;font-family:var(--serif);font-size:19px;font-weight:600;color:#fff;
+  margin-top:26px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.35)}
+
+@media(max-width:400px){
+  .letter .l-lead{font-size:18px}
+  .l-quote{font-size:21px}
+}
+
 /* ===== 根拠セクション ===== */
 .why{display:grid;gap:14px}
 .why-c{position:relative;background:#fff;border-radius:14px;padding:22px 18px 20px;box-shadow:0 6px 18px rgba(10,20,40,.08);border:1px solid var(--line)}
