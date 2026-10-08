@@ -185,27 +185,30 @@ a{color:inherit;text-decoration:none}
 .shot-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;line-height:1.6;
   background:linear-gradient(transparent,rgba(7,11,20,.85));color:#fff;font-size:13px;font-weight:700;text-align:center}
 
-/* ===== 3つの強み ===== */
-.str-hd{text-align:center;font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--gold-d);
-  margin:34px 0 16px;position:relative}
-.str-hd::before,.str-hd::after{content:"";position:absolute;top:50%;width:40px;height:1px;
-  background:var(--gold);opacity:.5}
-.str-hd::before{left:50%;margin-left:-130px}
-.str-hd::after{right:50%;margin-right:-130px}
-.str{list-style:none;display:grid;gap:12px}
-.str li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
-  border-left:4px solid var(--gold);border-radius:10px;padding:18px 16px;
-  box-shadow:0 4px 14px rgba(10,20,40,.07)}
-.str-ic{flex:none;width:40px;height:40px;color:var(--gold-d);margin-top:2px}
-.str-ic svg{width:100%;height:100%;display:block}
-.str li b{display:block;font-size:17.5px;font-weight:900;line-height:1.55;color:var(--tx);margin-bottom:7px}
-.str li p{font-size:14.5px;line-height:1.95;color:var(--tx2)}
+/* ===== 届けるもの（3つの強み）===== */
+.dv-lead{text-align:center;font-size:16px;line-height:2.05;color:var(--tx2);margin-bottom:28px}
+.dv-lead b{color:var(--tx);font-weight:900}
+.dv{list-style:none;display:grid;gap:18px}
+.dv li{background:#fff;border-radius:14px;overflow:hidden;position:relative;
+  box-shadow:0 10px 30px rgba(10,20,40,.12);border:1px solid var(--line)}
+.dv li::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;z-index:2;
+  background:linear-gradient(90deg,#f3dd92,var(--gold),#b0873a)}
+.dv-img{margin:0;line-height:0;background:#070b14;aspect-ratio:16/9;overflow:hidden}
+.dv-img img{width:100%;height:100%;object-fit:cover;display:block}
+.dv-bd{padding:20px 18px 22px;text-align:center}
+.dv-ic{display:block;width:40px;height:40px;margin:-42px auto 12px;color:var(--gold-d);
+  background:#fff;border-radius:50%;padding:7px;box-shadow:0 4px 14px rgba(10,20,40,.18);
+  position:relative;z-index:2;box-sizing:content-box}
+.dv-ic svg{width:100%;height:100%;display:block}
+.dv li b{display:block;font-size:19px;font-weight:900;line-height:1.55;color:var(--tx);margin-bottom:10px}
+.dv li p{font-size:14.5px;line-height:2;color:var(--tx2);text-align:left}
+@media(min-width:620px){
+  .dv{grid-template-columns:repeat(3,1fr);gap:14px}
+  .dv li b{font-size:17px}
+  .dv li p{font-size:13.5px}
+}
 @media(max-width:400px){
-  .str li{gap:11px;padding:16px 13px}
-  .str-ic{width:34px;height:34px}
-  .str li b{font-size:16.5px}
-  .str-hd::before{margin-left:-120px}
-  .str-hd::after{margin-right:-120px}
+  .dv li b{font-size:18px}
 }
 
 /* ===== 知識ゼロ／スマホだけ バッジ ===== */
