@@ -185,6 +185,29 @@ a{color:inherit;text-decoration:none}
 .shot-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;line-height:1.6;
   background:linear-gradient(transparent,rgba(7,11,20,.85));color:#fff;font-size:13px;font-weight:700;text-align:center}
 
+/* ===== 3つの強み ===== */
+.str-hd{text-align:center;font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--gold-d);
+  margin:34px 0 16px;position:relative}
+.str-hd::before,.str-hd::after{content:"";position:absolute;top:50%;width:40px;height:1px;
+  background:var(--gold);opacity:.5}
+.str-hd::before{left:50%;margin-left:-130px}
+.str-hd::after{right:50%;margin-right:-130px}
+.str{list-style:none;display:grid;gap:12px}
+.str li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-left:4px solid var(--gold);border-radius:10px;padding:18px 16px;
+  box-shadow:0 4px 14px rgba(10,20,40,.07)}
+.str-ic{flex:none;width:40px;height:40px;color:var(--gold-d);margin-top:2px}
+.str-ic svg{width:100%;height:100%;display:block}
+.str li b{display:block;font-size:17.5px;font-weight:900;line-height:1.55;color:var(--tx);margin-bottom:7px}
+.str li p{font-size:14.5px;line-height:1.95;color:var(--tx2)}
+@media(max-width:400px){
+  .str li{gap:11px;padding:16px 13px}
+  .str-ic{width:34px;height:34px}
+  .str li b{font-size:16.5px}
+  .str-hd::before{margin-left:-120px}
+  .str-hd::after{margin-right:-120px}
+}
+
 /* ===== 知識ゼロ／スマホだけ バッジ ===== */
 .oks{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:26px 0 0}
 .oks li{background:#fff;border:2px solid var(--gold);border-radius:12px;padding:16px 6px 13px;text-align:center;
