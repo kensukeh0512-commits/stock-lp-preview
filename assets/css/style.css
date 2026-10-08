@@ -272,6 +272,47 @@ a{color:inherit;text-decoration:none}
 .sig-ft{text-align:center;color:#c8cfdd;font-size:14px;padding:14px 16px 18px;line-height:1.8}
 .sig-ft strong{color:var(--gold-l)}
 
+/* ===== 急騰までのタイムライン ===== */
+.tl{background:var(--ink);border-radius:14px;padding:26px 18px 24px;margin-bottom:28px;
+  border:1px solid rgba(212,175,55,.3)}
+.tl-hd{text-align:center;font-size:19px;font-weight:900;line-height:1.7;color:#fff}
+.tl-lead{text-align:center;margin-top:10px;font-size:14.5px;line-height:1.95;color:#a9b3c4}
+.tl-l{list-style:none;counter-reset:tl;margin-top:26px;position:relative;padding-left:26px}
+.tl-l::before{content:"";position:absolute;left:7px;top:8px;bottom:26px;width:2px;
+  background:linear-gradient(180deg,rgba(212,175,55,.25),rgba(224,52,42,.9))}
+.tl-l li{counter-increment:tl;position:relative;padding-bottom:26px}
+.tl-l li:last-child{padding-bottom:0}
+.tl-l li::before{content:counter(tl);position:absolute;left:-26px;top:2px;width:17px;height:17px;
+  border-radius:50%;background:var(--ink);border:2px solid rgba(212,175,55,.75);color:var(--gold-l);
+  font-size:9px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.tl-l li.tl-fire::before{background:var(--red);border-color:var(--red);color:#fff}
+.tl-t{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--gold);
+  background:rgba(212,175,55,.12);border-radius:3px;padding:2px 9px;margin-bottom:7px}
+.tl-fire .tl-t{color:#ff8a7a;background:rgba(224,52,42,.18)}
+.tl-n{display:block;font-size:17px;font-weight:900;line-height:1.55;color:#fff}
+.tl-fire .tl-n{color:#ff8a7a}
+.tl-d{display:block;margin-top:6px;font-size:13.5px;line-height:1.95;color:#a9b3c4}
+.tl-ft{margin-top:24px;padding-top:20px;border-top:1px dashed rgba(212,175,55,.35);
+  text-align:center;font-size:16px;font-weight:700;line-height:1.95;color:#fff}
+.tl-ft b{color:#ff8a7a;font-weight:900}
+.tl-ft2{display:inline-block;margin-top:12px;font-size:14.5px;font-weight:500;color:#c0c8d4}
+.tl-ans{margin-top:18px;text-align:center;font-size:17px;font-weight:900;line-height:1.9;
+  color:var(--gold-l);background:rgba(212,175,55,.1);border-radius:10px;padding:16px 12px}
+.tl-ans b{color:#fff;font-size:20px}
+
+/* ===== After：3ヶ月後のあなた ===== */
+.af{list-style:none;display:grid;gap:14px}
+.af li{background:rgba(255,255,255,.045);border:1px solid rgba(212,175,55,.26);
+  border-radius:12px;padding:20px 18px}
+.af li.af-last{border-color:var(--gold);background:rgba(212,175,55,.1)}
+.af-t{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--gold);
+  margin-bottom:9px}
+.af-n{display:block;font-size:18.5px;font-weight:900;line-height:1.6;color:#fff;margin-bottom:10px}
+.af li p{font-size:14.5px;line-height:2;color:#c0c8d4}
+.af-ft{margin-top:26px;text-align:center;font-size:17px;font-weight:700;line-height:1.95;color:#fff}
+.af-ft2{display:inline-block;margin-top:10px;font-family:var(--serif);font-size:21px;font-weight:600;
+  color:var(--gold-l);line-height:1.8}
+
 /* ===== 危機感クロージング ===== */
 .alarm{margin-top:36px;border:1px solid rgba(224,52,42,.55);border-radius:16px;overflow:hidden;
   background:linear-gradient(180deg,rgba(224,52,42,.12),rgba(7,11,20,.2));padding:26px 18px;text-align:center}
