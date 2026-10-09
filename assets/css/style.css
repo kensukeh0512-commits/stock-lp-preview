@@ -550,6 +550,41 @@ html[data-once="on"]  .once-off{display:none !important}
   .once-tx{font-size:14px}
 }
 
+/* ===== USP宣言 ===== */
+.usp{background:var(--ink);border-radius:14px;padding:24px 18px;margin-bottom:28px;text-align:center;
+  border:1px solid rgba(212,175,55,.4)}
+.usp-k{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--gold);margin-bottom:14px}
+.usp-m{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.85;color:#fff;letter-spacing:.02em}
+.usp-m b{color:var(--gold-l);font-weight:600}
+.usp-s{margin-top:16px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.35);
+  font-size:14px;line-height:2;color:#b9c2d1}
+
+/* ===== なぜ今日なのか ===== */
+.wnow{background:#fff;border:2px solid var(--red);border-radius:14px;padding:24px 18px;
+  margin-bottom:26px;text-align:center;box-shadow:0 8px 24px rgba(224,52,42,.14)}
+.wnow-k{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:900;
+  letter-spacing:.12em;padding:4px 16px;border-radius:100px;margin-bottom:16px}
+.wnow-m{font-size:17px;font-weight:700;line-height:1.95;color:var(--tx)}
+.wnow-m b{color:var(--red);font-size:19px;font-weight:900}
+.wnow-s{margin-top:14px;font-size:14.5px;line-height:2;color:var(--tx2)}
+.wnow-s b{color:var(--tx);font-weight:900}
+.wnow-e{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);
+  font-size:15px;line-height:1.95;color:var(--tx2)}
+.wnow-e b{display:inline-block;margin-top:4px;font-size:19px;font-weight:900;color:var(--red)}
+
+/* ===== 追伸 ===== */
+.ps{background:var(--paper2);border-top:3px solid var(--gold)}
+.ps .wrap{max-width:600px}
+.ps-h{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.2em;color:var(--gold-d);
+  text-align:center;margin-bottom:24px;text-indent:.2em}
+.ps p{font-size:15.5px;line-height:2.1;color:var(--tx2);margin-bottom:18px}
+.ps-1{font-size:17px !important;font-weight:700;color:var(--tx) !important}
+.ps-key{font-size:18.5px !important;font-weight:900;line-height:1.9 !important;color:var(--tx) !important;
+  padding:16px 14px;background:#fff;border-left:4px solid var(--red);border-radius:6px}
+.ps-link{color:var(--red);font-weight:900;text-decoration:underline;text-underline-offset:3px}
+.ps-last{font-size:17px !important;line-height:2 !important;color:var(--tx) !important}
+.ps-last b{font-size:21px;font-weight:900;color:var(--red)}
+
 /* ===== footer ===== */
 .ft{background:#04070d;color:#8d97a8;font-size:11.5px;line-height:1.95;padding:40px 0 100px}
 .ft h5{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.1em;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid rgba(212,175,55,.25)}
