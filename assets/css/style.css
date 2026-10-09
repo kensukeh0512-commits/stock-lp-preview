@@ -126,6 +126,16 @@ a{color:inherit;text-decoration:none}
 .dec li b{display:block;font-size:16.5px;font-weight:900;line-height:1.5;color:var(--tx)}
 .dec li span:not(.dec-n){display:block;margin-top:5px;font-size:11.5px;color:var(--muted);line-height:1.6}
 
+/* 惜しかったパターン */
+.miss{list-style:none;display:grid;gap:9px;margin-bottom:26px}
+.miss li{position:relative;background:#fff6f5;border:1px solid #f3c9c5;border-radius:10px;
+  padding:14px 14px 14px 44px}
+.miss li::before{content:" D7";position:absolute;left:15px;top:13px;width:20px;height:20px;
+  border-radius:50%;background:var(--red);color:#fff;font-size:13px;font-weight:900;
+  display:flex;align-items:center;justify-content:center}
+.miss li b{display:block;font-size:15.5px;font-weight:900;color:var(--tx);line-height:1.5}
+.miss li span{display:block;margin-top:3px;font-size:13.5px;color:var(--tx2);line-height:1.75}
+
 /* 認めにくい理由 */
 .deep-hd{text-align:center;font-size:17px;font-weight:700;line-height:1.9;color:var(--tx2);margin-bottom:18px}
 .deep{background:var(--ink);border-radius:14px;padding:26px 18px;text-align:center;
@@ -136,7 +146,8 @@ a{color:inherit;text-decoration:none}
   font-size:15.5px;line-height:2.05;color:#c0c8d4}
 .deep .d3b{display:inline-block;margin-top:10px;font-size:18px;font-weight:900;color:#fff}
 .deep .d3b .nb:last-child{color:var(--gold-l)}
-.deep .d4{margin-top:18px;font-size:14px;line-height:1.9;color:#8d97a8}
+.deep .d4{margin-top:22px;padding-top:20px;border-top:1px dashed rgba(212,175,55,.35);font-size:15.5px;line-height:2;color:#c0c8d4}
+.deep .d4 b{color:var(--gold-l);font-size:18px;font-weight:900}
 .dec-ans{margin-top:16px;text-align:center;font-size:24px;font-weight:900;line-height:1.7;color:var(--tx)}
 .dec-ans b{color:var(--red);font-size:28px}
 
