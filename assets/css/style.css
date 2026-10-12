@@ -621,3 +621,6 @@ html[data-once="on"]  .once-off{display:none !important}
 @media(prefers-reduced-motion:reduce){
   *{animation:none !important}
 }
+
+/* 決断ラベル（共感パート） */
+.dq{display:inline-block;margin:0 0 14px;padding:7px 16px;border-radius:999px;background:rgba(243,221,146,.12);border:1px solid rgba(243,221,146,.45);color:#f3dd92;font-size:13.5px;font-weight:900;letter-spacing:.06em}
