@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261019035330">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019035854">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -20,7 +20,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20261019035330" defer></script>
+<script src="assets/js/channel.js?v=20261019035854" defer></script>
 </head>
 <body>
 
@@ -154,12 +154,31 @@ window.LP_CHANNEL = {
     </svg>
 
     <p class="dv-lead">
-      <span class="nb">〈サービス名〉は、</span><span class="nb">AIが選んだ</span><br>
-      <span class="nb"><b>「次に上がりそうな株」</b>を、</span><br>
-      <span class="nb"><b>買う目安・売る目安つき</b>で</span><br>
-      <span class="nb">お届けするサービスです。</span><br>
-      <span class="nb">もちろん、無料です。</span>
+      <span class="nb">届くのは、</span><span class="nb">銘柄名だけではありません。</span><br>
+      <span class="nb"><b>「いくらで買うか」</b></span><span class="nb"><b>「いくらで売るか」</b>。</span><br>
+      <span class="nb">その数字と、</span><span class="nb">選んだ理由まで</span><span class="nb">入っています。</span>
     </p>
+
+    <!-- ▼▼ 配信イメージ：数値は仮のものです。実際の配信内容に差し替えてください ▼▼ -->
+    <div class="spec mb24">
+      <div class="spec-hd"><i></i><b>配信イメージ</b></div>
+      <div class="spec-bd">
+        <p class="spec-nm">◯◯◯◯ホールディングス<small>証券コード ****</small></p>
+        <ul class="spec-l">
+          <li><span>買い時の目安</span><b>1,850<small>円前後</small></b></li>
+          <li><span>目標株価</span><b>2,400<small>円</small></b></li>
+          <li><span>想定期間</span><b>3〜5<small>ヶ月</small></b></li>
+        </ul>
+        <div class="spec-why">
+          <b>なぜ、今なのか</b>
+          <p>株価はまだ動いていません。<br>ただ、3週間前から売買の量だけが増え続けています。<br>売りに出ている株も減っており、あとはきっかけを待つだけの状態です。</p>
+        </div>
+      </div>
+      <p class="spec-ft">
+        ※配信イメージです。銘柄名・数値は伏せています。<br>
+        ※目標株価は分析にもとづく目安であり、到達を保証するものではありません。
+      </p>
+    </div>
 
     <ul class="free">
       <li>月額料金 <b>なし</b></li>
@@ -1579,7 +1598,7 @@ window.LP_CHANNEL = {
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
-<script src="assets/js/slots.js?v=20261019035330"></script>
+<script src="assets/js/slots.js?v=20261019035854"></script>
 <script>
 (function(){
   // 実績の続きを開く
