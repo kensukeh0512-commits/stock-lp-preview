@@ -714,3 +714,22 @@ html[data-once="on"]  .once-off{display:none !important}
 @media(max-width:400px){
   .turn-m{font-size:17px} .turn-m b{font-size:21px} .turn-e{font-size:21px}
 }
+
+/* ===== 無料であることの安心（解決パート） ===== */
+.safe{background:#fff;border:2px solid var(--green);border-radius:16px;padding:24px 18px 22px;
+  text-align:center;box-shadow:0 10px 30px rgba(18,160,92,.14)}
+.safe-k{display:inline-block;background:var(--green);color:#fff;font-size:12.5px;font-weight:900;
+  letter-spacing:.1em;padding:5px 18px;border-radius:100px;margin-bottom:16px}
+.safe-m{font-size:18px;font-weight:700;line-height:1.85;color:var(--tx2)}
+.safe-m b{display:inline-block;margin-top:4px;font-size:22px;font-weight:900;color:var(--tx);
+  line-height:1.7}
+.safe-l{list-style:none;display:grid;gap:8px;margin:18px 0 0;text-align:left}
+.safe-l li{position:relative;background:var(--paper2);border-radius:10px;
+  padding:12px 14px 12px 42px;font-size:14.5px;font-weight:700;color:var(--tx2);line-height:1.7}
+.safe-l li::before{content:"\2714";position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;
+  display:flex;align-items:center;justify-content:center;font-weight:900}
+.safe-l li b{color:var(--green);font-weight:900}
+.safe-e{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);
+  font-size:14.5px;line-height:1.95;color:var(--tx2)}
+@media(max-width:400px){ .safe-m{font-size:16.5px} .safe-m b{font-size:20px} }
