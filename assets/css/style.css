@@ -614,3 +614,22 @@ html[data-once="on"]  .once-off{display:none !important}
   *{animation:none !important}
 }
 
+
+/* ===== 個別相談（有料オプション） ===== */
+.adv{background:var(--ink);border-radius:14px;padding:26px 18px;text-align:center;
+  border:1px solid rgba(212,175,55,.4)}
+.adv-k{display:inline-block;background:linear-gradient(160deg,var(--gold-l),var(--gold-d));
+  color:#221a00;font-size:12px;font-weight:900;letter-spacing:.1em;
+  padding:5px 16px;border-radius:100px;margin-bottom:16px}
+.adv-m{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.85;color:#fff}
+.adv-m b{color:var(--gold-l);font-weight:600}
+.adv-l{list-style:none;display:grid;gap:10px;margin:20px 0 0;text-align:left}
+.adv-l li{background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.25);
+  border-radius:11px;padding:14px 15px}
+.adv-l b{display:block;font-size:15.5px;font-weight:900;color:var(--gold-l);
+  margin-bottom:6px;line-height:1.55}
+.adv-l span{display:block;font-size:13.5px;line-height:1.85;color:#b9c2d1}
+.adv-n{margin-top:18px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.35);
+  font-size:13.5px;line-height:1.95;color:#9aa5b6}
+.adv-n b{color:var(--gold-l);font-weight:900}
+.adv-free{display:inline-block;margin-top:8px;color:#e8ecf3;font-weight:700}

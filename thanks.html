@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261013052304">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019031954">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 「一度きり表示」の ON / OFF ▼▼
      false … 機能も、関連する文言も、まとめて非表示になります（現在の設定）
@@ -30,7 +30,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20261013052304" defer></script>
+<script src="assets/js/channel.js?v=20261019031954" defer></script>
 </head>
 <body>
 
@@ -185,6 +185,14 @@ window.LP_CHANNEL = {
       <li><b>03｜3銘柄のどれが合うか</b><span>使えるお金も、使える時間も、人それぞれです。<br>同じ3銘柄でも、合うものは人によって違います。<br>ここは、お話をうかがわないと分かりません。</span></li>
     </ul>
 
+    <p class="ofr-sub" style="margin-bottom:30px">
+      <span class="nb">なお、お電話では</span><br>
+      <span class="nb"><b>いま持っている銘柄のご相談</b></span><span class="nb">もお受けしています。</span><br>
+      <span class="nb">「ずっとマイナスのまま動かせない株がある」</span><br>
+      <span class="nb">という方は、</span><span class="nb">そのときにお伝えください。</span><br>
+      <span style="display:inline-block;margin-top:10px;font-size:13px;opacity:.75">※3銘柄のお受け取りに、費用は一切かかりません。</span>
+    </p>
+
     <!-- 残枠 -->
     <div class="limit mb32">
       <div class="limit-hd">本日の審査通過枠</div>
@@ -284,6 +292,18 @@ window.LP_CHANNEL = {
         <p class="hint">3銘柄のうち、どれをご案内すべきかの判断に使用します</p>
       </div>
 
+      <div class="fm-row">
+        <label for="fHold">いま持っている銘柄について<span class="opt">任意</span></label>
+        <select id="fHold" name="holding">
+          <option value="">選択してください</option>
+          <option>ずっとマイナスのまま持っている株がある</option>
+          <option>持っているが、売り時が分からない</option>
+          <option>相談したい銘柄が特にある</option>
+          <option>いまは何も持っていない</option>
+        </select>
+        <p class="hint">お電話での時間配分に使用します</p>
+      </div>
+
       <div class="fm-agree">
         <label>
           <input type="checkbox" id="fAgree" name="agree" required>
@@ -326,6 +346,8 @@ window.LP_CHANNEL = {
     <div class="faq">
       <details open><summary>電話では何を話すのですか？</summary>
         <div class="a">投資の経験、用意できるお金、どんなやり方を考えているかをうかがいます。<br>そのうえで、3銘柄のうちどれが合うかをご案内します。<br><strong>5分〜10分ほど</strong>です。</div></details>
+      <details><summary>いま持っている銘柄の相談もできますか？</summary>
+        <div class="a">はい、できます。<br>「ずっとマイナスのまま」「売り時が分からない」といったご相談は、とても多くいただきます。<br>ただし、持っている銘柄も買った値段も人それぞれなので、まとめてお答えできるものではありません。<br>お電話で、お一人ずつ承っています。<br>もちろん、3銘柄だけ受け取っていただいても構いません。</div></details>
       <details><summary>しつこく営業されませんか？</summary>
         <div class="a">しません。<br>いらない場合は、その場でそう言ってください。<br>それ以降のご連絡は止めます。</div></details>
       <details><summary>本当に無料ですか？</summary>
@@ -433,7 +455,7 @@ window.LP_CHANNEL = {
 })();
 </script>
 
-<script src="assets/js/slots.js?v=20261013052304"></script>
+<script src="assets/js/slots.js?v=20261019031954"></script>
 <script>
 (function(){
   /* ── 追従CTA ───────────────────────────────── */

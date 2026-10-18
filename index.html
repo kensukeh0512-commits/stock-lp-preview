@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261013052304">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019031954">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -20,7 +20,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20261013052304" defer></script>
+<script src="assets/js/channel.js?v=20261019031954" defer></script>
 </head>
 <body>
 
@@ -1267,6 +1267,65 @@ window.LP_CHANNEL = {
 
 
 <!-- ============================================================
+     個別相談への導線
+     ※LP上では有料であることに触れません（無料オファーの訴求を薄めないため）。
+     ※料金のご案内は、ご登録後のお電話で行う設計です。
+     ============================================================ -->
+<section class="sec" id="advice">
+  <div class="wrap">
+
+    <svg class="h-img" viewBox="0 0 660 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="いま持っている株は、どうすればいいですか">
+      <text x="330" y="26" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="15" font-weight="700" fill="#b0873a" letter-spacing="5">ONE TO ONE</text>
+      <text x="330" y="80" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="37" font-weight="900" fill="#14181f">いま持っている株は、</text>
+      <text x="330" y="126" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="37" font-weight="900" fill="#e0342a">どうすればいいですか</text>
+    </svg>
+
+    <p class="lead big center mb24">
+      いちばん多くいただく、ご質問です。
+    </p>
+
+    <div class="bubble mb32">
+      <span class="nb">「買ったはいいものの、</span><span class="nb">ずっとマイナスのまま。</span><br>
+      <span class="nb">売るに売れず、</span><span class="nb">何年も持っている株がある。</span><br>
+      <span class="big-red" style="font-size:19px"><span class="nb">これは、</span><span class="nb">どうすればいいですか」</span></span>
+    </div>
+
+    <p class="lead center mb24">
+      <span class="nb">先にお伝えしておきます。</span><br>
+      <span class="nb">無料でお届けする5銘柄は、</span><br>
+      <span class="nb"><b>これから買う株</b>の話です。</span><br>
+      <span class="nb">いま持っている株のことは、</span><br>
+      <span class="mk"><span class="nb">そこには書いてありません。</span></span>
+    </p>
+
+    <p class="lead center mb32">
+      <span class="nb">銘柄も、買った値段も、株数も、</span><br>
+      <span class="nb">持っている期間も、</span><span class="nb">人それぞれだからです。</span><br>
+      <span class="mk-g"><span class="nb">まとめて配れるものでは、</span><span class="nb">ありません。</span></span>
+    </p>
+
+    <div class="adv">
+      <p class="adv-k">1対1で、直接お話しします</p>
+      <p class="adv-m">
+        <span class="nb">こうしたご相談には、</span><br>
+        <b><span class="nb">〈開発者名〉が直接</span></b><span class="nb">お答えしています。</span>
+      </p>
+      <ul class="adv-l">
+        <li><b>その株を、どうするか</b><span>売るのか、持ち続けるのか、買い増すのか。いまの相場とあわせて、一緒に考えます。</span></li>
+        <li><b>マイナスからの、立て直し方</b><span>いくらまで戻れば損が消えるのか。どのくらいかかりそうか。数字で整理します。</span></li>
+        <li><b>あなたの資金に合った買い方</b><span>同じ銘柄でも、30万円の方と300万円の方では、買い方が変わります。</span></li>
+      </ul>
+      <p class="adv-n">
+        <span class="adv-free">まずは、無料の5銘柄を受け取ってください。</span><br>
+        個別のご相談は、そのあとのお電話で承っています。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
      お客様の声（プレースホルダー）
      ============================================================ -->
 <section class="sec" id="voice">
@@ -1409,6 +1468,8 @@ window.LP_CHANNEL = {
     <div class="faq">
       <details open><summary>本当に無料ですか？あとから請求されませんか？</summary>
         <div class="a">はい、ご登録と「急騰期待5銘柄」のお受け取りは完全無料です。<br>お金がかかるサービスをご案内する場合は、必ず先に内容と金額をお伝えします。<br>勝手に課金することは一切ありません。</div></details>
+      <details><summary>いま持っている株の相談もできますか？</summary>
+        <div class="a">はい。「ずっとマイナスのまま」「売り時が分からない」というご相談は、とても多くいただきます。<br>ただ、持っている銘柄も買った値段も人それぞれなので、まとめてお答えできるものではありません。<br>ご登録後のお電話で、お一人ずつ承っています。</div></details>
       <details><summary>投資はまったくの初心者ですが、大丈夫でしょうか？</summary>
         <div class="a">はい、大丈夫です。<br>銘柄の名前だけでなく「なぜ今その株なのか」という理由まで書いています。<br>分からないことは専任アドバイザーに聞けますので、はじめての方でも安心して使えます。</div></details>
       <details><summary>まとまった資金がありません。少額でも始められますか？</summary>
@@ -1563,7 +1624,7 @@ window.LP_CHANNEL = {
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
-<script src="assets/js/slots.js?v=20261013052304"></script>
+<script src="assets/js/slots.js?v=20261019031954"></script>
 <script>
 (function(){
   // 実績の続きを開く
