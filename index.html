@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261019045735">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019050340">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -20,7 +20,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20261019045735" defer></script>
+<script src="assets/js/channel.js?v=20261019050340" defer></script>
 </head>
 <body>
 
@@ -195,9 +195,83 @@ window.LP_CHANNEL = {
 
 
 <!-- ============================================================
+     同調 ― 疑っている方へ
+     ※売り込み（Solution）の直前に置くこと。警戒心が最大になる位置です。
+     ============================================================ -->
+<section class="sec" id="trust">
+  <div class="wrap">
+
+    <figure class="shot mb32">
+      <img src="assets/img/trust-bg.jpg" alt="正直なところ、疑っていますよね" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="trg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#05070d" stop-opacity=".92"/><stop offset="58%" stop-color="#05070d" stop-opacity=".5"/><stop offset="100%" stop-color="#05070d" stop-opacity="0"/></linearGradient>
+          <filter id="trs" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="430" height="400" fill="url(#trg)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="start" filter="url(#trs)">
+          <text x="34" y="150" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">BEFORE YOU DECIDE</text>
+          <text x="34" y="212" font-size="36" font-weight="900" fill="#ffffff">正直なところ、</text>
+          <text x="34" y="262" font-size="36" font-weight="900" fill="#ff6a52">疑っていますよね</text>
+          <rect x="34" y="288" width="96" height="5" rx="2.5" fill="#d4af37"/>
+        </g>
+      </svg>
+    </figure>
+
+    <div class="bubble mb32">
+      <span class="big-red" style="font-size:22px"><span class="nb">「また、</span><span class="nb">この手のやつか」</span></span>
+    </div>
+
+    <p class="lead big center mb32">
+      <span class="nb">分かります。</span><br>
+      <span class="nb">そう思われて、</span><span class="nb">当然だと思います。</span>
+    </p>
+
+    <ul class="miss">
+      <li><b>「必ず儲かる」と言われた</b><span>そのとおりになったことは、一度もなかった</span></li>
+      <li><b>お金を払って、情報を買った</b><span>届いたのは、調べれば出てくる話だった</span></li>
+      <li><b>最初だけ、やたら親切だった</b><span>申し込んだあとは、連絡すら来なくなった</span></li>
+    </ul>
+
+    <p class="lead center mb32">
+      <span class="nb">ひとつでも心当たりがあれば、</span><br>
+      <span class="nb">簡単に信じられるわけが</span><span class="nb">ありません。</span><br>
+      <span class="mk-g"><span class="nb">それは、</span><span class="nb">あなたが疑り深いからでは</span><span class="nb">ありません。</span></span><br>
+      <span class="nb">そういうものが、</span><span class="nb">多すぎただけです。</span>
+    </p>
+
+    <div class="ask">
+      <p class="ask-k">ひとつだけ、お願いがあります</p>
+      <p class="ask-m">
+        <span class="nb"><b>信じないでください。</b></span><br>
+        <span class="nb">今日のところは、</span><br><span class="nb">疑ったままで構いません。</span>
+      </p>
+      <p class="ask-s">
+        <span class="nb">その代わり、</span><span class="nb">ひとつだけ</span><span class="nb">確かめてください。</span><br>
+        <b><span class="nb">無料で受け取った5銘柄が、</span><br><span class="nb">このあと本当に動くかどうか。</span></b>
+      </p>
+      <p class="ask-e">
+        <span class="nb">お金は、一円もかかりません。</span><br>
+        <span class="nb">受け取って、</span><span class="nb">眺めるだけです。</span><br>
+        <b><span class="nb">確かめもせずに閉じてしまうほうが、</span><br><span class="nb">よほど もったいない話です。</span></b>
+      </p>
+    </div>
+
+    <p class="lead big center" style="margin-top:26px;font-weight:900;font-size:19px;color:var(--tx)">
+      <span class="nb">では、何をお渡しするのか。</span><br>
+      <span class="mk-g"><span class="nb">先に、中身を</span><span class="nb">お見せします。</span></span>
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
      [So] Solution ― すべてお任せください
      ============================================================ -->
-<section class="sec" id="solution">
+<section class="sec gray" id="solution">
   <div class="wrap">
 
     <svg class="h-img" viewBox="0 0 660 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="すべて、お任せください。">
@@ -775,80 +849,6 @@ window.LP_CHANNEL = {
         <span class="fee">完全無料</span>
       </a>
     </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     同調 ― 疑っている方へ
-     ※売り込み（Solution）の直前に置くこと。警戒心が最大になる位置です。
-     ============================================================ -->
-<section class="sec gray" id="trust">
-  <div class="wrap">
-
-    <figure class="shot mb32">
-      <img src="assets/img/trust-bg.jpg" alt="正直なところ、疑っていますよね" width="1400" height="875" loading="lazy" decoding="async">
-      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="trg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#05070d" stop-opacity=".92"/><stop offset="58%" stop-color="#05070d" stop-opacity=".5"/><stop offset="100%" stop-color="#05070d" stop-opacity="0"/></linearGradient>
-          <filter id="trs" x="-40%" y="-40%" width="180%" height="180%">
-            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
-          </filter>
-        </defs>
-        <rect x="0" y="0" width="430" height="400" fill="url(#trg)"/>
-        <g font-family="'Noto Sans JP',sans-serif" text-anchor="start" filter="url(#trs)">
-          <text x="34" y="150" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">BEFORE YOU DECIDE</text>
-          <text x="34" y="212" font-size="36" font-weight="900" fill="#ffffff">正直なところ、</text>
-          <text x="34" y="262" font-size="36" font-weight="900" fill="#ff6a52">疑っていますよね</text>
-          <rect x="34" y="288" width="96" height="5" rx="2.5" fill="#d4af37"/>
-        </g>
-      </svg>
-    </figure>
-
-    <div class="bubble mb32">
-      <span class="big-red" style="font-size:22px"><span class="nb">「また、</span><span class="nb">この手のやつか」</span></span>
-    </div>
-
-    <p class="lead big center mb32">
-      <span class="nb">分かります。</span><br>
-      <span class="nb">そう思われて、</span><span class="nb">当然だと思います。</span>
-    </p>
-
-    <ul class="miss">
-      <li><b>「必ず儲かる」と言われた</b><span>そのとおりになったことは、一度もなかった</span></li>
-      <li><b>お金を払って、情報を買った</b><span>届いたのは、調べれば出てくる話だった</span></li>
-      <li><b>最初だけ、やたら親切だった</b><span>申し込んだあとは、連絡すら来なくなった</span></li>
-    </ul>
-
-    <p class="lead center mb32">
-      <span class="nb">ひとつでも心当たりがあれば、</span><br>
-      <span class="nb">簡単に信じられるわけが</span><span class="nb">ありません。</span><br>
-      <span class="mk-g"><span class="nb">それは、</span><span class="nb">あなたが疑り深いからでは</span><span class="nb">ありません。</span></span><br>
-      <span class="nb">そういうものが、</span><span class="nb">多すぎただけです。</span>
-    </p>
-
-    <div class="ask">
-      <p class="ask-k">ひとつだけ、お願いがあります</p>
-      <p class="ask-m">
-        <span class="nb"><b>信じないでください。</b></span><br>
-        <span class="nb">今日のところは、</span><br><span class="nb">疑ったままで構いません。</span>
-      </p>
-      <p class="ask-s">
-        <span class="nb">その代わり、</span><span class="nb">ひとつだけ</span><span class="nb">確かめてください。</span><br>
-        <b><span class="nb">無料で受け取った5銘柄が、</span><br><span class="nb">このあと本当に動くかどうか。</span></b>
-      </p>
-      <p class="ask-e">
-        <span class="nb">お金は、一円もかかりません。</span><br>
-        <span class="nb">受け取って、</span><span class="nb">眺めるだけです。</span><br>
-        <b><span class="nb">確かめもせずに閉じてしまうほうが、</span><br><span class="nb">よほど もったいない話です。</span></b>
-      </p>
-    </div>
-
-    <p class="lead big center" style="margin-top:26px;font-weight:900;font-size:19px;color:var(--tx)">
-      <span class="nb">では、なぜ</span><span class="nb">そんなことが分かるのか。</span><br>
-      <span class="mk-g"><span class="nb">その根拠を、</span><span class="nb">お見せします。</span></span>
-    </p>
-
   </div>
 </section>
 
@@ -1487,7 +1487,7 @@ window.LP_CHANNEL = {
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
-<script src="assets/js/slots.js?v=20261019045735"></script>
+<script src="assets/js/slots.js?v=20261019050340"></script>
 <script>
 (function(){
   // 実績の続きを開く
