@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261019041744">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019043449">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -20,7 +20,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20261019041744" defer></script>
+<script src="assets/js/channel.js?v=20261019043449" defer></script>
 </head>
 <body>
 
@@ -805,11 +805,24 @@ window.LP_CHANNEL = {
 <section class="sec gray" id="trust">
   <div class="wrap">
 
-    <svg class="h-img" viewBox="0 0 660 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="正直なところ、疑っていますよね">
-      <text x="330" y="26" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="15" font-weight="700" fill="#b0873a" letter-spacing="5">BEFORE YOU DECIDE</text>
-      <text x="330" y="80" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="38" font-weight="900" fill="#14181f">正直なところ、</text>
-      <text x="330" y="126" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="38" font-weight="900" fill="#e0342a">疑っていますよね</text>
-    </svg>
+    <figure class="shot mb32">
+      <img src="assets/img/trust-bg.jpg" alt="正直なところ、疑っていますよね" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="trg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#05070d" stop-opacity=".92"/><stop offset="58%" stop-color="#05070d" stop-opacity=".5"/><stop offset="100%" stop-color="#05070d" stop-opacity="0"/></linearGradient>
+          <filter id="trs" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="430" height="400" fill="url(#trg)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="start" filter="url(#trs)">
+          <text x="34" y="150" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">BEFORE YOU DECIDE</text>
+          <text x="34" y="212" font-size="36" font-weight="900" fill="#ffffff">正直なところ、</text>
+          <text x="34" y="262" font-size="36" font-weight="900" fill="#ff6a52">疑っていますよね</text>
+          <rect x="34" y="288" width="96" height="5" rx="2.5" fill="#d4af37"/>
+        </g>
+      </svg>
+    </figure>
 
     <div class="bubble mb32">
       <span class="big-red" style="font-size:22px"><span class="nb">「また、</span><span class="nb">この手のやつか」</span></span>
@@ -865,11 +878,24 @@ window.LP_CHANNEL = {
 <section class="sec" id="why">
   <div class="wrap">
 
-    <svg class="h-img" viewBox="0 0 660 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="なぜ、AIには見えるのか">
-      <text x="330" y="26" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="15" font-weight="700" fill="#b0873a" letter-spacing="5">THE REASON</text>
-      <text x="330" y="84" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="44" font-weight="900" fill="#14181f">なぜ、AIには<tspan fill="#e0342a">「見える」</tspan>のか</text>
-      <rect x="276" y="106" width="108" height="5" rx="2.5" fill="#d4af37"/>
-    </svg>
+    <figure class="shot mb32">
+      <img src="assets/img/why-bg.jpg" alt="なぜ、AIには見えるのか" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="whg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#05070d" stop-opacity=".92"/><stop offset="70%" stop-color="#05070d" stop-opacity=".45"/><stop offset="100%" stop-color="#05070d" stop-opacity="0"/></linearGradient>
+          <filter id="whs" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="640" height="300" fill="url(#whg)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle" filter="url(#whs)">
+          <text x="320" y="92" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">THE REASON</text>
+          <text x="320" y="154" font-size="36" font-weight="900" fill="#ffffff">なぜ、AIには</text>
+          <text x="320" y="204" font-size="36" font-weight="900" fill="#f3dd92">「見える」のか</text>
+          <rect x="272" y="230" width="96" height="5" rx="2.5" fill="#d4af37"/>
+        </g>
+      </svg>
+    </figure>
 
     <p class="lead big center mb32">
       「たまたま当たった」が<br>
@@ -1030,11 +1056,24 @@ window.LP_CHANNEL = {
      ============================================================ -->
 <section class="sec gray" id="benefit">
   <div class="wrap">
-    <svg class="h-img" viewBox="0 0 660 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="何が手に入るの？">
-      <text x="330" y="26" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="15" font-weight="700" fill="#b0873a" letter-spacing="5">WHAT YOU GET</text>
-      <text x="330" y="84" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="46" font-weight="900" fill="#14181f">何が<tspan fill="#e0342a">手に入るの？</tspan></text>
-      <rect x="276" y="106" width="108" height="5" rx="2.5" fill="#d4af37"/>
-    </svg>
+    <figure class="shot mb32">
+      <img src="assets/img/benefit-bg.jpg" alt="何が手に入るの？" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="bng" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#05070d" stop-opacity=".92"/><stop offset="70%" stop-color="#05070d" stop-opacity=".45"/><stop offset="100%" stop-color="#05070d" stop-opacity="0"/></linearGradient>
+          <filter id="bns" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="640" height="300" fill="url(#bng)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle" filter="url(#bns)">
+          <text x="320" y="92" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">WHAT YOU GET</text>
+          <text x="320" y="154" font-size="36" font-weight="900" fill="#ffffff">何が</text>
+          <text x="320" y="204" font-size="36" font-weight="900" fill="#ff6a52">手に入るの？</text>
+          <rect x="272" y="230" width="96" height="5" rx="2.5" fill="#d4af37"/>
+        </g>
+      </svg>
+    </figure>
 
     <p class="lead big center mb32">
       いまの相場に合った<span class="mk-g">新しい情報</span>と、<br>
@@ -1066,11 +1105,24 @@ window.LP_CHANNEL = {
      ============================================================ -->
 <section class="sec gray" id="trio">
   <div class="wrap">
-    <svg class="h-img" viewBox="0 0 660 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="会員様・専任アドバイザー・アナリストの3者連携で確かな投資判断をサポート">
-      <text x="330" y="26" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="15" font-weight="700" fill="#b0873a" letter-spacing="5">TEAM SUPPORT</text>
-      <text x="330" y="80" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="35" font-weight="900" fill="#14181f">会員様・専任アドバイザー・アナリスト</text>
-      <text x="330" y="126" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="35" font-weight="900" fill="#14181f">の<tspan fill="#e0342a">3者連携</tspan>でサポート</text>
-    </svg>
+    <figure class="shot mb32">
+      <img src="assets/img/trio-bg.jpg" alt="ひとりでは、やらせません" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="tog" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#05070d" stop-opacity=".92"/><stop offset="58%" stop-color="#05070d" stop-opacity=".5"/><stop offset="100%" stop-color="#05070d" stop-opacity="0"/></linearGradient>
+          <filter id="tos" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="430" height="400" fill="url(#tog)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="start" filter="url(#tos)">
+          <text x="34" y="150" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">TEAM SUPPORT</text>
+          <text x="34" y="212" font-size="36" font-weight="900" fill="#ffffff">ひとりでは、</text>
+          <text x="34" y="262" font-size="36" font-weight="900" fill="#ff6a52">やらせません</text>
+          <rect x="34" y="288" width="96" height="5" rx="2.5" fill="#d4af37"/>
+        </g>
+      </svg>
+    </figure>
 
     <div class="bubble mb24" style="border-color:var(--gold)">
       お任せいただくのは、<br><span class="mk-g">「さがす」作業だけ</span>です。<br>
@@ -1309,11 +1361,24 @@ window.LP_CHANNEL = {
      ============================================================ -->
 <section class="sec ink2" id="entry">
   <div class="wrap">
-    <svg class="h-img" viewBox="0 0 660 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="お受け取りはかんたん3ステップ">
-      <text x="330" y="26" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="15" font-weight="700" fill="#c79d24" letter-spacing="5">HOW TO GET</text>
-      <text x="330" y="80" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="39" font-weight="900" fill="#ffffff">お受け取りは</text>
-      <text x="330" y="128" text-anchor="middle" font-family="'Noto Sans JP',sans-serif" font-size="39" font-weight="900" fill="#ffffff"><tspan fill="#f3dd92">かんたん3ステップ</tspan></text>
-    </svg>
+    <figure class="shot mb32">
+      <img src="assets/img/entry-bg.jpg" alt="お受け取りはかんたん3ステップ" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="eng" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#05070d" stop-opacity=".92"/><stop offset="70%" stop-color="#05070d" stop-opacity=".45"/><stop offset="100%" stop-color="#05070d" stop-opacity="0"/></linearGradient>
+          <filter id="ens" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="640" height="300" fill="url(#eng)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle" filter="url(#ens)">
+          <text x="320" y="92" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">HOW TO GET</text>
+          <text x="320" y="154" font-size="36" font-weight="900" fill="#ffffff">お受け取りは</text>
+          <text x="320" y="204" font-size="36" font-weight="900" fill="#f3dd92">かんたん3ステップ</text>
+          <rect x="272" y="230" width="96" height="5" rx="2.5" fill="#d4af37"/>
+        </g>
+      </svg>
+    </figure>
 
     <ol class="step mb40">
       <li><b>下のボタンから<span class="ch" data-line="友だち追加" data-mail="アドレスを登録">友だち追加</span></b><p>かかる時間は<strong>たった10秒</strong>。<br>面倒な入力はありません。</p></li>
@@ -1443,7 +1508,7 @@ window.LP_CHANNEL = {
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
-<script src="assets/js/slots.js?v=20261019041744"></script>
+<script src="assets/js/slots.js?v=20261019043449"></script>
 <script>
 (function(){
   // 実績の続きを開く
