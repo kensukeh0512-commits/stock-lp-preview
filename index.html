@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261019053303">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019054125">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -20,7 +20,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20261019053303" defer></script>
+<script src="assets/js/channel.js?v=20261019054125" defer></script>
 </head>
 <body>
 
@@ -598,10 +598,28 @@ window.LP_CHANNEL = {
      ============================================================ -->
 <section class="sec dark" id="gap" style="padding-top:8px">
   <div class="wrap">
-    <p class="center mb24" style="font-size:21px;font-weight:900;line-height:1.7;color:#fff">
-      この<span class="gold">たった4ヶ月半</span>で、<br>
-      受け取った人と、<br>受け取らなかった人。
-    </p>
+    <figure class="shot mb32">
+      <img src="assets/img/gap-bg.jpg" alt="受け取った人と、受け取らなかった人" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="gpg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#05070d" stop-opacity=".92"/>
+            <stop offset="70%" stop-color="#05070d" stop-opacity=".4"/>
+            <stop offset="100%" stop-color="#05070d" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="gps" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="640" height="300" fill="url(#gpg)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle" filter="url(#gps)">
+          <text x="320" y="86" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">THE DIFFERENCE</text>
+          <text x="320" y="146" font-size="34" font-weight="900" fill="#ffffff">同じ4ヶ月半で、</text>
+          <text x="320" y="194" font-size="34" font-weight="900" fill="#ff6a52">ここまで変わります</text>
+          <rect x="272" y="220" width="96" height="5" rx="2.5" fill="#d4af37"/>
+        </g>
+      </svg>
+    </figure>
 
     <div class="vs">
       <div class="vs-c no">
@@ -627,12 +645,48 @@ window.LP_CHANNEL = {
       <span class="k">。</span>
       <p>分けたのは、才能でもお金でもありません。<br>
       <span class="mk-g" style="color:#fff">一度、受け取るかどうか</span>。<br>それだけでした。<br>
-      <span class="big-red" style="font-size:18px;display:inline-block;margin-top:14px"><span class="nb">そして今日も、</span><span class="nb">まったく同じ分かれ道が、</span><span class="nb">目の前にあります。</span></span></p>
+      <span class="big-red" style="font-size:18px;display:inline-block;margin-top:14px"><span class="nb">たった一度の判断が、</span><br><span class="nb">ここまでの差を作ります。</span></span></p>
     </div>
 
     <p class="center" style="margin-top:34px;font-size:19px;font-weight:900;line-height:1.8;color:#fff">
       しかもこれは、<span class="gold">1銘柄だけ</span>の話。<br>
       ほかの株でも、<br>同じことが起きていました。
+    </p>
+
+    <p class="center" style="margin-top:40px;font-size:17px;font-weight:700;line-height:1.9;color:#c8cfdd">
+      <span class="nb">数字だけでは、</span><span class="nb">ぴんと来ないかもしれません。</span><br>
+      <span style="color:#fff;font-size:20px;font-weight:900"><span class="nb">978万円とは、</span><span class="nb">こういう差です。</span></span>
+    </p>
+
+    <figure class="shot mt20">
+      <img src="assets/img/future-bg.jpg" alt="978万円の差が意味するもの" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="ftg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#05070d" stop-opacity=".9"/>
+            <stop offset="56%" stop-color="#05070d" stop-opacity=".45"/>
+            <stop offset="100%" stop-color="#05070d" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="fts" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="420" height="400" fill="url(#ftg)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="start" filter="url(#fts)">
+          <text x="30" y="118" font-size="23" font-weight="900" fill="#ffffff">住宅ローンの残りが、</text>
+          <text x="30" y="154" font-size="23" font-weight="900" fill="#e8d08a">消えるかもしれない。</text>
+          <text x="30" y="212" font-size="23" font-weight="900" fill="#ffffff">老後の不安が、</text>
+          <text x="30" y="248" font-size="23" font-weight="900" fill="#e8d08a">ひとつ減るかもしれない。</text>
+          <text x="30" y="306" font-size="23" font-weight="900" fill="#ffffff">やりたかったことに、</text>
+          <text x="30" y="342" font-size="23" font-weight="900" fill="#e8d08a">手が届くかもしれない。</text>
+        </g>
+      </svg>
+    </figure>
+    <p class="cap">※上記は、上に載せた実績価格をもとにした単純な試算から想定されるイメージです。将来の成果を保証・示唆するものではありません。</p>
+
+    <p class="center" style="margin-top:30px;font-size:20px;font-weight:900;line-height:1.85;color:#fff">
+      <span class="nb">その分かれ道が、</span><span class="nb">いま目の前にあります。</span><br>
+      <span class="gold"><span class="nb">どちらに進むかは、</span><span class="nb">今日決まります。</span></span>
     </p>
 
     <div class="cta-zone">
@@ -1489,7 +1543,7 @@ window.LP_CHANNEL = {
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
-<script src="assets/js/slots.js?v=20261019053303"></script>
+<script src="assets/js/slots.js?v=20261019054125"></script>
 <script>
 (function(){
   // 実績の続きを開く
