@@ -718,3 +718,40 @@ PC幅で「幅の3割しか使っていない段落」が29箇所ありますが
 
 **カード型のレイアウトを足すときは、必ず 620px 以上での1列幅を確認してください。**
 720px のセンターカラムでは、3カラムにすると必ず 217px になります。
+
+## 無料バッジが上のカードに重なっていた（2026-10-19）
+
+`.free`（月額料金なし／初期費用なし／解除いつでも）に
+**`margin:-12px`（負の上余白）** が残っていました。
+
+旧「届けるもの」セクションで**リード文の直下に詰める**ための指定でしたが、
+3枚カードを `#solution` に統合した際にカードの直後へ移ったため、
+**カードに12px食い込んでいました。**
+
+`margin:24px 0 26px` に修正。
+
+### 負の余白の棚卸し（残り2つは意図的）
+
+| 箇所 | 指定 | 判断 |
+|---|---|---|
+| `.dv-ic` | `margin:-42px auto 12px` | **意図的。**丸アイコンを画像の下端に重ねる演出。PC幅のメディアクエリで解除済み |
+| `.once-bar` | `margin:0 -20px` | **意図的。**警告バーを左右いっぱいに出すため（現在は非表示） |
+
+### 再発防止：隣接要素の重なり検査
+
+セクションの移動・統合をしたら、**負の余白が意味を失っていないか**必ず確認してください。
+ブラウザのコンソールでこれを流すと、隣り合う要素の重なりを一括検出できます。
+
+```js
+const hits=[];
+document.querySelectorAll('.wrap > *, .sec > .wrap > *').forEach(el=>{
+  const n=el.nextElementSibling; if(!n) return;
+  const a=el.getBoundingClientRect(), b=n.getBoundingClientRect();
+  if(a.height<2||b.height<2) return;
+  const ov=Math.round(a.bottom-b.top);
+  if(ov>2) hits.push({sec:el.closest('section')?.id, a:el.className, b:n.className, ov});
+});
+console.table(hits);
+```
+
+**375px と 840px の両方で 0件**になることを確認してください。
