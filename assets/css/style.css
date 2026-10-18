@@ -635,3 +635,7 @@ html[data-once="on"]  .once-off{display:none !important}
   font-size:15px;line-height:1.95;color:var(--tx2)}
 .ask-e b{display:inline-block;margin-top:6px;color:var(--tx);font-weight:900}
 
+
+/* 小見出し（解決パート内） */
+.dec-hd{text-align:center;font-size:18px;font-weight:700;line-height:1.85;color:var(--tx2);margin-bottom:18px}
+.dec-hd b{display:inline-block;font-size:24px;font-weight:900;color:var(--tx)}
