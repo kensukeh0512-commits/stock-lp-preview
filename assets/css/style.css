@@ -270,10 +270,20 @@ a{color:inherit;text-decoration:none}
 .dv-ic svg{width:100%;height:100%;display:block}
 .dv li b{display:block;font-size:19px;font-weight:900;line-height:1.55;color:var(--tx);margin-bottom:10px}
 .dv li p{font-size:14.5px;line-height:2;color:var(--tx2);text-align:left}
+/* 620px以上は3カラムにせず横並びカードにする。
+   720pxのセンターカラムを3分割すると1列217pxになり、
+   .nb（改行保護）と相まって1行6文字まで落ちるため。 */
 @media(min-width:620px){
-  .dv{grid-template-columns:repeat(3,1fr);gap:14px}
-  .dv li b{font-size:17px}
-  .dv li p{font-size:13.5px}
+  .dv{grid-template-columns:1fr;gap:16px}
+  .dv li{display:grid;grid-template-columns:286px 1fr;align-items:stretch}
+  .dv-img{aspect-ratio:auto;height:100%;min-height:186px}
+  .dv-bd{padding:26px 28px 26px 26px;text-align:left;display:flex;
+    flex-direction:column;justify-content:center}
+  .dv-ic{margin:0 0 12px;box-shadow:none;padding:0;width:34px;height:34px}
+  .dv li b{font-size:20px;margin-bottom:8px}
+  .dv li p{font-size:15px;line-height:1.95}
+  /* 本文中の<br>はスマホ幅用。PC幅では文が細切れになるので無効化する */
+  .dv li p br{display:none}
 }
 @media(max-width:400px){
   .dv li b{font-size:18px}
