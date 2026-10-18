@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261019062730">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019063222">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -20,7 +20,7 @@ window.LP_CHANNEL = {
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20261019062730" defer></script>
+<script src="assets/js/channel.js?v=20261019063222" defer></script>
 </head>
 <body>
 
@@ -919,13 +919,35 @@ window.LP_CHANNEL = {
       <li class="left"><b>いくら買うか</b><em>ここだけ決める</em></li>
     </ul>
 
+    <figure class="shot mb24">
+      <img src="assets/img/arrive-bg.jpg" alt="あなたがやることは、指示どおりに買って、売るだけ" width="1400" height="875" loading="lazy" decoding="async">
+      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="arg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#05070d" stop-opacity=".9"/>
+            <stop offset="66%" stop-color="#05070d" stop-opacity=".42"/>
+            <stop offset="100%" stop-color="#05070d" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="ars" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#000" flood-opacity=".92"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="640" height="280" fill="url(#arg)"/>
+        <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle" filter="url(#ars)">
+          <text x="320" y="78" font-size="14" font-weight="700" fill="#e0b95a" letter-spacing="5">YOUR PART</text>
+          <text x="320" y="128" font-size="25" font-weight="700" fill="#ffffff">あなたがやることは、</text>
+          <text x="320" y="180" font-size="35" font-weight="900" fill="#ffd27a">指示どおりに買って、</text>
+          <text x="320" y="226" font-size="35" font-weight="900" fill="#ffd27a">売るだけ。</text>
+          <rect x="272" y="252" width="96" height="5" rx="2.5" fill="#d4af37"/>
+        </g>
+      </svg>
+    </figure>
+
     <p class="lead center">
-      <span class="nb">あなたがやることは、</span><br>
-      <b style="font-size:23px;color:var(--red)"><span class="nb">指示どおりに買って、</span><span class="nb">売るだけ。</span></b><br>
       <span class="nb">考えるのは、</span><span class="nb">いくら買うかだけです。</span>
     </p>
 
-    <p class="lead center" style="margin-top:22px;font-size:18px;font-weight:900;color:var(--tx)">
+    <p class="lead center" style="margin-top:18px;font-size:19px;font-weight:900;color:var(--tx)">
       <span class="nb">早ければ、今日のうちに。</span><br>
       <span class="mk-g"><span class="nb">次に動く5銘柄が、</span><span class="nb">手元に届きます。</span></span>
     </p>
@@ -1581,7 +1603,7 @@ window.LP_CHANNEL = {
   <a href="#entry" class="btn"><small>＼ 誰でも無料・たった1分 ／</small><span data-cta-label>LINEで銘柄を受け取る</span></a>
 </div>
 
-<script src="assets/js/slots.js?v=20261019062730"></script>
+<script src="assets/js/slots.js?v=20261019063222"></script>
 <script>
 (function(){
   // 実績の続きを開く
