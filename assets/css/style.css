@@ -733,3 +733,26 @@ html[data-once="on"]  .once-off{display:none !important}
 .safe-e{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);
   font-size:14.5px;line-height:1.95;color:var(--tx2)}
 @media(max-width:400px){ .safe-m{font-size:16.5px} .safe-m b{font-size:20px} }
+
+
+/* ===== 締切カウントダウン（thanks.html / 緊急性） ===== */
+.cd-bar{display:flex;align-items:center;justify-content:center;gap:9px;
+  background:linear-gradient(90deg,#8d1208,#c3190c 55%,#8d1208);
+  padding:7px 12px;border-radius:9px 9px 0 0;margin-bottom:-1px}
+.cd-bar .cd-k{font-size:11px;font-weight:900;color:#ffd9d4;letter-spacing:.08em;white-space:nowrap}
+.cd-bar .cd-v{font-size:19px;font-weight:900;color:#fff;line-height:1;letter-spacing:.04em;
+  font-variant-numeric:tabular-nums;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.cd-bar .cd-v i{font-style:normal;font-size:12px;font-weight:700;color:#ffd9d4;margin:0 1px 0 2px}
+.cd-bar .cd-dot{width:7px;height:7px;border-radius:50%;background:#ff6a52;flex:none;
+  box-shadow:0 0 0 0 rgba(255,106,82,.75);animation:cdPulse 1.4s ease-out infinite}
+@keyframes cdPulse{70%{box-shadow:0 0 0 9px rgba(255,106,82,0)}100%{box-shadow:0 0 0 0 rgba(255,106,82,0)}}
+@media (prefers-reduced-motion: reduce){.cd-bar .cd-dot{animation:none}}
+
+/* 追従バーの中に入れたとき */
+.fixcta .cd-bar{border-radius:9px;margin:0 0 7px}
+
+/* 残枠カードの締切行 */
+.limit-dl{display:flex;align-items:center;justify-content:center;gap:7px;
+  margin-top:14px;padding-top:13px;border-top:1px dashed #f0b6b2}
+.limit-dl .k{font-size:12px;font-weight:900;color:var(--tx2);letter-spacing:.06em}
+.limit-dl .v{font-size:21px;font-weight:900;color:var(--red);line-height:1;font-variant-numeric:tabular-nums}
