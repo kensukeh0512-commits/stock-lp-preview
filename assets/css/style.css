@@ -756,3 +756,21 @@ html[data-once="on"]  .once-off{display:none !important}
   margin-top:14px;padding-top:13px;border-top:1px dashed #f0b6b2}
 .limit-dl .k{font-size:12px;font-weight:900;color:var(--tx2);letter-spacing:.06em}
 .limit-dl .v{font-size:21px;font-weight:900;color:var(--red);line-height:1;font-variant-numeric:tabular-nums}
+
+
+/* ===== 3倍の試算（thanks.html） ===== */
+.x3{background:linear-gradient(180deg,#121a2b,#0b1220);border:1px solid rgba(212,175,55,.42);
+  border-radius:14px;padding:20px 16px 18px;text-align:center}
+.x3-k{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--gold-l);margin-bottom:10px}
+.x3-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.x3-a{font-size:26px;font-weight:900;color:#8d97a8;line-height:1.1}
+.x3-a i{font-style:normal;font-size:14px;font-weight:700}
+.x3-ar{font-size:22px;font-weight:900;color:var(--red);line-height:1}
+.x3-b{font-size:40px;font-weight:900;color:#fff;line-height:1.05;text-shadow:0 2px 12px rgba(224,52,42,.5)}
+.x3-b i{font-style:normal;font-size:18px;font-weight:700;color:var(--gold-l)}
+.x3-n{margin-top:13px;padding-top:12px;border-top:1px dashed rgba(212,175,55,.3);
+  font-size:14px;line-height:1.9;color:#c0c8d4}
+
+
+/* 白カードの中は濃色文字（.ink2 / .dark の白を継承させない） */
+.ben li{color:var(--tx)}
