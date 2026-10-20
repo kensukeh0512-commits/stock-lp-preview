@@ -180,3 +180,12 @@ body{background:#fff;color:#14181f}
   .v3cta .v3offer,.v3cta .k,.v3cta .v3arw,.v3cta .note{
     max-width:var(--wrap);margin-left:auto;margin-right:auto}
 }
+
+
+/* ===== 各セクションの締め（次のセクションへ渡す一言） ===== */
+.v3end{margin-top:28px;text-align:center;font-size:17px;font-weight:900;line-height:1.8}
+.v3end span{display:block}
+.v3end .q{font-size:21px;margin-bottom:5px}
+.v3end em{font-style:normal;color:var(--red)}
+.v3sec.dark .v3end{color:#fff}
+.v3sec.dark .v3end em{color:#ff6a52}
