@@ -774,3 +774,11 @@ html[data-once="on"]  .once-off{display:none !important}
 
 /* 白カードの中は濃色文字（.ink2 / .dark の白を継承させない） */
 .ben li{color:var(--tx)}
+
+
+/* ===== サンキューページのヘッダー画像（文字は画像に焼き込み済み） ===== */
+.tvhero{margin:0;line-height:0;background:#05070d}
+.tvhero img{width:100%;height:auto;display:block}
+.tvhero + .tv{padding-top:26px}
+/* PCでは他の写真と同じ720pxの中央カラムに揃える */
+@media (min-width:760px){.tvhero{max-width:var(--wrap);margin:0 auto}}
