@@ -83,3 +83,18 @@ body{background:#fff;color:#14181f}
   transform:translateY(105%);transition:transform .26s ease}
 .v3fix.on{transform:translateY(0)}
 .v3fix .v3btn{font-size:18px;padding:12px 12px 11px;box-shadow:0 4px 0 #a3150e}
+
+
+/* ===== ステップの矢印とゴール（v3） ===== */
+.v3s{gap:0}
+.v3s li.arw{margin-top:34px;position:relative}
+.v3s li.arw::after{content:"";position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+  width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;
+  border-top:17px solid var(--red)}
+.v3s li.goal{border-color:var(--red);background:#fff6f5}
+.v3s li.goal::before{background:var(--red)}
+.v3s li.goal b{color:var(--red);font-size:21px}
+.v3s em{font-style:normal;font-weight:900;color:var(--tx)}
+
+/* 固定ヘッダーに見出しが隠れないように */
+.v3sec{scroll-margin-top:62px}
