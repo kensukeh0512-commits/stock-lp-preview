@@ -113,3 +113,57 @@ body{background:#fff;color:#14181f}
   text-shadow:1px 0 0 #fff,-1px 0 0 #fff,0 1px 0 #fff,0 -1px 0 #fff}
 /* 追従CTAの中では詰める */
 .v3fix .v3arw{display:none}
+
+
+/* ===== 追加セクション（同調・肩書・感謝の声・限定） ===== */
+
+/* セクションの写真（人物入り） */
+.v3img{margin:0 0 22px;line-height:0;border-radius:14px;overflow:hidden;
+  box-shadow:0 6px 20px rgba(10,20,40,.12)}
+.v3img img{width:100%;height:auto;display:block}
+
+/* オファーの画像（黄色CTAの中） */
+.v3cta .v3offer{margin:0 0 4px;line-height:0}
+.v3cta .v3offer img{width:100%;height:auto;display:block;border-radius:10px}
+
+/* ---- 同調：あるあるリスト ---- */
+.v3chk{list-style:none;display:grid;gap:10px;margin-top:22px}
+.v3chk li{background:#fff;border:2px solid var(--line);border-radius:12px;
+  padding:14px 14px 14px 46px;position:relative;font-size:15px;font-weight:700;line-height:1.7}
+.v3chk li::before{content:"";position:absolute;left:15px;top:17px;width:19px;height:19px;
+  border-radius:4px;background:var(--red)}
+.v3chk li::after{content:"";position:absolute;left:21px;top:21px;width:6px;height:11px;
+  border-right:2.6px solid #fff;border-bottom:2.6px solid #fff;transform:rotate(42deg)}
+.v3chk-end{margin-top:22px;text-align:center;font-size:19px;font-weight:900;line-height:1.7}
+.v3chk-end em{font-style:normal;color:var(--red)}
+
+/* ---- 肩書 ---- */
+.v3cred{list-style:none;display:grid;gap:10px;margin-top:22px}
+.v3cred li{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:center;
+  background:#0f1626;color:#fff;border-radius:12px;padding:15px 16px}
+.v3cred li i{font-style:normal;flex:none;width:34px;height:34px;border-radius:50%;
+  background:var(--gold);color:#0f1626;font-weight:900;font-size:16px;
+  display:flex;align-items:center;justify-content:center}
+.v3cred li b{display:block;font-size:16.5px;font-weight:900;line-height:1.55}
+.v3cred li span{display:block;grid-column:2;font-size:13px;line-height:1.8;color:#aab3c2;margin-top:3px}
+
+/* ---- 感謝の声 ---- */
+.v3voice{display:grid;gap:14px;margin-top:22px}
+.v3vc{background:#fff;border:2px solid var(--line);border-radius:14px;padding:18px 16px;
+  box-shadow:0 4px 14px rgba(10,20,40,.05)}
+.v3vc .star{color:#f5a623;font-size:15px;letter-spacing:.14em;line-height:1}
+.v3vc .ttl{display:block;font-size:17px;font-weight:900;line-height:1.55;margin:8px 0 7px}
+.v3vc .ttl em{font-style:normal;color:var(--red)}
+.v3vc p{font-size:14px;line-height:1.95;color:var(--tx2)}
+.v3vc .nm{display:block;margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);
+  font-size:12.5px;font-weight:700;color:var(--muted);text-align:right}
+
+/* ---- 300名限定 ---- */
+.v3lim{background:#fff;border:3px solid var(--red);border-radius:16px;overflow:hidden;margin-top:22px}
+.v3lim-hd{background:var(--red);color:#fff;text-align:center;font-weight:900;font-size:16px;
+  padding:10px;letter-spacing:.08em}
+.v3lim-bd{padding:20px 16px;text-align:center}
+.v3lim-bd .slots-k{font-size:14px;font-weight:700;color:var(--tx2)}
+.v3lim-bd .slots-k b{color:var(--tx);font-size:19px;font-weight:900;margin:0 3px}
+.v3lim-note{margin-top:14px;font-size:13px;line-height:1.85;color:var(--tx2)}
+.v3lim-note strong{color:var(--red)}
