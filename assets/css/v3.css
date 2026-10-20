@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* ============================================================
+   v3 専用スタイル（シンプル・実績押し版）
+   style.css を読み込んだうえで、この順で重ねて使います。
+   実績カード（.rank / .rc）とフッター（.ft）は style.css のものを流用。
+   ============================================================ */
+
+body{background:#fff;color:#14181f}
+
+/* ===== 固定ヘッダー ===== */
+.v3hd{position:sticky;top:0;z-index:90;background:#fff;border-bottom:3px solid var(--red);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px}
+.v3hd .nm{font-weight:900;font-size:15px;line-height:1.25}
+.v3hd .nm small{display:block;font-size:9px;letter-spacing:.14em;color:#9aa3b2;font-weight:700}
+.v3hd a{flex:none;background:var(--red);color:#fff;font-weight:900;font-size:13px;white-space:nowrap;
+  padding:9px 15px;border-radius:100px;text-decoration:none;box-shadow:0 3px 0 #a3150e}
+
+/* ===== ヘッダー画像 ===== */
+.v3hero{margin:0;line-height:0;background:#fff}
+.v3hero img{width:100%;height:auto;display:block}
+@media (min-width:760px){.v3hero img{max-width:var(--wrap);margin:0 auto}}
+
+/* ===== セクション ===== */
+.v3sec{padding:42px 0}
+.v3sec.alt{background:#f6f7fa}
+.v3sec.dark{background:var(--ink);color:#fff}
+.v3lab{text-align:center;font-size:11px;font-weight:900;letter-spacing:.3em;color:var(--red);
+  margin-bottom:7px;text-indent:.3em}
+.v3sec.dark .v3lab{color:var(--gold-l)}
+.v3h{text-align:center;font-size:25px;font-weight:900;line-height:1.5;margin-bottom:10px}
+.v3h em{font-style:normal;color:var(--red)}
+.v3sec.dark .v3h{color:#fff}
+.v3sec.dark .v3h em{color:#ff6a52}
+.v3p{text-align:center;font-size:15px;line-height:1.95;color:var(--tx2)}
+.v3sec.dark .v3p{color:#c0c8d4}
+
+/* ===== 特長カード ===== */
+.v3f{list-style:none;display:grid;gap:14px;margin-top:26px}
+.v3f li{background:#fff;border:2px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center;
+  box-shadow:0 4px 14px rgba(10,20,40,.05)}
+.v3f .n{display:inline-block;background:var(--red);color:#fff;font-weight:900;font-size:12px;
+  padding:4px 13px;border-radius:100px;letter-spacing:.1em;margin-bottom:11px}
+.v3f b{display:block;font-size:19px;font-weight:900;line-height:1.5;margin-bottom:8px}
+.v3f span{font-size:14px;line-height:1.9;color:var(--tx2)}
+@media (min-width:620px){.v3f{grid-template-columns:repeat(3,1fr)}}
+
+/* ===== ステップ ===== */
+.v3s{list-style:none;counter-reset:s;display:grid;gap:12px;margin-top:24px}
+.v3s li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:4px 13px;align-items:center;
+  background:#fff;border:2px solid var(--line);border-radius:12px;padding:15px 14px}
+.v3s li::before{content:counter(s);grid-row:1 / span 2;width:44px;height:44px;border-radius:50%;
+  background:var(--tx);color:#fff;align-self:start;
+  font-weight:900;font-size:19px;display:flex;align-items:center;justify-content:center}
+.v3s b,.v3s span{grid-column:2}
+.v3s b{display:block;font-size:17px;font-weight:900;margin-bottom:2px;line-height:1.45}
+.v3s span{font-size:13.5px;line-height:1.8;color:var(--tx2)}
+
+/* ===== CTA ===== */
+.v3cta{background:#ffe600;padding:20px 14px}
+.v3cta .k{text-align:center;font-size:17px;font-weight:900;line-height:1.5;margin-bottom:11px}
+.v3cta .k em{font-style:normal;color:var(--red)}
+.v3btn{display:block;max-width:420px;margin:0 auto;background:var(--red);color:#fff;text-decoration:none;
+  font-weight:900;font-size:21px;line-height:1.3;text-align:center;padding:16px 12px 15px;
+  border-radius:100px;box-shadow:0 5px 0 #a3150e}
+.v3btn small{display:block;font-size:11.5px;font-weight:700;margin-bottom:4px;opacity:.95}
+.v3cta .note{text-align:center;font-size:11.5px;line-height:1.75;color:#6b5f00;margin-top:10px}
+
+/* ===== FAQ ===== */
+.v3q{margin-top:22px;border-top:1px solid var(--line)}
+.v3q details{border-bottom:1px solid var(--line)}
+.v3q summary{list-style:none;cursor:pointer;padding:15px 34px 15px 2px;position:relative;
+  font-size:15.5px;font-weight:900;line-height:1.6}
+.v3q summary::-webkit-details-marker{display:none}
+.v3q summary::after{content:"";position:absolute;right:8px;top:50%;width:9px;height:9px;
+  border-right:2.5px solid var(--red);border-bottom:2.5px solid var(--red);
+  transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.v3q details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.v3q .a{padding:0 2px 16px;font-size:14px;line-height:1.95;color:var(--tx2)}
+
+/* ===== 追従CTA ===== */
+.v3fix{position:fixed;left:0;right:0;bottom:0;z-index:95;background:#ffe600;
+  padding:8px 12px calc(8px + env(safe-area-inset-bottom));
+  transform:translateY(105%);transition:transform .26s ease}
+.v3fix.on{transform:translateY(0)}
+.v3fix .v3btn{font-size:18px;padding:12px 12px 11px;box-shadow:0 4px 0 #a3150e}
