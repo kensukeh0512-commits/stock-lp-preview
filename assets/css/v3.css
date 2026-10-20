@@ -105,3 +105,11 @@ body{background:#fff;color:#14181f}
 
 /* 固定ヘッダーに見出しが隠れないように */
 .v3sec{scroll-margin-top:62px}
+
+
+/* ===== 見出しからボタンへ落とす矢印（v3） ===== */
+.v3arw{text-align:center;color:var(--red);font-size:21px;font-weight:900;
+  letter-spacing:.3em;text-indent:.3em;line-height:1;margin:2px 0 10px;
+  text-shadow:1px 0 0 #fff,-1px 0 0 #fff,0 1px 0 #fff,0 -1px 0 #fff}
+/* 追従CTAの中では詰める */
+.v3fix .v3arw{display:none}
