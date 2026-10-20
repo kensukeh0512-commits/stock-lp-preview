@@ -1416,7 +1416,7 @@ thanks.html の `#offer` は `ink2`（暗色・白文字）のため、`b` が�
 .tvhero{margin:0;line-height:0;background:#05070d}
 .tvhero img{width:100%;height:auto;display:block}
 .tvhero + .tv{padding-top:26px}
-@media (min-width:760px){.tvhero{max-width:var(--wrap);margin:0 auto}}
+@media (min-width:760px){.tvhero img{max-width:var(--wrap);margin:0 auto}}
 ```
 
 PCで画像が縦949pxまで伸びて1画面に収まらなかったため、**760px以上では720pxの中央カラムに制限**
@@ -1428,3 +1428,23 @@ PCで画像が縦949pxまで伸びて1画面に収まらなかったため、**7
 元の写真はスクラッチパッドの `dl/hero.png`、焼き込みスクリプトは `burn.py` です。
 **文言を変えるときは、ChatGPTで画像ごと作り直してください。**
 HTMLを書き換えても画像の文字は変わりません。alt も必ず一緒に直してください。
+
+
+### 不具合：PCで画像の左右が白かった（2026-10-21）
+
+最初 .tvhero（h1）自体に max-width:720px をかけたため、**要素の外側に body の白
+（var(--paper)）がそのまま出て**、左右が白帯になっていました。
+
+**max-width は img だけにかけて、h1 は全幅のまま background:#05070d を残す**形に修正。
+帯は全幅の暗色、画像だけ中央720px になります。
+
+**暗色の上に中央寄せの要素を置くときは、幅を絞るのは中の要素だけにしてください。**
+外側まで絞ると body の白が出ます。
+
+### 申し送り：画像を差し替えるときはキャッシュバスターを
+
+同じファイル名で画像を差し替えた際、CDN・ブラウザのキャッシュで旧画像が表示されました。
+CSS/JS には ?v= を付けていましたが、img には付けていませんでした。
+
+いまは  としています。
+**ファイル名を変えずに画像を更新したら、必ず ?v= も更新してください。**
