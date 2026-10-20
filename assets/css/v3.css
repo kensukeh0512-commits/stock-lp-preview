@@ -57,8 +57,15 @@ body{background:#fff;color:#14181f}
 
 /* ===== CTA ===== */
 .v3cta{background:#ffe600;padding:20px 14px}
-.v3cta .k{text-align:center;font-size:17px;font-weight:900;line-height:1.5;margin-bottom:11px}
-.v3cta .k em{font-style:normal;color:var(--red)}
+.v3cta .k{text-align:center;margin-bottom:14px}
+.v3cta .k1{display:block;font-size:15px;font-weight:900;line-height:1.5;color:#3a3102}
+.v3cta .k2{display:block;font-size:27px;font-weight:900;line-height:1.35;margin-top:2px}
+.v3cta .k3{display:block;font-size:24px;font-weight:900;line-height:1.35;margin-top:1px}
+.v3cta .k em{font-style:normal;color:var(--red);
+  text-shadow:2px 0 0 #fff,-2px 0 0 #fff,0 2px 0 #fff,0 -2px 0 #fff,
+              2px 2px 0 #fff,-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff}
+.v3cta .k3 em{font-size:30px}
+@media (max-width:359px){.v3cta .k2{font-size:24px}.v3cta .k3{font-size:21px}.v3cta .k3 em{font-size:26px}}
 .v3btn{display:block;max-width:420px;margin:0 auto;background:var(--red);color:#fff;text-decoration:none;
   font-weight:900;font-size:21px;line-height:1.3;text-align:center;padding:16px 12px 15px;
   border-radius:100px;box-shadow:0 5px 0 #a3150e}
