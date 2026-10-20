@@ -167,3 +167,10 @@ body{background:#fff;color:#14181f}
 .v3lim-bd .slots-k b{color:var(--tx);font-size:19px;font-weight:900;margin:0 3px}
 .v3lim-note{margin-top:14px;font-size:13px;line-height:1.85;color:var(--tx2)}
 .v3lim-note strong{color:var(--red)}
+
+
+/* PCでは黄色CTAの中身も720pxの中央カラムに揃える */
+@media (min-width:760px){
+  .v3cta .v3offer,.v3cta .k,.v3cta .v3arw,.v3cta .note{
+    max-width:var(--wrap);margin-left:auto;margin-right:auto}
+}
