@@ -56,7 +56,11 @@ body{background:#fff;color:#14181f}
 .v3s span{font-size:13.5px;line-height:1.8;color:var(--tx2)}
 
 /* ===== CTA ===== */
-.v3cta{background:#ffe600;padding:20px 14px}
+.v3cta{background:#ffe600;padding:0 0 20px}
+/* オファー画像は帯いっぱいまで出す。まわりに平らな黄色が残ると、
+   画像の黄色との境目が線になって見えてしまうため。 */
+.v3cta .v3arw{padding:0 14px}
+.v3cta .note{padding:0 14px}
 .v3cta .k{text-align:center;margin-bottom:14px}
 .v3cta .k1{display:block;font-size:15px;font-weight:900;line-height:1.5;color:#3a3102}
 .v3cta .k2{display:block;font-size:27px;font-weight:900;line-height:1.35;margin-top:2px}
@@ -66,7 +70,7 @@ body{background:#fff;color:#14181f}
               2px 2px 0 #fff,-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff}
 .v3cta .k3 em{font-size:30px}
 @media (max-width:359px){.v3cta .k2{font-size:24px}.v3cta .k3{font-size:21px}.v3cta .k3 em{font-size:26px}}
-.v3btn{display:block;max-width:420px;margin:0 auto;background:var(--red);color:#fff;text-decoration:none;
+.v3btn{display:block;width:calc(100% - 28px);max-width:420px;margin:0 auto;background:var(--red);color:#fff;text-decoration:none;
   font-weight:900;font-size:21px;line-height:1.3;text-align:center;padding:16px 12px 15px;
   border-radius:100px;box-shadow:0 5px 0 #a3150e}
 .v3btn small{display:block;font-size:11.5px;font-weight:700;margin-bottom:4px;opacity:.95}
@@ -123,8 +127,8 @@ body{background:#fff;color:#14181f}
 .v3img img{width:100%;height:auto;display:block}
 
 /* オファーの画像（黄色CTAの中） */
-.v3cta .v3offer{margin:0 0 4px;line-height:0}
-.v3cta .v3offer img{width:100%;height:auto;display:block;border-radius:10px}
+.v3cta .v3offer{margin:0 0 12px;line-height:0}
+.v3cta .v3offer img{width:100%;height:auto;display:block}
 
 /* ---- 同調：あるあるリスト ---- */
 .v3chk{list-style:none;display:grid;gap:10px;margin-top:22px}
@@ -169,8 +173,10 @@ body{background:#fff;color:#14181f}
 .v3lim-note strong{color:var(--red)}
 
 
-/* PCでは黄色CTAの中身も720pxの中央カラムに揃える */
+/* PCでは黄色の帯そのものを720pxにして、ヘッダー画像と1本の列に見せる。
+   帯だけ全幅にすると、中のオファー画像（独自の黄色）との境目が見えてしまう。 */
 @media (min-width:760px){
+  .v3cta{max-width:var(--wrap);margin-left:auto;margin-right:auto}
   .v3cta .v3offer,.v3cta .k,.v3cta .v3arw,.v3cta .note{
     max-width:var(--wrap);margin-left:auto;margin-right:auto}
 }
