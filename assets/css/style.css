@@ -214,8 +214,11 @@ a{color:inherit;text-decoration:none}
 .rc-sim .k{font-size:12px;font-weight:700;color:var(--gold-l);letter-spacing:.04em}
 .rc-sim .v{font-size:20px;font-weight:900;color:#8d97a8;line-height:1.2}
 .rc-sim .v i{font-style:normal;font-size:13px;font-weight:700}
-.rc-sim .v.to{color:#fff;font-size:26px}
-.rc-sim .v.to i{color:var(--gold-l);font-size:15px}
+/* 到達額は、このカードで一番見せたい数字。大きく・黄色で立てる */
+.rc-sim .v.to{color:#ffe14d;font-size:36px;letter-spacing:-.01em;
+  text-shadow:0 2px 10px rgba(255,214,0,.35)}
+.rc-sim .v.to i{color:#ffe14d;font-size:19px}
+@media (max-width:359px){.rc-sim .v.to{font-size:31px}.rc-sim .v.to i{font-size:17px}}
 .rc-sim .ar{color:var(--red);font-size:17px;font-weight:900;line-height:1}
 .rc-bar{height:7px;background:var(--paper3)}
 .rc-bar i{display:block;height:100%;background:linear-gradient(90deg,#ff8a5c,var(--red))}
@@ -766,8 +769,10 @@ html[data-once="on"]  .once-off{display:none !important}
 .x3-a{font-size:26px;font-weight:900;color:#8d97a8;line-height:1.1}
 .x3-a i{font-style:normal;font-size:14px;font-weight:700}
 .x3-ar{font-size:22px;font-weight:900;color:var(--red);line-height:1}
-.x3-b{font-size:40px;font-weight:900;color:#fff;line-height:1.05;text-shadow:0 2px 12px rgba(224,52,42,.5)}
-.x3-b i{font-style:normal;font-size:18px;font-weight:700;color:var(--gold-l)}
+.x3-b{font-size:54px;font-weight:900;color:#ffe14d;line-height:1.05;letter-spacing:-.01em;
+  text-shadow:0 2px 14px rgba(255,214,0,.4)}
+.x3-b i{font-style:normal;font-size:24px;font-weight:700;color:#ffe14d}
+@media (max-width:359px){.x3-b{font-size:46px}.x3-b i{font-size:21px}}
 .x3-n{margin-top:13px;padding-top:12px;border-top:1px dashed rgba(212,175,55,.3);
   font-size:14px;line-height:1.9;color:#c0c8d4}
 
