@@ -35,6 +35,11 @@ body{font-family:var(--sans);color:var(--tx);background:var(--paper);
 img{max-width:100%;height:auto}
 .nb{display:inline-block}
 
+/* 見出しは画像に焼き込まれているため、テキストは読み上げ・構造用に残して隠す。
+   画像側は alt="" の装飾扱いにして二重読み上げを防ぐ。 */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
 .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 18px}
 
 /* ===== ヘッダー ===== */
@@ -48,19 +53,16 @@ img{max-width:100%;height:auto}
   font-size:13px;font-weight:700;padding:9px 15px;border-radius:100px}
 
 /* ===== ファーストビュー ===== */
-.bfv{background:linear-gradient(180deg,#f2f6fc 0%,#ffffff 100%);
-  border-bottom:1px solid var(--line);padding:30px 0 34px}
-.bfv .eyebrow{font-size:14px;font-weight:700;line-height:1.75;color:var(--navy-l);
-  margin-bottom:14px}
-.bfv h1{font-size:31px;font-weight:900;line-height:1.5;letter-spacing:-.01em;color:var(--navy)}
-.bfv h1 em{font-style:normal;border-bottom:5px solid rgba(6,199,85,.35)}
-.bfv .sub{margin-top:16px;font-size:16.5px;line-height:1.9;color:var(--tx2)}
-.bfv .offer{margin-top:20px;background:#fff;border:2px solid var(--navy);border-radius:12px;
-  padding:16px 16px 15px;text-align:center}
-.bfv .offer b{display:block;font-size:20px;font-weight:900;line-height:1.6;color:var(--navy)}
-.bfv .offer b i{font-style:normal;color:var(--green-d)}
-.bfv .offer span{display:block;margin-top:7px;font-size:14px;line-height:1.75;color:var(--tx2)}
-.bfv .fvimg{margin-top:20px;border-radius:12px;overflow:hidden;line-height:0}
+/* 画像の左右が白く抜けると安っぽく見えるので、地を濃紺で埋める。
+   スマホでは画像が全幅になるため、この色は上下の余白にだけ出る。 */
+.bfv{background:#0e2043;padding:0 0 26px}
+.bfvimg{max-width:var(--wrap);margin:0 auto;line-height:0}
+.bfvimg img{display:block;width:100%}
+.bfv .lead{margin-top:20px;text-align:center;font-size:16px;line-height:1.85;color:#c3d1e8}
+@media (min-width:720px){
+  .bfv{padding:30px 0 32px}
+  .bfvimg{border-radius:14px;overflow:hidden;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+}
 
 /* ===== セクション ===== */
 .bsec{padding:40px 0}
@@ -77,22 +79,32 @@ img{max-width:100%;height:auto}
 .bsec p + p{margin-top:13px}
 .bsec strong{color:var(--tx);font-weight:700}
 .bsec.navy strong{color:#fff}
-.bimg{margin:20px 0 0;border-radius:12px;overflow:hidden;line-height:0}
+/* セクション見出し画像 */
+.bshot{margin:0 0 20px;border-radius:12px;overflow:hidden;line-height:0;
+  border:1px solid var(--line)}
+.bshot img{display:block;width:100%}
+/* 濃色セクションの上に白い画像が浮くので、枠を暗くしてなじませる */
+.bshot.on-navy{border-color:rgba(255,255,255,.18);
+  box-shadow:0 6px 24px rgba(0,0,0,.28)}
+/* 画像そのものがCTAになっているもの */
+a.bshot-cta{display:block;text-decoration:none;margin:0 0 22px;
+  border-color:rgba(6,199,85,.45);box-shadow:0 4px 0 var(--green-d);
+  transition:transform .12s ease,box-shadow .12s ease}
+a.bshot-cta:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green-d)}
 
-/* ===== あるあるリスト ===== */
-.blist{list-style:none;margin-top:18px;display:grid;gap:9px}
-.blist li{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy-l);
-  border-radius:8px;padding:13px 14px;font-size:16px;line-height:1.75;color:var(--tx)}
+/* ===== 画像の①〜④に対応する説明文 ===== */
+/* 見出し・項目名は画像が持っているので、ここでは説明だけを並べる */
+.bexp{list-style:none;margin-top:4px;display:grid;gap:11px;counter-reset:e}
+.bexp li{counter-increment:e;position:relative;padding-left:36px;
+  font-size:15.5px;line-height:1.85;color:var(--tx2)}
+.bexp li::before{content:counter(e);position:absolute;left:0;top:5px;
+  width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;
+  font-size:12.5px;font-weight:900;line-height:1;
+  display:flex;align-items:center;justify-content:center}
 
-/* ===== 受け取れるもの ===== */
-.bget{list-style:none;margin-top:18px;display:grid;gap:11px;counter-reset:g}
-.bget li{counter-increment:g;background:#fff;border:1px solid var(--line);border-radius:10px;
-  padding:15px 15px 15px 52px;position:relative}
-.bget li::before{content:counter(g);position:absolute;left:14px;top:15px;
-  width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
-  font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.bget b{display:block;font-size:19px;font-weight:900;line-height:1.5;color:var(--navy);margin-bottom:4px}
-.bget span{display:block;font-size:15px;line-height:1.85;color:var(--tx2)}
+/* 注記（※で始まる補足） */
+.bnotice{margin-top:16px;font-size:14px;line-height:1.8;color:var(--muted)}
+.bsec.navy .bnotice{color:#9aa8c0}
 
 /* ===== 実績テーブル ===== */
 .btbl{margin-top:16px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
@@ -147,12 +159,12 @@ img{max-width:100%;height:auto}
 .bft .cr{border-top:1px solid #272f3e;padding-top:14px;color:#6f7a8c}
 
 @media (min-width:620px){
-  .bfv h1{font-size:35px}
   .bsec h2{font-size:27px}
 }
 @media (max-width:359px){
-  .bfv h1{font-size:27px}
   .bsec h2{font-size:22px}
+  .bshot{margin-bottom:16px}
+  .bexp li{padding-left:32px;font-size:15px}
   .bbtn{font-size:17px}
   /* 小型端末では株価推移を折り返す。nowrap のままだと枠外に出る */
   .btbl td{padding:9px 6px}
