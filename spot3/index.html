@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 未公開。公開判断までは検索にも載せない -->
+<!-- 公開判断までは検索に載せない -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="format-detection" content="telephone=no">
 <title>千里眼 スポット3銘柄レポート｜AI株式投資 千里眼トレーダーズクラブ</title>
@@ -12,249 +12,222 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261029a">
+<link rel="stylesheet" href="assets/css/style.css?v=20261029d">
+<link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
 </head>
 <body>
 
 <!-- ============================================================
-     ヘッダー
-     ロゴ画像はエンブレムのみ。正式なブランド表記はHTMLテキストで組む。
-     （支給された brand_logo_reference.png は文字入りのため参考扱い）
+     1  ファーストビュー
+     画像：assets/img/hero.webp（01_hero_text_baked.jpg）
+     ブランド名・タグライン・主見出し・4項目は画像に焼き込み済み。
+     HTMLで同じ文面を出さない。h1 は読み上げ用に隠して置く。
      ============================================================ -->
-<header class="hd">
+<header class="fv">
+  <h1 class="vh">AI株式投資 千里眼トレーダーズクラブ｜年末相場に向けて、注目の日本株3銘柄を公開</h1>
+
+  <figure class="fvimg">
+    <img src="assets/img/hero.webp"
+         alt="AI株式投資 千里眼トレーダーズクラブ。年末相場に向けて、注目の日本株3銘柄を公開。AIが約4,000社の日本株から厳選し、選定理由・買う価格の目安・利益確定ライン・損切りラインをお届けします。"
+         width="1983" height="793" fetchpriority="high" decoding="async">
+  </figure>
+
   <div class="wrap">
-    <div class="hd-logo">
-      <img class="mk" src="assets/img/mark.webp" alt="" width="128" height="128" decoding="async">
-      <span>AI株式投資<br>千里眼トレーダーズクラブ</span>
+    <div class="pricebox">
+      <p class="k">読者向け販売価格</p>
+      <p class="v"><b>49,800</b><i>円</i></p>
+      <p class="tax"><span class="tbd">税込・税別 要確定</span></p>
     </div>
-    <span class="hd-tag">スポット3銘柄</span>
+    <p><a href="#price" class="btn">スポット3銘柄レポートの内容を見る</a></p>
+    <p class="btnnote">※掲載図版はイメージです。将来の株価や利益を示すものではありません。</p>
   </div>
 </header>
 
 
 <!-- ============================================================
-     01 ファーストビュー
-     背景：assets/img/01_hero_background.svg（CSS background-image）
+     2  読者の悩み
+     画像：assets/img/problem.webp（02_problem_section.jpg）
+     ※元画像は5つ目の箇条書きが途中で切れていたため、その行は落とし、
+       内容は下の本文で補っている。
      ============================================================ -->
-<section class="fv">
+<section class="band fade">
+  <img src="assets/img/problem.webp"
+       alt="こんな悩みはありませんか。どの株を買えばいいか分からない。買うタイミングに迷ってしまう。利益確定の判断が難しい。損切りができずに損失を抱えてしまう。"
+       width="619" height="213" loading="lazy" decoding="async">
+</section>
+
+<section class="sec deep">
   <div class="wrap">
-    <p class="brand">AI株式投資 千里眼トレーダーズクラブ</p>
-    <p class="catch">次に狙う株が、ここで見つかる。</p>
+    <p class="eyebrow">THE PROBLEM</p>
+    <h2>銘柄を知っただけでは、<br><em>売買は決められない。</em></h2>
 
-    <h1>年末相場に向けて、<br><em>注目の日本株3銘柄</em>を公開。</h1>
+    <p class="lead">「この株が来る」という話は、毎日どこかで流れてきます。けれど銘柄名だけを受け取っても、実際に動けるとは限りません。いくらで買うのか。どこまで上がったら利益を確定するのか。下がったら、どこで手を引くのか。</p>
 
-    <p class="sub">銘柄名だけでは終わらない。<br>買う前に、理由と価格まで確認する。</p>
+    <p class="lead">情報が多すぎて、何を信じればいいか分からない。その状態のまま買ってしまうと、価格が動いたあとで判断を迫られることになります。</p>
 
-    <p class="desc">AIが約4,000社の日本株から注目銘柄を選定。今回のスポットレポートでは、3銘柄の選定理由、購入を検討する価格、利確・損切りの目安を一つにまとめました。</p>
+    <p class="punch">決めるべきことは、<br>買う前に決めておく。</p>
+  </div>
+</section>
 
-    <div class="pricebar">
-      <p class="k">読者向け販売価格</p>
-      <p class="v"><b>49,800</b><i>円</i></p>
-      <p class="k" style="margin-top:6px;letter-spacing:.02em">
-        <span class="tbd">税込・税別 要確認</span></p>
+
+<!-- ============================================================
+     3  商品紹介
+     画像：assets/img/product.webp（03_product_report.jpg）
+     実物の証明ではなくイメージである旨を隣に明記する。
+     ============================================================ -->
+<section class="band">
+  <img src="assets/img/product.webp"
+       alt="千里眼 スポット3銘柄レポート。今、注目すべき日本株3銘柄の選定理由から売買の判断材料まで、1つのレポートにまとめてお届けします。"
+       width="659" height="249" loading="lazy" decoding="async">
+  <p class="bandcap">※上図はイメージ画像です。実際にお渡しする成果物の体裁・ページ数を示すものではありません。</p>
+</section>
+
+<section class="sec blue">
+  <div class="wrap">
+    <p class="eyebrow">THE PRODUCT</p>
+    <h2>千里眼 <em>スポット3銘柄レポート</em></h2>
+
+    <p class="lead">AIが日本株およそ4,000社の情報を分析し、注目候補を抽出。今回のスポットレポートは、その中から3銘柄に絞ってお届けするものです。</p>
+
+    <p class="lead">銘柄名と証券コードだけでなく、なぜその銘柄なのかという根拠と、売買の判断に使う価格の目安までをひとつにまとめています。</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     4  4つの提供情報
+     画像：assets/img/features.webp（04_four_features.jpg）
+     1293x159 に4枚のカードが横並びの1枚絵。
+     そのまま縮めるとスマホで文字が4pxになるため、
+     カード1枚分ずつ切り出して積んでいる（--x が切り出し位置）。
+     元画像の上部にあった見出しは、ここではHTMLテキストで組んだ。
+     ============================================================ -->
+<section class="sec deep">
+  <div class="wrap">
+    <p class="eyebrow">WHAT YOU GET</p>
+    <h2>1つの銘柄につき、<br><em>4つの情報</em>をセットでお届け。</h2>
+
+    <div class="fcards">
+      <div class="fcard" style="--x:2.6">
+        <img src="assets/img/features.webp"
+             alt="01 選定理由。なぜこの銘柄なのか、AIが注目した数字と選定の理由を解説。"
+             width="1293" height="159" loading="lazy" decoding="async">
+      </div>
+      <div class="fcard" style="--x:104.8">
+        <img src="assets/img/features.webp"
+             alt="02 購入価格の目安。どの価格で購入を検討するか、具体的な価格帯の目安を提示。"
+             width="1293" height="159" loading="lazy" decoding="async">
+      </div>
+      <div class="fcard" style="--x:208.1">
+        <img src="assets/img/features.webp"
+             alt="03 利益確定ライン。どこで売るか、株価が上がったときの利益確定の目安を解説。"
+             width="1293" height="159" loading="lazy" decoding="async">
+      </div>
+      <div class="fcard" style="--x:311.3">
+        <img src="assets/img/features.webp"
+             alt="04 損切りライン。どこで撤退するか、株価が下がったときの損切りの目安を解説。"
+             width="1293" height="159" loading="lazy" decoding="async">
+      </div>
     </div>
 
-    <p style="margin-top:20px">
-      <a href="#price" class="btn">スポット3銘柄の内容を確認する</a>
-    </p>
+    <p class="punch">銘柄選びから、<br>出口の準備まで。</p>
   </div>
 </section>
 
 
 <!-- ============================================================
-     02 なぜ、この株なのか
+     5  レポート構成イメージ
+     画像：assets/img/sample.webp（05_report_sample.jpg）
      ============================================================ -->
-<section class="sec">
-  <div class="wrap">
-    <p class="eyebrow">01</p>
-    <h2>なぜ、この株なのか。<br>答えを持ってから買う。</h2>
-
-    <p class="lead">株の情報は、毎日流れてきます。「上がりそう」「注目されている」──その一言だけで、買う銘柄を決めていませんか。</p>
-
-    <p class="punch">千里眼が伝えるのは、銘柄名だけではありません。</p>
-
-    <p class="lead">選んだ根拠となる数字。購入を検討する価格。利益確定の目安。そして、下落した場合の損切りライン。</p>
-
-    <p class="punch">上がる場合も、下がる場合も。<br>買う前に判断材料を揃える。</p>
-  </div>
+<section class="band">
+  <img src="assets/img/sample.webp"
+       alt="レポートのサンプルイメージ。銘柄の選定理由、購入価格の目安、利益確定ライン、損切りラインの4部構成。"
+       width="620" height="242" loading="lazy" decoding="async">
+  <p class="bandcap">※掲載画像は構成イメージです。実際の銘柄・数値ではありません。</p>
 </section>
 
 
 <!-- ============================================================
-     03 約4,000社から3銘柄
-     背景：assets/img/04_section_background.svg（CSS background-image）
+     6  選定ロジックとFAQ
      ============================================================ -->
-<section class="pick ink">
+<section class="sec blue">
   <div class="wrap">
-    <p class="eyebrow">02</p>
-    <h2>日本株約4,000社から、<br>注目の3銘柄を選定。</h2>
+    <p class="eyebrow">HOW IT WORKS</p>
+    <h2>どうやって<em>3銘柄</em>に絞るか。</h2>
 
-    <p class="lead">AIが日本株の情報を分析し、注目候補を抽出。今回のレポートは、その中から3銘柄に絞ってお届けします。</p>
-
-    <p class="punch">見るべき銘柄を絞る。<br>見るべき数字を押さえる。<br>次の判断に備える。</p>
-
-    <p class="btn-note" style="text-align:left;margin-top:18px">
-      <span class="tbd">分析方法・基準日・使用データは実際の提供内容に合わせて追記</span>
-    </p>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     04 3銘柄すべてに、4つの情報
-     画像：assets/img/03_four_features.svg
-           4アイコンが横並びの1枚絵。各項目にアイコン1つ分を切り出して添えている。
-           見出しと説明はHTMLテキスト。
-     ============================================================ -->
-<section class="sec paper2">
-  <div class="wrap">
-    <p class="eyebrow">03</p>
-    <h2>3銘柄すべてに、4つの情報。</h2>
-
-    <ol class="feats">
+    <ol class="steps">
       <li>
-        <span class="ficon" style="--x:35.1" aria-hidden="true">
-          <img src="assets/img/03_four_features.svg" alt="">
-        </span>
-        <span class="tx">
-          <b>1｜選定理由</b>
-          <span>なぜこの銘柄なのか。注目する数字と理由を説明します。</span>
-        </span>
+        <b>日本株およそ4,000社を見る</b>
+        <span>個別に追いきれない数の銘柄を、AIがまとめて処理します。</span>
       </li>
       <li>
-        <span class="ficon" style="--x:189.4" aria-hidden="true">
-          <img src="assets/img/03_four_features.svg" alt="">
-        </span>
-        <span class="tx">
-          <b>2｜購入価格の目安</b>
-          <span>いくらなら購入を検討するか。参考となる価格帯を提示します。</span>
-        </span>
+        <b>注目する数字で候補を抽出する</b>
+        <span><span class="tbd">分析方法・使用データ・基準日は、実際の提供内容に合わせて追記</span></span>
       </li>
       <li>
-        <span class="ficon" style="--x:343.6" aria-hidden="true">
-          <img src="assets/img/03_four_features.svg" alt="">
-        </span>
-        <span class="tx">
-          <b>3｜利確ライン</b>
-          <span>上昇したとき、どこで利益確定を検討するか。事前に目安を示します。</span>
-        </span>
+        <b>3銘柄に絞り、根拠を言葉にする</b>
+        <span>なぜその銘柄なのかを、数字とあわせて説明します。納得できないものは、買わなくて構いません。</span>
       </li>
       <li>
-        <span class="ficon" style="--x:497.9" aria-hidden="true">
-          <img src="assets/img/03_four_features.svg" alt="">
-        </span>
-        <span class="tx">
-          <b>4｜損切りライン</b>
-          <span>下落したとき、どこで撤退を検討するか。事前に目安を示します。</span>
-        </span>
+        <b>売買の目安を先に決める</b>
+        <span>購入を検討する価格、利益確定の目安、損切りの目安。上がったときも下がったときも、判断材料を手元に置いてから動けます。</span>
       </li>
     </ol>
 
-    <p class="punch">銘柄選びから、出口の準備まで。</p>
+    <p class="lead">このレポートは、投資判断をご自身で行うための資料です。最終的な売買は、お客様ご自身の判断と責任において行ってください。</p>
   </div>
 </section>
 
 
 <!-- ============================================================
-     05 「買ってから考える」を、終わりにする
+     7  含まれるもの・提供条件・価格
+     ※二重価格表示（128,000円→49,800円／78,200円OFF）は、
+       比較対照価格の根拠が未確認のため掲載していない。
      ============================================================ -->
-<section class="sec">
+<section class="sec pricesec" id="price">
   <div class="wrap">
-    <p class="eyebrow">04</p>
-    <h2>「買ってから考える」を、<br>終わりにする。</h2>
-
-    <p class="lead">買った後に価格が動くと、判断は難しくなります。上がったときも、下がったときも、考えるべきことはあります。</p>
-
-    <p class="punch">だから、売買の目安を先に決める。</p>
-
-    <p class="lead">千里眼のスポット3銘柄レポートは、投資判断を自分で行うための資料です。最終的な売買は、ご自身で判断してください。</p>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     06 商品イメージ
-     画像：assets/img/02_report_product.svg
-           文字も価格も入っていないイメージ図。実物ではない旨をHTMLで明記。
-     ============================================================ -->
-<section class="sec ink">
-  <div class="wrap">
-    <p class="eyebrow">05</p>
-    <h2>千里眼 スポット3銘柄レポート</h2>
-
-    <figure class="product">
-      <img src="assets/img/02_report_product.svg" alt="レポートのイメージ図" width="1200" height="850" loading="lazy" decoding="async">
-    </figure>
-    <p class="product-cap">※上図はイメージです。実際のレポートの体裁・ページ数を示すものではありません。</p>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     07 含まれる内容と提供条件
-     ============================================================ -->
-<section class="sec">
-  <div class="wrap">
-    <p class="eyebrow">06</p>
+    <p class="eyebrow">WHAT'S INCLUDED</p>
     <h2>お届けするもの</h2>
 
     <ul class="incl">
       <li>注目の日本株3銘柄（銘柄名・証券コード）</li>
-      <li>各銘柄の選定理由と注目するデータ</li>
+      <li>各銘柄の選定理由と、注目するデータ</li>
       <li>購入を検討する価格の目安</li>
       <li>利益確定を検討するライン</li>
       <li>損切りを検討するライン</li>
     </ul>
 
-    <p class="punch">3銘柄それぞれの判断材料を、<br>まとめて手元に。</p>
-
     <div class="spec">
       <dl>
         <dt>提供形式</dt>
-        <dd><span class="tbd">PDF／LINE／メール等、要確定</span></dd>
+        <dd><span class="tbd">PDF／メール等、要確定</span></dd>
         <dt>提供日</dt>
         <dd><span class="tbd">要確定</span></dd>
         <dt>情報の基準日</dt>
         <dd><span class="tbd">要確定</span></dd>
         <dt>追加サポート</dt>
         <dd><span class="tbd">有無・範囲を要確定</span></dd>
+        <dt>キャンセル・返金</dt>
+        <dd><span class="tbd">販売条件と法務確認後に記載</span></dd>
       </dl>
     </div>
-  </div>
-</section>
 
-
-<!-- ============================================================
-     08 販売価格
-     背景：assets/img/05_cta_background.svg（CSS background-image）
-     ※二重価格表示（128,000円→49,800円／78,200円OFF）は、
-       比較対照価格の根拠が未確認のため掲載していない。
-     ============================================================ -->
-<section class="price ink" id="price">
-  <div class="wrap">
-    <p class="eyebrow">07</p>
-    <h2>販売価格</h2>
-
-    <div class="price-card">
+    <div class="pricecard">
       <p class="k">読者向け販売価格</p>
       <p class="v"><b>49,800</b><i>円</i></p>
-      <p class="note"><span class="tbd">税込・税別 要確定</span></p>
+      <p class="tax"><span class="tbd">税込・税別 要確定</span></p>
     </div>
 
-    <p class="punch" style="margin-top:22px">内容・提供条件を確認し、<br>納得してからお申し込みください。</p>
-
-    <p style="margin-top:22px">
-      <button type="button" class="btn" disabled>
-        <small>決済先URLが未確定のため</small>
-        お申し込み（準備中）
-      </button>
-    </p>
-    <p class="btn-note">
+    <button type="button" class="btn" disabled>
+      <small>決済先URLが未確定のため</small>
+      お申し込み（準備中）
+    </button>
+    <p class="btnnote">
       <span class="tbd">購入ページURL未確定</span><br>
       決済先が確定するまで、このボタンは無効にしています。
     </p>
 
-    <div class="price-hold">
+    <div class="hold">
       <b>二重価格表示を載せていない理由</b>
       定価として設定された金額は128,000円ですが、通常価格としての販売実績や、適法な比較表示の根拠が確認できていません。根拠が確定するまで、打消し線つきの定価表示と「78,200円OFF」などの割引表示はこのページに掲載しません。
     </div>
@@ -263,11 +236,11 @@
 
 
 <!-- ============================================================
-     09 FAQ
+     FAQ
      ============================================================ -->
-<section class="sec paper2">
+<section class="sec deep">
   <div class="wrap">
-    <p class="eyebrow">08</p>
+    <p class="eyebrow">FAQ</p>
     <h2>よくあるご質問</h2>
 
     <div class="faq">
@@ -277,7 +250,7 @@
       </details>
       <details>
         <summary>購入価格と売却価格も記載されていますか？</summary>
-        <p class="a">購入を検討する価格、利確・損切りの目安をそれぞれ記載します。必ずその価格で取引できるわけではありません。</p>
+        <p class="a">購入を検討する価格、利益確定・損切りの目安をそれぞれ記載します。必ずその価格で取引できるわけではありません。</p>
       </details>
       <details>
         <summary>いつ情報を受け取れますか？</summary>
@@ -297,51 +270,44 @@
 
 
 <!-- ============================================================
-     10 最終CTA
-     背景：assets/img/05_cta_background.svg（CSS background-image）
+     8  最終CTA
      ============================================================ -->
-<section class="final ink">
+<section class="final">
   <div class="wrap">
-    <h2>次に狙う株が、<br>ここで見つかる。</h2>
-
+    <h2>次に狙う株が、<br><em>ここで見つかる。</em></h2>
     <p class="catch">年末相場に向けて、<br>注目の日本株3銘柄を確認する。</p>
+    <p class="lead">選定理由、購入価格の目安、<br>利益確定ラインと損切りラインまで。</p>
 
-    <p class="lead" style="margin-top:16px;text-align:center">選定理由、購入価格の目安、<br>利確・損切りラインまで。</p>
-
-    <div class="pricebar">
+    <div class="pricebox">
       <p class="k">読者向け販売価格</p>
       <p class="v"><b>49,800</b><i>円</i></p>
-      <p class="k" style="margin-top:6px;letter-spacing:.02em">
-        <span class="tbd">税込・税別 要確定</span></p>
+      <p class="tax"><span class="tbd">税込・税別 要確定</span></p>
     </div>
 
-    <p style="margin-top:22px">
-      <button type="button" class="btn" disabled>
-        <small>決済先URLが未確定のため</small>
-        スポット3銘柄レポートを申し込む（準備中）
-      </button>
-    </p>
-    <p class="btn-note">決済先が確定するまで、このボタンは無効にしています。</p>
+    <button type="button" class="btn" disabled>
+      <small>決済先URLが未確定のため</small>
+      スポット3銘柄レポートを申し込む（準備中）
+    </button>
+    <p class="btnnote">内容・提供条件を確認し、納得してからお申し込みください。</p>
   </div>
 </section>
 
 
-<!-- ============================================================
-     フッター
-     ============================================================ -->
 <footer class="ft">
   <div class="wrap">
     <div class="biz">
       <h3>運営者情報</h3>
-      <p>株式会社ソソラ（東京都渋谷区）</p>
+      <p>AI株式投資 千里眼トレーダーズクラブ</p>
+      <p>運営：株式会社ソソラ（東京都渋谷区）</p>
       <p><span class="tbd">正式所在地・販売事業者情報・登録情報を確認して追記</span></p>
     </div>
 
     <h3>リスクに関するご説明</h3>
-    <ul class="risk">
+    <ul>
       <li>株式投資には価格変動による損失や元本割れのリスクがあります。</li>
       <li>掲載内容は将来の株価上昇や利益を保証するものではありません。</li>
       <li>分析時点の情報であり、価格は変動します。</li>
+      <li>当サービスは情報提供を行うものであり、個別銘柄の売買を推奨・断定するものではありません。</li>
       <li>最終的な投資の意思決定は、お客様ご自身の判断と責任において行ってください。</li>
     </ul>
 
