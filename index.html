@@ -20,18 +20,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261029b">
+<link rel="stylesheet" href="assets/css/style.css?v=20261029c">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
      遷移先URLがページ全体でまとめて切り替わります。 -->
 <script>
 window.LP_CHANNEL = {
-  mode: 'line',   // 'line' か 'mail'
+  mode: 'mail',   // 'line' か 'mail'
   url : ''        // LINE友だち追加URL または メール登録フォームURL
 };
 </script>
-<script src="assets/js/channel.js?v=20261021130000" defer></script>
+<script src="assets/js/channel.js?v=20261029c" defer></script>
+<!-- ▼▼ メール登録フォームの設定 ▼▼
+     action … 配信スタンドの受信URL。
+              空のあいだは送信せず、サンキューページへ遷移するだけです。
+     fields … 配信スタンド側の項目名。サービスごとに違います。 -->
+<script>
+window.LP_FORM = {
+  action : '',
+  method : 'post',
+  fields : { name: 'name', email: 'email' },
+  thanks : 'thanks.html'
+};
+</script>
+<script src="assets/js/entry-form.js?v=20261029b" defer></script>
 </head>
 <body>
 
@@ -1414,8 +1427,7 @@ window.LP_CHANNEL = {
     </figure>
 
     <ol class="step mb40">
-      <li><b>下のボタンから<span class="ch" data-line="友だち追加" data-mail="アドレスを登録">友だち追加</span></b><p>かかる時間は<strong>たった10秒</strong>。<br>面倒な入力はありません。</p></li>
-      <li><b>かんたんな質問に答える</b><p>投資の経験と、興味のあるテーマ。<br>この2つだけ、選ぶだけで終わります。<br><strong>30秒</strong>です。</p></li>
+      <li><b>下のフォームにご入力</b><p>お名前とメールアドレスだけ。<br>かかる時間は<strong>30秒</strong>です。</p></li>
       <li><b>「急騰期待の5銘柄」がその日に届く</b><p>銘柄名・買い時・目標株価まで、ひとつのレポートで届きます。<br><strong>あとは、指示どおりに買って、売るだけ。</strong><br>その日から、あなたは<br><span class="nb"><strong>「これから急騰する株を知っている側」</strong>です。</span></p></li>
     </ol>
 
@@ -1425,16 +1437,31 @@ window.LP_CHANNEL = {
       <span style="display:inline-block;margin-top:16px;font-size:17px;font-weight:700;color:#e8ecf3"><span class="nb">3ヶ月後に</span><br><span class="nb">「あのとき受け取っておけば」と</span><br><span class="nb">思わないために。</span></span>
     </p>
 
-    <!-- ▼▼ 要差し替え ▼▼
-         本番では LINE友だち追加URL を設定してください。
-         現在はクライアント確認用に、サンキューページへ直接リンクしています。
-         本来の導線： このボタン → LINE友だち追加 → thanks.html
+    <!-- ▼▼ 登録フォーム ▼▼
+         送信先は LP_FORM.action。空のあいだは、入力内容は
+         どこにも送られず、サンキューページへ遷移するだけです。
     -->
-    <a href="thanks.html" class="btn" id="mainCta" data-cta>
-      <small>＼ たった1分・誰でも無料で受け取れます ／</small>
-      LINEで銘柄を受け取る
-      <span class="fee">完全無料</span>
-    </a>
+    <form class="eform" data-entry novalidate>
+      <div class="row">
+        <label for="f-name">お名前</label>
+        <input id="f-name" data-f="name" name="name" type="text" required
+               autocomplete="name" enterkeyhint="next"
+               placeholder="山田　太郎" aria-describedby="e-name">
+        <p class="err" id="e-name" hidden></p>
+      </div>
+      <div class="row">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" data-f="email" name="email" type="email" required
+               autocomplete="email" inputmode="email" enterkeyhint="go"
+               placeholder="example@example.com" aria-describedby="e-mail">
+        <p class="err" id="e-mail" hidden></p>
+      </div>
+      <button type="submit" class="btn" id="mainCta" data-cta>
+        <small>＼ たった1分・誰でも無料で受け取れます ／</small>
+        <span data-cta-label>メールで銘柄を受け取る</span>
+        <span class="fee">完全無料</span>
+      </button>
+    </form>
     <p class="btn-note">
       ※ご登録は無料です。お金がかかる場合は、必ず先にお伝えします。<br>
       ※株式投資は元本を保証するものではありません。<br>

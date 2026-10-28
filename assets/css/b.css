@@ -17,7 +17,7 @@
   --paper2:#f6f8fb;
   --navy:#17305c;         /* 見出し・信頼色 */
   --navy-l:#2a4f8f;
-  --green:#06c755;        /* LINE */
+  --green:#06c755;        /* CTA（旧LINEブランド色。要再検討） */
   --green-d:#04a044;
   --amber:#c8871a;        /* 数字の強調（控えめ） */
   --red:#c2362c;          /* 注意 */
@@ -142,6 +142,32 @@ a.bshot-cta:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green-d)}
 .bbtn .ic{display:inline-block;width:19px;height:19px;vertical-align:-3px;margin-right:7px}
 .bcta .sub{margin-top:11px;text-align:center;font-size:13.5px;line-height:1.75;color:var(--tx2)}
 .bcta .dis{margin-top:9px;text-align:center;font-size:12.5px;line-height:1.7;color:var(--muted)}
+
+/* ===== 登録フォーム ===== */
+.bentry{background:var(--navy);padding:32px 0 36px}
+.bentry h2{color:#fff;font-size:23px;font-weight:900;line-height:1.5;text-align:center}
+.bentry .lead{margin-top:10px;text-align:center;font-size:15px;line-height:1.8;color:#c3d1e8}
+.bform{margin-top:20px;background:#fff;border-radius:14px;padding:20px 16px 18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.bform .row{margin-bottom:15px}
+.bform label{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px}
+/* iOSは16px未満の入力欄でページを勝手に拡大するので、16pxを下回らせない */
+.bform input{display:block;width:100%;box-sizing:border-box;
+  font-family:inherit;font-size:16px;line-height:1.5;color:var(--tx);
+  padding:13px 12px;border:1px solid var(--line);border-radius:9px;background:#fff;
+  -webkit-appearance:none;appearance:none}
+.bform input::placeholder{color:#b4bcc8}
+.bform input:focus{outline:2px solid var(--navy-l);outline-offset:1px;border-color:var(--navy-l)}
+.bform input[aria-invalid="true"]{border-color:#c62828;background:#fff8f8}
+.bform .err{margin-top:6px;font-size:13px;line-height:1.6;font-weight:700;color:#c62828}
+.bform .bbtn{width:100%;border:0;cursor:pointer;font-family:inherit;margin-top:4px}
+.bform .sub{margin-top:11px;text-align:center;font-size:13.5px;color:var(--tx2)}
+.bform .pp{margin-top:13px;font-size:12.5px;line-height:1.8;color:var(--muted)}
+.bform .dis{margin-top:9px;font-size:12px;line-height:1.7;color:var(--muted)}
+@media (max-width:359px){
+  .bentry h2{font-size:21px}
+  .bform{padding:17px 13px 15px}
+}
 
 /* ===== 追従CTA ===== */
 .bfix{position:fixed;left:0;right:0;bottom:0;z-index:95;background:rgba(255,255,255,.97);

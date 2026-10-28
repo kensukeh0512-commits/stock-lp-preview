@@ -20,11 +20,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/b.css?v=20261029b">
+<link rel="stylesheet" href="../assets/css/b.css?v=20261029c">
 
 <!-- ▼▼ A/Bの識別。?variant=B が無いときはこの値が使われます ▼▼ -->
 <script>window.LP_VARIANT = 'B';</script>
+
+<!-- ▼▼ メール登録フォームの設定 ▼▼
+     action … 配信スタンドの受信URL。
+              空のあいだは送信せず、サンキューページへ遷移するだけです。
+     fields … 配信スタンド側の項目名。サービスごとに違います。 -->
+<script>
+window.LP_FORM = {
+  action : '',
+  method : 'post',
+  fields : { name: 'name', email: 'email' },
+  thanks : '../thanks.html'
+};
+</script>
 <script src="../assets/js/ab-track.js?v=20261023" defer></script>
+<script src="../assets/js/entry-form.js?v=20261029b" defer></script>
 </head>
 <body>
 
@@ -53,10 +67,10 @@
 
 <div class="bcta tint">
   <div class="wrap">
-    <a href="../thanks.html" class="bbtn" data-cta data-cta-pos="1" data-cta-name="FV">
+    <a href="#entry" class="bbtn" data-cta data-cta-pos="1" data-cta-name="FV">
       <span class="ic" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.3 2.8 10.4c0 2.4 1.4 4.5 3.6 5.9-.1.6-.6 2.1-.7 2.4 0 0-.1.3.1.4.2.1.4 0 .4 0 .4-.1 2.5-1.6 3.4-2.3.8.1 1.6.2 2.4.2 5.1 0 9.2-3.3 9.2-7.4S17.1 3 12 3z"/></svg>
-      </span>LINEで無料の5銘柄を受け取る
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.3 4.4h15.4c1 0 1.8.8 1.8 1.8v11.6c0 1-.8 1.8-1.8 1.8H4.3c-1 0-1.8-.8-1.8-1.8V6.2c0-1 .8-1.8 1.8-1.8Zm.8 2 6.9 5.3 6.9-5.3H5.1Zm14.3 1.6-6.6 5.1a1.2 1.2 0 0 1-1.4 0L4.6 8v9.8h14.8V8Z"/></svg>
+      </span>無料で5銘柄を受け取る
     </a>
     <p class="dis">※株価の上昇や目標価格への到達を保証するものではありません。</p>
   </div>
@@ -201,10 +215,10 @@
 <div class="bcta tint">
   <div class="wrap">
     <p class="k">銘柄名だけでなく、<br>選んだ理由まで確認できます。</p>
-    <a href="../thanks.html" class="bbtn" data-cta data-cta-pos="2" data-cta-name="proof">
+    <a href="#entry" class="bbtn" data-cta data-cta-pos="2" data-cta-name="proof">
       <span class="ic" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.3 2.8 10.4c0 2.4 1.4 4.5 3.6 5.9-.1.6-.6 2.1-.7 2.4 0 0-.1.3.1.4.2.1.4 0 .4 0 .4-.1 2.5-1.6 3.4-2.3.8.1 1.6.2 2.4.2 5.1 0 9.2-3.3 9.2-7.4S17.1 3 12 3z"/></svg>
-      </span>LINEで無料の5銘柄を受け取る
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.3 4.4h15.4c1 0 1.8.8 1.8 1.8v11.6c0 1-.8 1.8-1.8 1.8H4.3c-1 0-1.8-.8-1.8-1.8V6.2c0-1 .8-1.8 1.8-1.8Zm.8 2 6.9 5.3 6.9-5.3H5.1Zm14.3 1.6-6.6 5.1a1.2 1.2 0 0 1-1.4 0L4.6 8v9.8h14.8V8Z"/></svg>
+      </span>無料で5銘柄を受け取る
     </a>
     <p class="sub">登録無料・クレジットカード不要</p>
   </div>
@@ -216,14 +230,14 @@
      ============================================================ -->
 <section class="bsec alt" id="free">
   <div class="wrap">
-    <h2 class="vh">まずは、AIが選んだ5銘柄を確認してください。LINEで友だち追加、かんたんな質問に答える、5銘柄が届く、の3ステップです。</h2>
+    <h2 class="vh">まずは、AIが選んだ5銘柄を確認してください。お名前とメールアドレスをご登録いただくだけです。</h2>
     <figure class="bshot">
       <img src="../assets/img/b/b-free.webp?v=20261023b" alt="" width="1080" height="1080" loading="lazy" decoding="async">
     </figure>
 
-    <p>答えていただくのは、<strong>投資の経験と、興味のあるテーマ</strong>だけです。<br>選ぶだけで終わります。入力する項目はありません。</p>
+    <p>ご入力いただくのは、<strong>お名前とメールアドレス</strong>の2つだけです。<br>ほかにご入力いただく項目はありません。</p>
     <p><strong>内容を確認したうえで、買わないという判断でも構いません。</strong><br>最終的な投資判断は、ご自身で行っていただくものです。</p>
-    <p>配信が不要になれば、いつでもブロック・配信停止ができます。</p>
+    <p>配信が不要になれば、メール末尾のリンクからいつでも配信停止ができます。</p>
   </div>
 </section>
 
@@ -237,8 +251,8 @@
   <div class="wrap">
     <h2 class="vh">次の銘柄を探す前に、まずは候補を見てみませんか？</h2>
 
-    <a href="../thanks.html" class="bshot bshot-cta" data-cta data-cta-pos="3" data-cta-name="action-img">
-      <img src="../assets/img/b/b-action.webp?v=20261023b" alt="LINEで無料の5銘柄を受け取る" width="1080" height="1080" loading="lazy" decoding="async">
+    <a href="#entry" class="bshot bshot-cta" data-cta data-cta-pos="3" data-cta-name="action-img">
+      <img src="../assets/img/b/b-action.webp?v=20261023b" alt="無料で5銘柄を受け取る" width="1080" height="1080" loading="lazy" decoding="async">
     </a>
 
     <p>株に興味はある。でも、何を選べばいいかわからない。<br>そんな方のために、AIが注目する5銘柄を用意しています。</p>
@@ -247,17 +261,43 @@
   </div>
 </section>
 
-<div class="bcta">
+<!-- ============================================================
+     登録フォーム
+     ※送信先は LP_FORM.action。空のあいだは、入力内容は
+       どこにも送られません。
+     ============================================================ -->
+<section class="bentry" id="entry">
   <div class="wrap">
-    <a href="../thanks.html" class="bbtn" data-cta data-cta-pos="4" data-cta-name="final">
-      <span class="ic" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.3 2.8 10.4c0 2.4 1.4 4.5 3.6 5.9-.1.6-.6 2.1-.7 2.4 0 0-.1.3.1.4.2.1.4 0 .4 0 .4-.1 2.5-1.6 3.4-2.3.8.1 1.6.2 2.4.2 5.1 0 9.2-3.3 9.2-7.4S17.1 3 12 3z"/></svg>
-      </span>LINEで無料の5銘柄を受け取る
-    </a>
-    <p class="sub">登録無料・クレジットカード不要</p>
-    <p class="dis">※株価の上昇や目標価格への到達を保証するものではありません。<br>※当サービスは情報提供を行うものであり、個別銘柄の売買を推奨・断定するものではありません。</p>
+    <h2>AIが選んだ5銘柄を<br>メールで受け取る</h2>
+    <p class="lead">ご入力は、お名前とメールアドレスの2つだけです。</p>
+
+    <form class="bform" data-entry novalidate>
+      <div class="row">
+        <label for="f-name">お名前</label>
+        <input id="f-name" data-f="name" name="name" type="text" required
+               autocomplete="name" enterkeyhint="next"
+               placeholder="山田　太郎" aria-describedby="e-name">
+        <p class="err" id="e-name" hidden></p>
+      </div>
+      <div class="row">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" data-f="email" name="email" type="email" required
+               autocomplete="email" inputmode="email" enterkeyhint="go"
+               placeholder="example@example.com" aria-describedby="e-mail">
+        <p class="err" id="e-mail" hidden></p>
+      </div>
+
+      <button type="submit" class="bbtn" data-cta data-cta-pos="4" data-cta-name="entry-form">
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.3 4.4h15.4c1 0 1.8.8 1.8 1.8v11.6c0 1-.8 1.8-1.8 1.8H4.3c-1 0-1.8-.8-1.8-1.8V6.2c0-1 .8-1.8 1.8-1.8Zm.8 2 6.9 5.3 6.9-5.3H5.1Zm14.3 1.6-6.6 5.1a1.2 1.2 0 0 1-1.4 0L4.6 8v9.8h14.8V8Z"/></svg>
+        </span>無料で5銘柄を受け取る
+      </button>
+      <p class="sub">登録無料・クレジットカード不要</p>
+      <p class="pp">ご入力いただいた情報は、銘柄情報の配信とご連絡にのみ使用します。<br>配信はいつでも停止できます。</p>
+      <p class="dis">※株価の上昇や目標価格への到達を保証するものではありません。<br>※当サービスは情報提供を行うものであり、個別銘柄の売買を推奨・断定するものではありません。</p>
+    </form>
   </div>
-</div>
+</section>
 
 
 <!-- ============================================================
@@ -294,10 +334,10 @@
 
 
 <div class="bfix" id="bfix">
-  <a href="../thanks.html" class="bbtn" data-cta data-cta-pos="fix" data-cta-name="sticky">
+  <a href="#entry" class="bbtn" data-cta data-cta-pos="fix" data-cta-name="sticky">
     <span class="ic" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.3 2.8 10.4c0 2.4 1.4 4.5 3.6 5.9-.1.6-.6 2.1-.7 2.4 0 0-.1.3.1.4.2.1.4 0 .4 0 .4-.1 2.5-1.6 3.4-2.3.8.1 1.6.2 2.4.2 5.1 0 9.2-3.3 9.2-7.4S17.1 3 12 3z"/></svg>
-    </span>LINEで無料の5銘柄を受け取る
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.3 4.4h15.4c1 0 1.8.8 1.8 1.8v11.6c0 1-.8 1.8-1.8 1.8H4.3c-1 0-1.8-.8-1.8-1.8V6.2c0-1 .8-1.8 1.8-1.8Zm.8 2 6.9 5.3 6.9-5.3H5.1Zm14.3 1.6-6.6 5.1a1.2 1.2 0 0 1-1.4 0L4.6 8v9.8h14.8V8Z"/></svg>
+    </span>無料で5銘柄を受け取る
   </a>
 </div>
 
