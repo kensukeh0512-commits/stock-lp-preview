@@ -2,38 +2,38 @@
 /* ============================================================
    千里眼 スポット3銘柄レポート／セールスページ
    ------------------------------------------------------------
-   既存の無料5銘柄LP（別フォルダ）とは完全に独立。
-   このファイルは senrigan-spot3-sales からのみ読み込まれます。
+   既存の無料5銘柄LPとは独立。このファイルは spot3 からのみ読む。
 
    指定配色
-     濃紺 #061429 ／ 金 #E9B75E ／ 白 #FFFFFF
-     赤 #C8232A は価格まわりの装飾にのみ使用
+     濃紺 #06152C ／ 深い青 #0B2D52 ／ 金 #E6BD67
+     白 #FFFFFF ／ 強調赤 #C32525（価格まわりのみ）
+
+   方針
+     白いカードを並べない。濃色を地にして、大きな画像の帯と
+     強い日本語見出しで組む。明暗を交互に置いて単調さを避ける。
    ============================================================ */
 
 :root{
-  --navy:#061429;
-  --navy2:#0b2039;
-  --navy3:#123354;
-  --gold:#e9b75e;
-  --gold-l:#f7dca2;
-  --gold-d:#a97f2c;
-  --red:#c8232a;        /* 価格の装飾のみ */
-  --paper:#ffffff;
-  --paper2:#f5f7fa;
-  --tx:#17202e;
-  --tx2b:#475263;
-  --muted:#7b8494;
-  --line:#dfe4ec;
-  --line-d:rgba(233,183,94,.28);
+  --navy:#06152C;          /* 地 */
+  --navy2:#0b2039;         /* 一段明るい地 */
+  --blue:#0B2D52;          /* 深い青の帯 */
+  --gold:#E6BD67;
+  --gold-l:#f6ddab;
+  --gold-d:#a67c28;
+  --red:#C32525;
+  --tx:#ffffff;
+  --tx2:#c2cfe0;
+  --tx3:#8d9cb2;
+  --line:rgba(230,189,103,.28);
   --sans:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
-  --wrap:720px;
+  --wrap:760px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%}
 [hidden]{display:none !important}
 html{scroll-behavior:smooth}
 body{
-  font-family:var(--sans);color:var(--tx);background:var(--paper);
+  font-family:var(--sans);background:var(--navy);color:var(--tx);
   font-size:16px;line-height:1.9;overflow-x:hidden;
   font-feature-settings:"palt";
   /* 日本語の折り返しをスマホで読みやすく */
@@ -42,247 +42,232 @@ body{
   text-wrap:pretty;
   letter-spacing:.01em;
 }
-/* 文節を途中で割らせないためのユーティリティ */
 .nb{display:inline-block}
-img,svg{max-width:100%;height:auto;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 
 .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 18px}
 
-/* 読み上げには残して、画面からは隠す */
+/* 読み上げには残して画面からは隠す。
+   見出しが画像に焼き込まれている箇所で使う。 */
 .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
   overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
-/* 未確定の箇所。公開前に必ず置き換える。
-   見落とさないよう、画面上でもはっきり分かる色にしてある。 */
-.tbd{display:inline-block;background:#fff3cd;color:#7a5600;
-  border:1px dashed #c9a227;border-radius:5px;
+/* 未確定。公開前に必ず置き換える。画面上でも分かるようにしてある。 */
+.tbd{display:inline-block;background:rgba(246,221,171,.14);color:var(--gold-l);
+  border:1px dashed rgba(230,189,103,.6);border-radius:5px;
   padding:0 7px;margin:0 2px;font-size:.88em;font-weight:700;
   line-height:1.7;letter-spacing:.02em}
-.ink .tbd{background:rgba(255,243,205,.14);color:#f3d99a;border-color:rgba(233,183,94,.55)}
 
 
-/* ===== 共通セクション ===== */
-.sec{padding:46px 0}
-.ink{background:var(--navy);color:#fff}
-.ink p{color:#c6d2e2}
-.paper2{background:var(--paper2)}
+/* ===== セクションの地 ===== */
+.sec{position:relative;padding:52px 0}
+.sec.blue{background:
+  radial-gradient(1200px 420px at 50% 0%,rgba(18,70,122,.55),transparent 70%),
+  var(--blue)}
+.sec.deep{background:
+  radial-gradient(900px 380px at 50% 100%,rgba(230,189,103,.09),transparent 70%),
+  var(--navy)}
 
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold);
-  margin-bottom:12px}
-h2{font-size:24px;font-weight:900;line-height:1.55;letter-spacing:-.01em}
-.ink h2{color:#fff}
-h2 + p,h2 + .lead{margin-top:16px}
-p + p{margin-top:15px}
-.lead{font-size:16px;line-height:1.95;color:var(--tx2b)}
-.ink .lead{color:#c6d2e2}
+/* 帯の境目に金の細線を1本入れて、安っぽい切り替わりを防ぐ */
+.sec + .sec::before,.band + .sec::before,.sec + .band::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent)}
 
-/* 言い切りの一文 */
-.punch{margin-top:20px;font-size:19px;font-weight:900;line-height:1.7;
-  color:var(--navy);border-left:4px solid var(--gold);padding-left:14px}
-.ink .punch{color:#fff;border-left-color:var(--gold)}
+.eyebrow{display:flex;align-items:center;gap:10px;
+  font-size:11.5px;font-weight:700;letter-spacing:.22em;color:var(--gold);
+  margin-bottom:14px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
 
+h2{font-size:27px;font-weight:900;line-height:1.5;letter-spacing:-.015em;color:#fff}
+h2 em{font-style:normal;color:var(--gold-l)}
+.lead{margin-top:16px;font-size:15.5px;line-height:2;color:var(--tx2)}
+.lead + .lead{margin-top:14px}
+.note{margin-top:12px;font-size:12.5px;line-height:1.85;color:var(--tx3)}
 
-/* ===== ヘッダー ===== */
-.hd{position:sticky;top:0;z-index:90;background:rgba(6,20,41,.95);
-  backdrop-filter:blur(8px);border-bottom:1px solid var(--line-d)}
-.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;
-  padding-top:9px;padding-bottom:9px}
-.hd-logo{display:flex;align-items:center;gap:7px;color:#fff;
-  font-size:13px;font-weight:900;line-height:1.35;letter-spacing:.01em}
-.hd-logo .mk{flex:none;width:30px;height:30px}
-.hd-tag{flex:none;font-size:11px;font-weight:700;letter-spacing:.04em;
-  color:var(--gold);border:1px solid var(--line-d);border-radius:100px;
-  padding:6px 11px;white-space:nowrap}
-@media (max-width:359px){
-  .hd-logo{gap:5px;font-size:12.5px}
-  .hd-logo .mk{width:26px;height:26px}
-  .hd-tag{font-size:10px;padding:5px 9px}
-}
+/* 言い切りの一文。罫で強さを出す */
+.punch{margin-top:22px;padding:14px 0 14px 16px;
+  border-left:3px solid var(--gold);
+  font-size:19px;font-weight:900;line-height:1.65;color:#fff}
 
-
-/* ===== ファーストビュー ===== */
-/* 背景SVGは右側に装飾が寄っているので、右を見せつつ左に文字を置く */
-.fv{position:relative;background:var(--navy) url("../img/01_hero_background.svg")
-  no-repeat right center / cover;
-  color:#fff;padding:34px 0 38px;overflow:hidden}
-.fv::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(100deg,rgba(6,20,41,.96) 0%,rgba(6,20,41,.86) 46%,
-    rgba(6,20,41,.52) 78%,rgba(6,20,41,.42) 100%)}
-.fv .wrap{position:relative;z-index:1}
-.fv .brand{font-size:13.5px;font-weight:700;letter-spacing:.06em;color:var(--gold-l)}
-.fv .catch{margin-top:7px;font-size:15px;font-weight:700;color:#dfe8f4}
-.fv h1{margin-top:18px;font-size:28px;font-weight:900;line-height:1.5;
-  letter-spacing:-.01em;color:#fff}
-.fv h1 em{font-style:normal;color:var(--gold-l)}
-.fv .sub{margin-top:16px;font-size:16.5px;font-weight:700;line-height:1.75;color:#fff}
-.fv .desc{margin-top:14px;font-size:15px;line-height:1.95;color:#c6d2e2}
 @media (min-width:620px){
-  .fv h1{font-size:34px}
+  h2{font-size:32px}
+  .sec{padding:64px 0}
 }
 @media (max-width:359px){
-  .fv h1{font-size:25px}
+  h2{font-size:24px}
+  .punch{font-size:17.5px}
 }
 
-/* 価格の帯 */
-.pricebar{margin-top:22px;background:rgba(255,255,255,.06);
-  border:1px solid var(--line-d);border-radius:12px;padding:15px 14px;text-align:center}
-.pricebar .k{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--gold)}
-.pricebar .v{margin-top:4px;font-size:32px;font-weight:900;line-height:1.25;color:#fff;
-  letter-spacing:-.02em}
-.pricebar .v i{font-style:normal;font-size:17px;margin-left:2px}
-.pricebar .v b{color:var(--gold-l)}
-@media (max-width:359px){ .pricebar .v{font-size:28px} }
+
+/* ===== 画像の帯 =====
+   端まで使う。囲みを付けず、地に溶かして迫力を出す。 */
+.band{position:relative;line-height:0;background:var(--navy)}
+.band img{width:100%;max-width:1400px;margin:0 auto}
+/* 下端で地に溶かす。元画像の下端が詰まって見えるのを抑える */
+.band.fade::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;
+  background:linear-gradient(180deg,transparent,var(--navy));pointer-events:none}
+.bandcap{line-height:1.8;text-align:center;font-size:12px;color:var(--tx3);
+  padding:12px 18px 0}
+
+
+/* ===== ファーストビュー =====
+   見出し・タグライン・ブランド名は画像に焼き込まれている。
+   HTMLで同じ文面を出さない（読み上げ用の h1 だけ隠して置く）。 */
+.fv{background:
+  radial-gradient(900px 400px at 50% 0%,rgba(18,70,122,.6),transparent 72%),
+  var(--navy);
+  padding:0 0 34px}
+.fvimg{line-height:0}
+.fvimg img{width:100%;max-width:1400px;margin:0 auto}
+@media (min-width:900px){
+  .fv{padding-top:18px}
+  .fvimg img{border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.6)}
+}
+
+
+/* ===== 価格の表示 ===== */
+.pricebox{margin:26px auto 0;max-width:460px;
+  border:1px solid var(--line);border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+  padding:18px 16px 16px;text-align:center}
+.pricebox .k{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--gold)}
+.pricebox .v{margin-top:6px;font-weight:900;line-height:1.1;letter-spacing:-.03em;
+  font-size:44px;color:#fff}
+.pricebox .v b{color:var(--red);background:#fff;border-radius:8px;padding:0 10px;
+  margin-right:3px;display:inline-block}
+.pricebox .v i{font-style:normal;font-size:20px;letter-spacing:0}
+.pricebox .tax{margin-top:10px}
+@media (max-width:359px){ .pricebox .v{font-size:36px} }
 
 
 /* ===== ボタン ===== */
-.btn{display:block;width:100%;max-width:460px;margin:0 auto;text-align:center;
-  font-family:inherit;font-size:17.5px;font-weight:900;line-height:1.5;
-  padding:17px 16px;border-radius:12px;border:0;cursor:pointer;letter-spacing:.01em;
-  background:linear-gradient(180deg,var(--gold-l) 0%,var(--gold) 52%,var(--gold-d) 100%);
-  color:#2a1c00;box-shadow:0 4px 0 #7d5c16}
-.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #7d5c16}
+.btn{display:block;width:100%;max-width:460px;margin:20px auto 0;
+  font-family:inherit;text-align:center;font-size:17.5px;font-weight:900;
+  line-height:1.5;padding:18px 16px;border-radius:12px;border:0;cursor:pointer;
+  letter-spacing:.01em;color:#2b1d00;
+  background:linear-gradient(180deg,var(--gold-l) 0%,var(--gold) 50%,var(--gold-d) 100%);
+  box-shadow:0 5px 0 #6f4f12,0 14px 30px rgba(230,189,103,.18)}
+.btn:active{transform:translateY(2px);box-shadow:0 3px 0 #6f4f12}
+.btn small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;
+  opacity:.82;margin-bottom:3px}
 /* 決済先が未確定のあいだは押せない状態にしておく */
-.btn[disabled]{background:#5d6675;color:#cfd5de;box-shadow:0 4px 0 #434b58;
-  cursor:not-allowed;opacity:.95}
-.btn[disabled]:active{transform:none;box-shadow:0 4px 0 #434b58}
-.btn small{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;
-  margin-bottom:3px;opacity:.9}
-.btn-note{margin-top:11px;text-align:center;font-size:12.5px;line-height:1.75;color:var(--muted)}
-.ink .btn-note{color:#95a2b6}
+.btn[disabled]{background:linear-gradient(180deg,#5a6578,#434d5e);color:#d3d9e2;
+  box-shadow:0 5px 0 #333b48;cursor:not-allowed}
+.btn[disabled]:active{transform:none;box-shadow:0 5px 0 #333b48}
+.btnnote{margin-top:12px;text-align:center;font-size:12.5px;line-height:1.8;color:var(--tx3)}
 
 
-/* ===== 02 選定の説明（背景SVG） ===== */
-.pick{position:relative;background:var(--navy) url("../img/04_section_background.svg")
-  no-repeat right center / cover;color:#fff;padding:44px 0;overflow:hidden}
-/* 素材は「右に目のエンブレム、左は空き」という作りだが、
-   スマホ幅で cover にすると目が画面の真ん中に来て本文に重なる。
-   狭い画面ではほぼ一様に濃く伏せ、広い画面だけ右を明るく残す。 */
-.pick::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:rgba(6,20,41,.9)}
-@media (min-width:860px){
-  .pick::before{background:linear-gradient(100deg,rgba(6,20,41,.95) 0%,
-    rgba(6,20,41,.84) 50%,rgba(6,20,41,.5) 100%)}
-}
-.pick .wrap{position:relative;z-index:1}
-
-
-/* ===== 03 4つの情報 ===== */
-/* 素材は 1200x360 に4つのアイコンが並んだ1枚絵。
-   スマホでは1枚のまま縮めると27px程度になって潰れるので、
-   アイコン1つ分（188px角）だけを切り出して各項目に添える。
-   数値はすべて 188px を 100% とした比率で、表示サイズに依存しない。 */
-.feats{list-style:none;margin-top:22px;display:grid;gap:13px}
-.feats li{display:flex;gap:13px;align-items:flex-start;
-  background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 14px}
-.ficon{position:relative;flex:none;width:52px;height:52px;overflow:hidden;
-  border-radius:50%;background:var(--navy2)}
-.ficon img{position:absolute;width:638.3%;max-width:none;height:auto;
-  top:-45.74%;left:calc(var(--x) * -1%)}
-.feats .tx b{display:block;font-size:17px;font-weight:900;line-height:1.5;
-  color:var(--navy);margin-bottom:4px}
-.feats .tx span{display:block;font-size:14.5px;line-height:1.85;color:var(--tx2b)}
+/* ===== 4つの情報 =====
+   支給画像は 1293x159 に4枚のカードが横並び。
+   そのまま縮めるとスマホで文字が4pxになるので、
+   カード1枚分（310x159）ずつ切り出して積む。
+   すべて比率指定なので、表示幅が変わっても崩れない。 */
+.fcards{margin-top:24px;display:grid;gap:12px}
+.fcard{position:relative;overflow:hidden;border-radius:10px;
+  aspect-ratio:310/159;border:1px solid var(--line);background:var(--navy2)}
+.fcard img{position:absolute;top:0;left:calc(var(--x) * -1%);
+  width:417.1%;max-width:none}
 @media (min-width:620px){
-  .ficon{width:64px;height:64px}
-  .feats li{padding:17px 16px;gap:16px}
-}
-@media (max-width:359px){
-  .ficon{width:46px;height:46px}
-  .feats li{gap:11px;padding:13px 12px}
-  .feats .tx b{font-size:16px}
+  .fcards{grid-template-columns:1fr 1fr;gap:14px}
 }
 
 
-/* ===== 06 商品イメージ ===== */
-.product{margin-top:22px;border-radius:14px;overflow:hidden;line-height:0;
-  border:1px solid var(--line-d);background:var(--navy2)}
-.product img{width:100%}
-.product-cap{margin-top:9px;font-size:12.5px;line-height:1.75;color:var(--muted);
-  text-align:center}
-.ink .product-cap{color:#95a2b6}
+/* ===== 選定ロジック ===== */
+.steps{list-style:none;margin-top:24px;display:grid;gap:0}
+.steps li{position:relative;padding:0 0 26px 52px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);
+  position:absolute;left:0;top:-2px;font-size:19px;font-weight:900;
+  color:var(--gold);letter-spacing:.02em;font-family:var(--sans)}
+.steps{counter-reset:s}
+.steps li::after{content:"";position:absolute;left:13px;top:26px;bottom:8px;width:1px;
+  background:linear-gradient(180deg,var(--line),transparent)}
+.steps li:last-child::after{display:none}
+.steps b{display:block;font-size:18px;font-weight:900;line-height:1.55;color:#fff;
+  margin-bottom:5px}
+.steps span{display:block;font-size:14.5px;line-height:1.95;color:var(--tx2)}
 
 
-/* ===== 07 含まれる内容 ===== */
-.incl{list-style:none;margin-top:18px;display:grid;gap:10px}
-.incl li{position:relative;background:#fff;border:1px solid var(--line);
-  border-radius:10px;padding:13px 14px 13px 42px;font-size:15.5px;line-height:1.75}
-.incl li::before{content:"";position:absolute;left:15px;top:19px;
-  width:13px;height:8px;border-left:3px solid var(--gold-d);
-  border-bottom:3px solid var(--gold-d);transform:rotate(-45deg)}
+/* ===== 含まれるもの ===== */
+.incl{list-style:none;margin-top:22px;display:grid;gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.incl li{background:var(--navy);position:relative;
+  padding:15px 16px 15px 46px;font-size:15.5px;line-height:1.7}
+.incl li::before{content:"";position:absolute;left:18px;top:22px;
+  width:12px;height:7px;border-left:2.5px solid var(--gold);
+  border-bottom:2.5px solid var(--gold);transform:rotate(-45deg)}
 
-.spec{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:12px;
-  padding:6px 14px}
-.spec dl{display:grid;grid-template-columns:1fr;gap:0}
-.spec dt{font-size:13px;font-weight:700;color:var(--muted);padding-top:13px}
-.spec dd{font-size:15.5px;line-height:1.8;padding-bottom:13px;
-  border-bottom:1px solid var(--line)}
+.spec{margin-top:22px;border:1px solid var(--line);border-radius:12px;padding:4px 16px}
+.spec dl{display:grid;grid-template-columns:1fr}
+.spec dt{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--gold);
+  padding-top:14px}
+.spec dd{font-size:15px;line-height:1.8;padding-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,.08);color:var(--tx2)}
 .spec dd:last-of-type{border-bottom:0}
 @media (min-width:560px){
-  .spec dl{grid-template-columns:8.5em 1fr;align-items:baseline}
-  .spec dt{border-bottom:1px solid var(--line);padding-bottom:13px}
-  .spec dd{border-bottom:1px solid var(--line)}
+  .spec dl{grid-template-columns:9em 1fr;align-items:baseline}
+  .spec dt{border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:14px}
+  .spec dd{border-bottom:1px solid rgba(255,255,255,.08)}
   .spec dt:last-of-type,.spec dd:last-of-type{border-bottom:0}
 }
 
 
-/* ===== 08 価格（背景SVG） ===== */
-.price{position:relative;background:var(--navy) url("../img/05_cta_background.svg")
-  no-repeat center center / cover;color:#fff;padding:44px 0;overflow:hidden}
-.price::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:rgba(6,20,41,.78)}
-.price .wrap{position:relative;z-index:1}
-.price-card{margin-top:20px;background:rgba(255,255,255,.055);
-  border:2px solid var(--gold);border-radius:14px;padding:22px 16px 20px;text-align:center}
-.price-card .k{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--gold)}
-.price-card .v{margin-top:6px;font-size:40px;font-weight:900;line-height:1.2;
-  letter-spacing:-.03em;color:#fff}
-.price-card .v b{color:var(--red);background:#fff;border-radius:7px;
-  padding:0 8px;margin-right:2px}
-.price-card .v i{font-style:normal;font-size:19px}
-.price-card .note{margin-top:13px;font-size:13px;line-height:1.8;color:#b9c6d8}
-@media (max-width:359px){ .price-card .v{font-size:33px} }
-
-/* 二重価格の根拠が未確認のため、定価の打消し線は出さない。
-   その事実をページ上にも残しておく（公開前に判断するため）。 */
-.price-hold{margin-top:16px;border:1px dashed rgba(233,183,94,.5);border-radius:10px;
-  padding:13px 14px;font-size:13px;line-height:1.85;color:#c6d2e2;
-  background:rgba(0,0,0,.18)}
-.price-hold b{display:block;color:var(--gold-l);font-size:13.5px;margin-bottom:4px}
-
-
-/* ===== 09 FAQ ===== */
-.faq{margin-top:20px;display:grid;gap:10px}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;
-  overflow:hidden}
+/* ===== FAQ ===== */
+.faq{margin-top:22px;display:grid;gap:10px}
+.faq details{border:1px solid rgba(255,255,255,.12);border-radius:11px;
+  background:rgba(255,255,255,.03);overflow:hidden}
+.faq details[open]{border-color:var(--line)}
 .faq summary{list-style:none;cursor:pointer;position:relative;
-  padding:15px 44px 15px 15px;font-size:15.5px;font-weight:700;line-height:1.7;
-  color:var(--navy)}
+  padding:15px 46px 15px 16px;font-size:15.5px;font-weight:700;line-height:1.7;color:#fff}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";position:absolute;right:17px;top:22px;
-  width:9px;height:9px;border-right:2px solid var(--gold-d);
-  border-bottom:2px solid var(--gold-d);transform:rotate(45deg);transition:transform .15s}
-.faq details[open] summary::after{transform:rotate(-135deg);top:25px}
-.faq .a{padding:0 15px 15px;font-size:14.5px;line-height:1.9;color:var(--tx2b)}
+.faq summary::after{content:"";position:absolute;right:18px;top:23px;
+  width:9px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);
+  transform:rotate(45deg);transition:transform .15s}
+.faq details[open] summary::after{transform:rotate(-135deg);top:26px}
+.faq .a{padding:0 16px 16px;font-size:14.5px;line-height:1.95;color:var(--tx2)}
+
+
+/* ===== 価格セクション ===== */
+.pricesec{position:relative;background:
+  radial-gradient(760px 420px at 50% 42%,rgba(230,189,103,.16),transparent 70%),
+  linear-gradient(180deg,#07192f,#040d1c)}
+.pricecard{margin-top:24px;border:2px solid var(--gold);border-radius:16px;
+  background:rgba(0,0,0,.3);padding:26px 16px 22px;text-align:center;
+  box-shadow:0 0 0 1px rgba(230,189,103,.18) inset,0 20px 50px rgba(0,0,0,.45)}
+.pricecard .k{font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--gold)}
+.pricecard .v{margin-top:8px;font-weight:900;line-height:1.05;letter-spacing:-.035em;
+  font-size:54px;color:#fff}
+.pricecard .v b{color:var(--red);background:#fff;border-radius:9px;padding:0 11px;
+  margin-right:3px;display:inline-block}
+.pricecard .v i{font-style:normal;font-size:23px;letter-spacing:0}
+.pricecard .tax{margin-top:12px}
+@media (max-width:359px){ .pricecard .v{font-size:42px} }
+
+/* 二重価格の根拠が未確認のため、定価の打消し線は出していない。
+   その判断自体をページに残しておく。 */
+.hold{margin-top:20px;border:1px dashed rgba(230,189,103,.45);border-radius:11px;
+  padding:15px 16px;font-size:13px;line-height:1.95;color:var(--tx2);
+  background:rgba(0,0,0,.22)}
+.hold b{display:block;color:var(--gold-l);font-size:13.5px;margin-bottom:5px}
 
 
 /* ===== 最終CTA ===== */
-.final{position:relative;background:var(--navy) url("../img/05_cta_background.svg")
-  no-repeat center center / cover;color:#fff;padding:46px 0 42px;overflow:hidden}
-.final::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:rgba(6,20,41,.8)}
-.final .wrap{position:relative;z-index:1}
-.final h2{font-size:26px;text-align:center;line-height:1.5}
-.final .catch{margin-top:14px;text-align:center;font-size:16.5px;font-weight:700;
-  line-height:1.75;color:var(--gold-l)}
-.final .pricebar{max-width:420px;margin-left:auto;margin-right:auto}
-@media (max-width:359px){ .final h2{font-size:23px} }
+.final{position:relative;padding:56px 0 50px;background:
+  radial-gradient(900px 440px at 50% 0%,rgba(18,70,122,.55),transparent 72%),
+  var(--navy)}
+.final h2{text-align:center}
+.final .catch{margin-top:16px;text-align:center;font-size:17px;font-weight:700;
+  line-height:1.8;color:var(--gold-l)}
+.final .lead{text-align:center}
 
 
 /* ===== フッター ===== */
-.ft{background:#030b17;color:#9aa6b8;padding:30px 0 34px;font-size:13px;line-height:1.9}
-.ft h3{font-size:13px;font-weight:900;color:var(--gold);letter-spacing:.06em;
-  margin-bottom:9px}
-.ft .biz{margin-bottom:20px}
-.ft .risk li{margin-left:1.1em;margin-bottom:7px}
-.ft .cr{margin-top:20px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);
-  font-size:12px;color:#77839a}
+.ft{background:#030a16;color:#8d9cb2;padding:32px 0 36px;font-size:13px;line-height:1.95;
+  border-top:1px solid rgba(255,255,255,.08)}
+.ft h3{font-size:12.5px;font-weight:900;letter-spacing:.1em;color:var(--gold);
+  margin-bottom:10px}
+.ft .biz{margin-bottom:22px}
+.ft ul li{margin-left:1.1em;margin-bottom:7px}
+.ft .cr{margin-top:22px;padding-top:15px;border-top:1px solid rgba(255,255,255,.08);
+  font-size:12px;color:#6d7b91}
