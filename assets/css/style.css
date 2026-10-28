@@ -62,7 +62,10 @@ a{color:inherit;text-decoration:none}
 /* ===== header ===== */
 .hd{position:sticky;top:0;z-index:90;background:rgba(7,11,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,175,55,.3)}
 .hd-in{max-width:var(--wrap);margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.hd-logo{color:#fff;font-weight:900;font-size:13px;letter-spacing:.01em;line-height:1.35}
+.hd-logo{color:#fff;font-weight:900;font-size:13px;letter-spacing:.01em;line-height:1.35;
+  display:flex;align-items:center;gap:7px}
+.hd-logo .mk{flex:none;width:30px;height:30px}
+@media (max-width:359px){.hd-logo{gap:5px}.hd-logo .mk{width:26px;height:26px}}
 .hd-cta{background:linear-gradient(180deg,#06c755,#04a344);color:#fff;font-weight:900;font-size:13px;padding:9px 16px;border-radius:100px;white-space:nowrap;box-shadow:0 2px 0 #037a33}
 
 /* ===== hero ===== */

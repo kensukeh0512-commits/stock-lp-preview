@@ -10,7 +10,10 @@ body{background:#fff;color:#14181f}
 /* ===== 固定ヘッダー ===== */
 .v3hd{position:sticky;top:0;z-index:90;background:#fff;border-bottom:3px solid var(--red);
   display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px}
-.v3hd .nm{font-weight:900;font-size:13.5px;line-height:1.35}
+.v3hd .nm{font-weight:900;font-size:13.5px;line-height:1.35;
+  display:flex;align-items:center;gap:7px}
+.v3hd .nm .mk{flex:none;width:30px;height:30px}
+@media (max-width:359px){.v3hd .nm{gap:5px}.v3hd .nm .mk{width:26px;height:26px}}
 .v3hd a{flex:none;background:var(--red);color:#fff;font-weight:900;font-size:13px;white-space:nowrap;
   padding:9px 15px;border-radius:100px;text-decoration:none;box-shadow:0 3px 0 #a3150e}
 
