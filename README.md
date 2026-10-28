@@ -2286,3 +2286,40 @@ iOS は16px未満の入力欄でページを勝手に拡大する。
 
 また `b.css` の `--green:#06c755` は LINE のブランドカラーそのもの。
 CTAの色として使っているだけだが、メール登録になった以上は再検討の余地がある。
+
+## 独自ドメインとスポット3銘柄ページ（2026-10-29）
+
+公開先を `lp.starmailer.uk` にした。`CNAME` ファイルがその設定。
+
+| URL | 中身 |
+|---|---|
+| `https://lp.starmailer.uk/` | A（無料5銘柄LP） |
+| `https://lp.starmailer.uk/b/` | Bパターン |
+| `https://lp.starmailer.uk/spot3/` | スポット3銘柄セールスページ |
+
+### spot3/ について
+
+**このフォルダは配置物であって、原本ではない。**
+原本は別プロジェクト `senrigan-spot3-sales/src/`。
+GitHub Pages はリポジトリ1つにつきカスタムドメイン1つなので、
+同じサブドメインのサブパスに置いている。
+
+更新するときは原本を直してから、こうコピーする。
+
+```
+cp -r ../senrigan-spot3-sales/src/. spot3/
+```
+
+`spot3/` を直接編集すると、次のコピーで消える。
+
+### Cloudflare 側
+
+`starmailer.uk` はメール専用のゾーン（MX・SPF 等が5本）。
+そこに Web 用のレコードを1本足した。
+
+```
+CNAME  lp  →  kensukeh0512-commits.github.io   プロキシなし（DNSのみ）
+```
+
+**プロキシ（オレンジの雲）を有効にすると GitHub Pages の証明書が発行されない。**
+必ず「DNSのみ」にしておくこと。
