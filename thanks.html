@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css?v=20261029c">
 <!-- 共有の style.css は A版・B版も読んでいる。このページの追加分だけ別ファイルに置く。 -->
-<link rel="stylesheet" href="assets/css/thanks.css?v=20261030c">
+<link rel="stylesheet" href="assets/css/thanks.css?v=20261030d">
 <link rel="preload" as="image" href="assets/img/thanks-01.webp?v=20261030a" fetchpriority="high">
 <!-- ▼▼ 「一度きり表示」の ON / OFF ▼▼
      false … 機能も、関連する文言も、まとめて非表示になります（現在の設定）
@@ -152,6 +152,10 @@ window.LP_CHANNEL = {
     </p>
 
     <!-- 受け取ったら、どうなるのか -->
+    <!-- 🔴 未確定：「この3銘柄は3倍になります」と、下の 100万円→300万円 の試算。
+         倍率の裏付けが確認できていない。2026-10-30 時点では記録のみで、
+         今回は手を入れていない。法務確認の結果しだいで差し替えか削除。
+         詳細は senrigan-spot3-sales/docs/未確定事項.md に記載。 -->
     <figure class="shot mb24">
       <img src="assets/img/thanks-3x.jpg" alt="この3銘柄は、3倍になります" width="1400" height="875" loading="lazy" decoding="async">
       <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -251,8 +255,16 @@ window.LP_CHANNEL = {
       <span style="display:inline-block;margin-top:10px;font-size:13px;opacity:.75">※3銘柄のお受け取りに、費用は一切かかりません。</span>
     </p>
 
-    <!-- 残枠 -->
-    <div class="limit mb32">
+    <!-- 残枠・カウントダウン
+         🔴 2026-10-30 いったん非表示にした。
+            ・残り人数は slots.js が自動生成していたもので、
+              実際の申込数とは連動していない
+            ・カウントダウンは毎日23:59にリセットされるだけで、
+              実際の締切ではない
+            実際の枠管理と締切が決まったら、この div の hidden を外す。
+            なお「50名様が埋まり次第、この受付は終了します。」の一文は、
+            画像 thanks-02.webp の末尾にも同じ内容が入っている。 -->
+    <div class="limit mb32" hidden>
       <div class="limit-hd">本日の審査通過枠</div>
       <div class="limit-bd">
         <!-- data-total:定員 / data-min:下限 / data-open・data-close:受付時間帯 -->
@@ -488,7 +500,9 @@ window.LP_CHANNEL = {
 
 <!-- 追従CTA -->
 <div class="fixcta" id="fixcta">
-  <div class="cd-bar"><span class="cd-dot"></span><span class="cd-k">本日の受付終了まで</span><span class="cd-v" data-countdown>--<i>時間</i>--<i>分</i>--<i>秒</i></span></div>
+  <!-- 🔴 2026-10-30 非表示。毎日23:59にリセットされるだけで実際の締切ではない。
+       実際の締切が決まったら hidden を外す。 -->
+  <div class="cd-bar" hidden><span class="cd-dot"></span><span class="cd-k">本日の受付終了まで</span><span class="cd-v" data-countdown>--<i>時間</i>--<i>分</i>--<i>秒</i></span></div>
   <a href="#form" class="btn"><small><span class="once-only">＼ 今回かぎり・50名様限定 ／</span><span class="once-off">＼ 審査あり・50名様限定 ／</span></small>無料の電話案内を申し込む</a>
 </div>
 
