@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="format-detection" content="telephone=no">
-<title>【重要】50名様限定のご案内</title>
+<title>【重要】50名様限定のご案内｜限定3銘柄の電話ご案内</title>
 <link rel="icon" type="image/png" href="assets/img/logo/favicon.png?v=20261029b">
 <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png?v=20261029b">
 <!-- ▼ LINEやSMSで共有されたときの表示。
@@ -21,7 +21,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css?v=20261029c">
-<link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
+<!-- 共有の style.css は A版・B版も読んでいる。このページの追加分だけ別ファイルに置く。 -->
+<link rel="stylesheet" href="assets/css/thanks.css?v=20261030c">
+<link rel="preload" as="image" href="assets/img/thanks-01.webp?v=20261030a" fetchpriority="high">
 <!-- ▼▼ 「一度きり表示」の ON / OFF ▼▼
      false … 機能も、関連する文言も、まとめて非表示になります（現在の設定）
      true  … 一度開いた端末では二度目に「受付終了」画面になります
@@ -51,31 +53,33 @@ window.LP_CHANNEL = {
 <header class="hd hd-t">
   <div class="hd-in">
     <div class="hd-logo"><img class="mk" src="assets/img/logo/mark.webp?v=20261029b" alt="" width="128" height="128" decoding="async"><span>AI株式投資千里眼<br>トレーダーズクラブ</span></div>
-    <a href="#form" class="hd-cta hd-cta-g">残り枠を見る</a>
+    <a href="#form" class="hd-cta hd-cta-g">無料の電話案内へ</a>
   </div>
 </header>
 
 
 <!-- ============================================================
-     登録完了
+     ① 登録完了 → 別枠の3銘柄
+     画像：assets/img/thanks-01.webp（01_登録後_限定3銘柄.png）
+     見出し・本文・ボタンはすべて画像に焼き込み済み。同じ文面をHTMLで出さない。
+     画像ごと #form へのリンクにしてある（画像内にボタンが描かれているため）。
+
+     🔴 元画像の下端で「入力 約30秒・電話相談 無料」が切れていたので、
+        金のプレートの下（y=535）で切り、その一文は下の .tv2-note で出している。
      ============================================================ -->
-<h1 class="tvhero">
-  <img src="assets/img/thanks-hero.jpg?v=20261021130000" alt="ご登録、ありがとうございます。この画面を絶対に閉じないでください" width="1400" height="1050" fetchpriority="high" decoding="async">
-</h1>
+<h1 class="vh">ご登録ありがとうございます。ここからが、本当のご案内です。無料公開とは別の、今まさに仕込みどきの日本株3銘柄を特別にご案内します。</h1>
 
-<section class="tv">
-  <div class="tv-bg" aria-hidden="true"></div>
-  <div class="wrap tv-in">
+<section class="tv2">
+  <a class="tv2-img" href="#form">
+    <img src="assets/img/thanks-01.webp?v=20261030a"
+         alt="ご登録ありがとうございます。ここからが、本当のご案内です。無料公開とは別の、今まさに仕込みどきの日本株3銘柄を特別にご案内します。限定3銘柄のご案内を希望する。電話での申込はこちら。"
+         width="510" height="535" fetchpriority="high" decoding="async">
+  </a>
+  <p class="tv2-note">入力 約30秒 ／ 電話相談 無料</p>
 
-    <p class="tv-s">
-      <span class="nb">「今すぐ急騰する銘柄5選」は、</span><br>
-      <span class="nb">ご登録の<span class="ch" data-line="LINE" data-mail="メール">LINE</span>にお届けします。</span>
-    </p>
-
-    <div class="tv-rule"><span>そして</span></div>
-
-    <p class="tv-lead">
-      <span class="nb">この続きは、</span><span class="nb"><span class="ch" data-line="LINE" data-mail="メール">LINE</span>には書けません。</span>
+  <div class="wrap">
+    <p class="tv2-s">
+      <span class="nb">「今すぐ急騰する銘柄5選」は、</span><span class="nb">ご登録の<span class="ch" data-line="LINE" data-mail="メール">LINE</span>にお届けします。</span>
     </p>
   </div>
 </section>
@@ -190,57 +194,55 @@ window.LP_CHANNEL = {
       <span class="nb">しかも、</span><span class="nb">申し込んだ順では</span><span class="nb">ありません。</span>
     </p>
 
-    <!-- なぜ全員に出せないのか -->
-    <div class="reason mb32">
-      <div class="reason-hd">なぜ、50名様だけなのか</div>
-      <div class="reason-bd">
-        <p class="r2"><strong>人数が増えれば、<br>相場そのものが動く</strong>から。</p>
-        <p class="r3">
-          <span class="mk-g" style="color:#fff">動いた瞬間、<br>この情報は価値を失います。</span>
-        </p>
-        <p class="r4">
-          だから、<b>人数を絞ります。</b>
-        </p>
-      </div>
-    </div>
-
-    <!-- なぜ電話なのか -->
-    <p class="ofr-h2">
-      <span class="nb">では、</span><span class="nb">どうやって選ぶのか。</span><br>
-      <span class="nb">〈開発者名〉が、</span><span class="nb">直接お電話します。</span>
-    </p>
-    <p class="ofr-sub">
-      <span class="nb">手続きではありません。</span><span class="nb"><b>選考</b>です。</span><br>
-      <span class="nb">5〜10分。</span><span class="nb">経験のあるなしは、</span><span class="nb">関係ありません。</span>
-    </p>
-
-    <figure class="shot mb24">
-      <img src="assets/img/thanks-call.jpg" alt="お電話で、この3点をうかがいます" width="1400" height="875" loading="lazy" decoding="async">
-      <svg class="shot-tx" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="clg" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#05070d" stop-opacity=".93"/>
-            <stop offset="68%" stop-color="#05070d" stop-opacity=".42"/>
-            <stop offset="100%" stop-color="#05070d" stop-opacity="0"/>
-          </linearGradient>
-          <filter id="cls" x="-40%" y="-40%" width="180%" height="180%">
-            <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity=".9"/>
-          </filter>
-        </defs>
-        <rect x="0" y="0" width="640" height="300" fill="url(#clg)"/>
-        <g font-family="'Noto Sans JP',sans-serif" text-anchor="middle" filter="url(#cls)">
-          <text x="320" y="86" font-size="15" font-weight="700" fill="#e0b95a" letter-spacing="4">THE CALL</text>
-          <text x="320" y="148" font-size="33" font-weight="900" fill="#ffffff">お電話で、</text>
-          <text x="320" y="198" font-size="33" font-weight="900" fill="#ff6a52">この3点をうかがいます</text>
-          <rect x="272" y="224" width="96" height="5" rx="2.5" fill="#d4af37"/>
-        </g>
-      </svg>
+    <!-- ③ なぜ50名限定なのか
+         画像：assets/img/thanks-02.webp（02_なぜ50名限定.png）
+         「人数が増えれば、相場そのものが動くからです」以下は画像に焼き込み済み。
+         同じ文面のHTML（旧 .reason ブロック）は外した。
+         🔴 元画像の本文に誤字がある（「意場のある情報です」）。要差し替え。
+         🔴 385pxしかないため、PCでは1.25倍までしか広げていない。 -->
+    <figure class="tfig narrow">
+      <img src="assets/img/thanks-02.webp?v=20261030a"
+           alt="なぜ、50名様だけなのか。人数が増えれば、相場そのものが動くからです。大勢が同じ銘柄に注目した瞬間、想定していた価格では買えなくなり、この情報の価値は一気に下がります。だから、今回のご案内は50名様に限定しています。今回の受付は50名様まで。受付枠が埋まり次第、募集を終了します。"
+           width="385" height="557" loading="lazy" decoding="async">
     </figure>
-    <ul class="ben mb32">
-      <li><b>01｜本気でやるつもりがあるか</b><span>見ているのは、経験ではありません。<br>「とりあえず」の方で枠が埋まると、本当に必要な方に届きません。</span></li>
-      <li><b>02｜無理のないお金でできるか</b><span>生活に必要なお金を使おうとしている方は、お断りします。</span></li>
-      <li><b>03｜3銘柄のどれが合うか</b><span>資金も時間も、人それぞれ。<br>どれが合うかは、お話ししないと分かりません。</span></li>
-    </ul>
+
+    <!-- ④ なぜ電話なのか
+         画像：assets/img/thanks-03.webp（03_なぜ電話なのか.png）
+         理由も「5〜10分」も画像に焼き込み済み。同じ文面のHTMLは外した。
+         あわせて未確定の〈開発者名〉も消えている。
+         🔴 417pxしかないため、PCでは1.25倍までしか広げていない。 -->
+    <figure class="tfig">
+      <img src="assets/img/thanks-03.webp?v=20261030a"
+           alt="なぜ、電話でのご案内なのか。同じ3銘柄でも、誰にとっても同じ答えになるわけではありません。投資経験、資金の状況、狙いたい利益、投資のスタイルは人それぞれです。だからこそ、メールで一方的に銘柄名を送って終わりにはしません。5〜10分のお電話で、あなたの状況をうかがい、今回の3銘柄の情報が本当に合うかを一緒に確認します。あなたに必要な情報を、きちんと届けるための電話です。"
+           width="417" height="557" loading="lazy" decoding="async">
+    </figure>
+
+    <!-- ⑤ 電話で確認する3つのこと
+         支給画像 04_電話で確認する3項目.png は使っていない。
+         1312x294 と横に長く、PCの本文幅でも説明文が8px程度にしかならない。
+         さらに元画像の下端で2枚目と3枚目の説明が切れている。
+         文面はそのままHTMLに起こした。高解像度版が届いたら差し替える。 -->
+    <div class="chk3">
+      <p class="chk3-hd">電話で確認する<b>3つ</b>のこと</p>
+      <p class="chk3-s">あなたに合った情報をお届けするために、<br class="t-sp">以下の3つを中心にお話をうかがいます。</p>
+      <ol class="chk3-l">
+        <li>
+          <span class="n">1</span>
+          <b>投資経験</b>
+          <span class="d">現在の経験や、これまでの投資について確認します。</span>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <b>無理のない資金</b>
+          <span class="d">生活費などを除いた、無理のない範囲で投資を考えているか確認します。</span>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <b>投資方針</b>
+          <span class="d">どのような投資を希望しているかを確認します。</span>
+        </li>
+      </ol>
+    </div>
 
     <p class="ofr-sub" style="margin-bottom:30px">
       <span class="nb">お電話では、</span><br>
@@ -264,6 +266,27 @@ window.LP_CHANNEL = {
         <p class="lead" style="font-size:13px;margin-top:14px">
           50名様が埋まり次第、この受付は終了します。<span class="once-only"><br>
           そして<strong style="color:var(--ox-l)">このページ自体、<br>二度と開きません。</strong></span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ⑥ フォーム直前の訴求
+         画像：assets/img/thanks-05.webp（05_電話申込への誘導.png）
+         799pxしかないため、390px幅に縮めると本文が6px程度になって読めない。
+         PCは画像、スマホは同じ文面をHTMLで出す。どちらか一方しか表示しない。 -->
+    <div class="lead05">
+      <figure class="lead05-img t-pc">
+        <img src="assets/img/thanks-05.webp?v=20261030a"
+             alt="今回の3銘柄を、受け取る準備はできていますか？ 無料でお届けする5銘柄とは別に、千里眼が注目する3銘柄を特別にご案内します。銘柄名だけでなく、選定理由・購入の目安・利益確定ライン・損切りラインまで、今すぐ検討できる情報をお届けするために、まずはお電話でお話をさせてください。所要時間は約5〜10分。電話相談は無料です。"
+             width="799" height="346" loading="lazy" decoding="async">
+      </figure>
+
+      <div class="l05 t-sp">
+        <p class="l05-h">今回の3銘柄を、<br><em>受け取る準備</em>はできていますか？</p>
+        <p class="l05-b">無料でお届けする5銘柄とは別に、千里眼が注目する3銘柄を特別にご案内します。銘柄名だけでなく、選定理由・購入の目安・利益確定ライン・損切りラインまで、今すぐ検討できる情報をお届けするために、まずはお電話でお話をさせてください。</p>
+        <p class="l05-bar">
+          <span>所要時間は <b>約5〜10分</b></span>
+          <span>電話相談は <b>無料</b></span>
         </p>
       </div>
     </div>
@@ -363,9 +386,20 @@ window.LP_CHANNEL = {
         <p class="err" data-for="fAgree">ご同意がない場合はお申し込みいただけません</p>
       </div>
 
-      <button type="submit" class="btn" id="submitBtn">
+      <!-- 🔴 action が "#" のままで、送信先が設定されていない。
+              以前はここで「お申し込みを受け付けました」と出していたが、
+              実際には何も送られていないため、その表示は外した。
+              送信先が決まったら form の action を設定し、
+              このボタンから disabled を外す。 -->
+      <div class="notready">
+        <b>ただいま電話受付の準備中です</b>
+        送信先の設定が完了していないため、お申し込みを受け付けられません。
+        受付開始まで、いましばらくお待ちください。
+      </div>
+
+      <button type="submit" class="btn" id="submitBtn" disabled>
         <small>＼ 審査あり・50名様限定 ／</small>
-        3銘柄を受け取る
+        無料の電話案内を申し込む（準備中）
         <span class="fee">入力30秒</span>
       </button>
       <p class="btn-note">
@@ -374,11 +408,6 @@ window.LP_CHANNEL = {
         ※このご案内は、今回かぎりの表示です</span>
       </p>
     </form>
-
-    <div class="sent" id="sentMsg" hidden>
-      <p class="s1">お申し込みを受け付けました</p>
-      <p class="s2">〈開発者名〉から、<br>ご指定の時間帯にお電話します。<br>少しお待ちください。</p>
-    </div>
   </div>
 </section>
 
@@ -460,7 +489,7 @@ window.LP_CHANNEL = {
 <!-- 追従CTA -->
 <div class="fixcta" id="fixcta">
   <div class="cd-bar"><span class="cd-dot"></span><span class="cd-k">本日の受付終了まで</span><span class="cd-v" data-countdown>--<i>時間</i>--<i>分</i>--<i>秒</i></span></div>
-  <a href="#form" class="btn"><small><span class="once-only">＼ 今回かぎり・50名様限定 ／</span><span class="once-off">＼ 審査あり・50名様限定 ／</span></small>3銘柄を受け取る</a>
+  <a href="#form" class="btn"><small><span class="once-only">＼ 今回かぎり・50名様限定 ／</span><span class="once-off">＼ 審査あり・50名様限定 ／</span></small>無料の電話案内を申し込む</a>
 </div>
 
 <!-- ============================================================
@@ -572,12 +601,11 @@ window.LP_CHANNEL = {
       return;
     }
 
-    /* ▼ 送信先が未設定の間はデモ表示。action を設定したらこのブロックを削除してください */
+    /* 送信先が未設定のあいだは送信しない。
+       「受け付けました」と見せるのは誤りなので、何も起こさない。
+       送信ボタン自体も disabled にしてある。 */
     if (f.getAttribute('action') === '#'){
       ev.preventDefault();
-      f.hidden = true;
-      document.getElementById('sentMsg').hidden = false;
-      document.getElementById('sentMsg').scrollIntoView({behavior:'smooth', block:'center'});
     }
   });
 
