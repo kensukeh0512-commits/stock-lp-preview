@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261030c">
+<link rel="stylesheet" href="assets/css/style.css?v=20261030d">
 <link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
 </head>
 <body>
@@ -46,34 +46,45 @@
 
 <!-- ============================================================
      2  読者の悩み
-     画像：assets/img/problem.webp（02_problem_1920x760.png）
-     左半分に見出しと4つの悩みが焼き込まれている。
-     PC（1000px〜）のみ表示。1920pxを390pxに縮めると文字が読めないため、
-     スマホでは画像を出さず、同じ4項目を下のセクションにテキストで置く。
+     2026-10-30 文章を主役にして組み直した。
 
-     🔴 支給画像の右半分は旧画像のはめ込みで、左端の「問題提起セクション」が
-        1文字欠け、最下行「情報が多すぎて、何を信じればいいか分からない」が
-        下端で切れている。差し替え前に要修正。ユーザーへ報告済み。
+     それまでは problem.webp（1920x760）に見出しと4項目が焼き込まれていて、
+     HTMLのリストと二重に出ていた。さらに支給画像の右半分が旧画像のはめ込みで、
+     制作管理用の「問題提起セクション」が1文字欠けたまま写り込み、
+     最下行「情報が多すぎて、何を信じればいいか分からない」も下端で切れていた。
+     → 画像の掲載をやめ、文面はすべてHTMLに起こした。
+        problem.webp はファイルとして残してある（assets/img/problem.webp）。
+
+     🔴 右カラムは「文字なしの新画像」待ち。届いたらやることは2つだけ。
+        1. 下の figure から hidden を外す
+        2. 中の img のコメントを解除して src をその画像に差し替える
+        これでPCは左60%／右40%の2カラムに切り替わる。
+        画像が無い間は1カラムのまま崩れない（CSSの .pgrid:has(> .pfig:not([hidden])) ）。
      ============================================================ -->
-<section class="band fade pconly">
-  <img src="assets/img/problem.webp?v=20261030c"
-       alt="株の情報は多い。でも、売買は決められない。こんな悩みはありませんか。どの銘柄を選べばいいかわからない。買う価格の目安がわからない。利益確定の判断に迷う。損切りができずに持ち続けてしまう。"
-       width="1920" height="760" loading="lazy" decoding="async">
-</section>
-
 <section class="sec deep">
   <div class="wrap">
     <p class="eyebrow">THE PROBLEM</p>
-    <!-- 画像に同じ主旨の見出しが焼き込まれているため、PCでは隠す -->
-    <h2 class="dup">銘柄を知っただけでは、<br><em>売買は決められない。</em></h2>
 
-    <!-- スマホ用。画像の4項目をそのままテキストにしたもの -->
-    <ul class="worry sponly">
-      <li>どの銘柄を選べばいいかわからない</li>
-      <li>買う価格の目安がわからない</li>
-      <li>利益確定の判断に迷う</li>
-      <li>損切りができずに持ち続けてしまう</li>
-    </ul>
+    <div class="pgrid">
+      <h2>株の情報は多い。<br><em>でも、売買は決められない。</em></h2>
+
+      <figure class="pfig" hidden>
+        <!-- 新画像が届いたら、この img を有効にして figure の hidden を外す
+        <img src="assets/img/problem-v2.webp?v=20261030d"
+             alt="暗いトレーディングルームで、株価チャートが並ぶモニターの前に立つ男性の後ろ姿。"
+             width="1200" height="1500" loading="lazy" decoding="async">
+        -->
+      </figure>
+
+      <p class="psub">こんな悩みはありませんか？</p>
+
+      <ul class="worry">
+        <li>どの銘柄を選べばいいかわからない</li>
+        <li>買う価格の目安がわからない</li>
+        <li>利益確定の判断に迷う</li>
+        <li>損切りができずに持ち続けてしまう</li>
+      </ul>
+    </div>
 
     <p class="lead">「この株が来る」という話は、毎日どこかで流れてきます。けれど銘柄名だけを受け取っても、実際に動けるとは限りません。いくらで買うのか。どこまで上がったら利益を確定するのか。下がったら、どこで手を引くのか。</p>
 

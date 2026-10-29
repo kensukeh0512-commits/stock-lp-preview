@@ -209,9 +209,21 @@ h2 em{font-style:normal;color:var(--gold-l)}
 }
 
 
-/* ===== 読者の悩み（スマホ） =====
-   problem.webp の左半分に焼き込まれている4項目を、そのままテキストにしたもの。
-   PCでは画像が同じ内容を出すので、このリストは隠れる。 */
+/* ===== 読者の悩み =====
+   2026-10-30 画像をやめて文章を主役にした。画像は右の装飾枠に降格。
+   並び順は order で決める。DOMの順と見た目の順を分けておかないと、
+   スマホの「見出し → 画像 → チェック項目」が作れない。
+     スマホ … 見出し / 画像 / こんな悩みは / チェック項目  を縦に
+     PC    … 左60%に文章、右40%に画像。画像が無いときは1カラムのまま */
+.pgrid{display:grid;gap:18px}
+.pgrid > h2{order:1}
+.pgrid > .pfig{order:2;margin:0}
+.pgrid > .psub{order:3}
+.pgrid > .worry{order:4;margin-top:0}
+
+.psub{font-size:18px;font-weight:900;line-height:1.6;color:var(--gold-l)}
+.pfig img{width:100%;border-radius:12px;border:1px solid var(--line)}
+
 .worry{margin-top:20px;display:grid;gap:10px;list-style:none}
 .worry li{position:relative;padding:13px 16px 13px 46px;
   border:1px solid var(--line);border-radius:10px;background:var(--navy2);
@@ -373,6 +385,22 @@ h2 em{font-style:normal;color:var(--gold-l)}
   /* 本文より広く／狭く取るものは、同じ詳細度で書き戻す。
      .fcards{...} のように書いても、上の指定のほうが強くて効かない。 */
   .sec > .wrap > .fcards{max-width:880px}
+
+  /* --- 読者の悩み：左60%が文章、右40%が画像 ---
+     画像が入っていないあいだ（figure に hidden が付いている）は
+     この指定に当たらないので、1カラムのまま崩れない。 */
+  .sec > .wrap > .pgrid{max-width:1000px}
+  .pgrid:has(> .pfig:not([hidden])){
+    grid-template-columns:3fr 2fr;column-gap:40px;row-gap:14px;
+    grid-template-rows:auto auto 1fr}
+  .pgrid:has(> .pfig:not([hidden])) > h2{grid-area:1 / 1}
+  .pgrid:has(> .pfig:not([hidden])) > .psub{grid-area:2 / 1}
+  .pgrid:has(> .pfig:not([hidden])) > .worry{grid-area:3 / 1;align-self:start}
+  /* 画像は3行ぶんを縦に通して、文章の高さに揃える。
+     文字なしの写真なので、はみ出した分は cover で切って構わない。 */
+  .pgrid:has(> .pfig:not([hidden])) > .pfig{grid-area:1 / 2 / 4 / 3;align-self:stretch}
+  .pgrid:has(> .pfig:not([hidden])) > .pfig img{height:100%;object-fit:cover;object-position:center}
+  .psub{font-size:20px}
   /* 4つの情報の画像は本文より広く。--measure(780px) で止めると文字が小さくなる。
      左右のガターぶんだけ外に出し、ファーストビューの画像と同じ幅に揃える。 */
   .sec > .wrap > .fimg{max-width:none;
