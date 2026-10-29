@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261030e">
+<link rel="stylesheet" href="assets/css/style.css?v=20261030h">
 <link rel="preload" as="image" href="assets/img/hero.webp?v=20261030e" fetchpriority="high" media="(min-width:1000px)">
 <link rel="preload" as="image" href="assets/img/hero-sp.webp?v=20261030e" fetchpriority="high" media="(max-width:999px)">
 </head>
@@ -30,8 +30,6 @@
         同じ説明を2回出さないため、ここは名前だけにとどめる。
      ============================================================ -->
 <header class="fv">
-  <h1 class="vh">AI株式投資 千里眼トレーダーズクラブ｜年末相場に向けて、注目の日本株3銘柄を公開</h1>
-
   <figure class="fvimg">
     <!-- スマホは hero-sp.webp（下段の4項目を落としたもの）。
          あの帯は390px幅だと説明文が7〜8pxで読めず、すぐ下の .hpts と
@@ -47,20 +45,14 @@
   </figure>
 
   <div class="wrap">
-    <!-- スマホのみ。画像の文字が小さすぎるぶんをここで補う -->
-    <ul class="hpts sponly">
-      <li>選定理由</li>
-      <li>購入価格の目安</li>
-      <li>利益確定ライン</li>
-      <li>損切りライン</li>
-    </ul>
-
-    <div class="pricebox">
-      <p class="k">読者向け販売価格</p>
-      <p class="v"><b>49,800</b><i>円</i></p>
-      <p class="tax"><span class="tbd">税込・税別 要確定</span></p>
+    <!-- 主見出し。画像にも近い文面が焼き込まれているため、
+         本文を焼き込まないヘッダー画像への差し替えを依頼中。 -->
+    <div class="fvcopy">
+      <h1>年末相場、<br><em>次に注目するのはどの株だ。</em></h1>
+      <p class="sub">AIが約4,000社から選定する、注目の日本株3銘柄。</p>
+      <p class="sub">選定理由から購入価格・利益確定・損切りの目安まで。</p>
     </div>
-    <p><a href="#price" class="btn">スポット3銘柄レポートの内容を見る</a></p>
+    <p><a href="#price" class="btn">3銘柄レポートの内容を見る</a></p>
     <p class="btnnote">※掲載図版はイメージです。将来の株価や利益を示すものではありません。</p>
   </div>
 </header>
@@ -111,9 +103,7 @@
       </ul>
     </div>
 
-    <p class="lead">「この株が来る」という話は、毎日どこかで流れてきます。けれど銘柄名だけを受け取っても、実際に動けるとは限りません。いくらで買うのか。どこまで上がったら利益を確定するのか。下がったら、どこで手を引くのか。</p>
-
-    <p class="lead">情報が多すぎて、何を信じればいいか分からない。その状態のまま買ってしまうと、価格が動いたあとで判断を迫られることになります。</p>
+    <p class="lead">「この株が来る」という話は、毎日どこかで流れてきます。けれど銘柄名だけを受け取っても、実際に動けるとは限りません。情報が多すぎて、何を信じればいいか分からない。その状態のまま買ってしまうと、価格が動いたあとで判断を迫られることになります。</p>
 
     <p class="punch">決めるべきことは、<br>買う前に決めておく。</p>
   </div>
@@ -121,7 +111,142 @@
 
 
 <!-- ============================================================
-     3  商品紹介
+     ② なぜ今、日本株なのか
+     ============================================================ -->
+<section class="sec blue">
+  <div class="wrap">
+    <p class="eyebrow">WHY NOW</p>
+
+    <div class="vgrid">
+      <h2>年末相場を前に、<br><em>日本株の注目材料が動いている。</em></h2>
+
+      <!-- 支給 01_why_now.jpg（1600x900）から内側の絵だけを切り出したもの。
+           左上に前の見出しの行末「る。」が残っていたため、左140pxを落としている。
+           779x801。拡大素材なので、表示幅はPCで約400pxに抑える。 -->
+      <figure class="vfig">
+        <img src="assets/img/why-now.webp?v=20261030g"
+             alt="夕暮れの街。証券取引所を思わせる建物の脇に、株価ボードとローソク足チャートの大型ディスプレイが並び、手前の街路樹が紅葉している。"
+             width="779" height="801" loading="lazy" decoding="async">
+      </figure>
+
+      <p class="lead">決算発表。業績予想の修正。新しい成長投資。株価を動かす材料は、日々生まれています。</p>
+
+      <p class="lead">重要なのは、ニュースが出た後に慌てて飛びつくことではありません。どの企業に成長の余地があり、どんな条件で株価の再評価が起こり得るのか。その理由を、先に調べておくことです。</p>
+
+      <p class="punch">年末相場に向けて、<br>今こそ注目銘柄を見極める。</p>
+
+      <p class="lead">そのために、千里眼は3銘柄に絞りました。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ③ なぜこの3銘柄なのか
+     旧「どうやって3銘柄に絞るか」（.steps）はここに統合した。
+     同じ「選び方」を2回説明しないため。
+     ============================================================ -->
+<section class="sec deep">
+  <div class="wrap">
+    <p class="eyebrow">WHY THESE THREE</p>
+
+    <div class="vgrid">
+      <h2>約4,000社から、<br><em>なぜこの3銘柄なのか。</em></h2>
+
+      <!-- 支給 02_why_three.jpg から内側の絵だけを切り出したもの。869x801。
+           文字の写り込みはない。拡大素材なので表示幅はPCで約400pxに抑える。 -->
+      <figure class="vfig">
+        <img src="assets/img/why-three.webp?v=20261030g"
+             alt="青く光る脳のイメージ。周囲に株価チャートを映した複数のディスプレイが浮かび、中央にAIの文字が入っている。"
+             width="869" height="801" loading="lazy" decoding="async">
+      </figure>
+
+      <p class="lead">銘柄選びで大切なのは、名前ではなく理由です。</p>
+
+      <ol class="pillars">
+        <li><b>業績はどう変化しているのか</b></li>
+        <li><b>今後の成長につながる材料はあるのか</b></li>
+        <li><b>現在の株価は、どのように評価できるのか</b></li>
+      </ol>
+    </div>
+
+    <p class="lead">千里眼は、AIが注目した数字と選定理由を公開します。上昇を期待する根拠を、数字と言葉で確認できる。さらに、購入を検討する価格、利益確定の目安、損切りラインも提示します。</p>
+
+    <p class="note"><span class="tbd">分析方法・使用データ・情報の基準日は、実際の提供内容に合わせて記載</span></p>
+
+    <p class="note">このレポートは、投資判断をご自身で行うための資料です。最終的な売買は、お客様ご自身の判断と責任において行ってください。</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ④ 上昇シナリオと根拠
+     ★枠だけ。実際の分析結果が確定してから埋める。
+       架空の銘柄名・数値・上昇率は入れない。
+     ============================================================ -->
+<section class="sec blue">
+  <div class="wrap">
+    <p class="eyebrow">THE SCENARIOS</p>
+
+    <div class="vgrid">
+      <h2>3銘柄それぞれに、<br><em>上昇を期待する根拠がある。</em></h2>
+
+      <!-- 支給 03_growth_scenario.jpg の上半分だけを切り出したもの。990x415。
+           下半分にあった「リスクと条件／注意すべきポイント」のカード2枚は、
+           左のカードの文字が切れていたため外した。
+           横長なので、右カラムでは高さが出ない。 -->
+      <figure class="vfig">
+        <img src="assets/img/scenario.webp?v=20261030g"
+             alt="夜の高層ビルを背景に、ローソク足チャートと棒グラフ、右上へ伸びる矢印を重ねたイメージ図。"
+             width="990" height="415" loading="lazy" decoding="async">
+      </figure>
+
+      <p class="lead">レポートでは、1銘柄ごとに次の3点を整理してお届けします。なぜ注目しているのか。どうなれば株価が見直され得るのか。そして、思惑が外れるとすればどこか。</p>
+    </div>
+
+    <div class="scen">
+      <article class="scard">
+        <p class="k">銘柄 01</p>
+        <dl>
+          <dt>AIが注目した変化</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+          <dt>株価が再評価され得る条件</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+          <dt>想定されるリスク</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+        </dl>
+      </article>
+      <article class="scard">
+        <p class="k">銘柄 02</p>
+        <dl>
+          <dt>AIが注目した変化</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+          <dt>株価が再評価され得る条件</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+          <dt>想定されるリスク</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+        </dl>
+      </article>
+      <article class="scard">
+        <p class="k">銘柄 03</p>
+        <dl>
+          <dt>AIが注目した変化</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+          <dt>株価が再評価され得る条件</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+          <dt>想定されるリスク</dt>
+          <dd><span class="tbd">実際の分析結果を記載</span></dd>
+        </dl>
+      </article>
+    </div>
+
+    <p class="note">銘柄名・証券コードはレポート内でお伝えします。上記は、株価の上昇や利益を予測・保証するものではありません。</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ⑤ 商品紹介
      画像：assets/img/product.webp（03_product_1920x760.png）
      右半分に商品名と説明が焼き込まれている。PCはこの1枚。
      スマホは product-sp.webp（左のモックアップだけを切り出したもの）に差し替える。
@@ -244,54 +369,51 @@
 
 
 <!-- ============================================================
-     6  選定ロジックとFAQ
+     ⑥ なぜ49,800円の価値があるのか
+     比較表は「銘柄名だけの情報」との対比。特定の他社を指していない。
      ============================================================ -->
 <section class="sec blue">
   <div class="wrap">
-    <p class="eyebrow">HOW IT WORKS</p>
-    <h2>どうやって<em>3銘柄</em>に絞るか。</h2>
+    <p class="eyebrow">WHY IT'S WORTH IT</p>
+    <h2>無料の銘柄情報と、<br><em>何が違うのか。</em></h2>
 
-    <ol class="steps">
-      <li>
-        <b>日本株およそ4,000社を見る</b>
-        <span>個別に追いきれない数の銘柄を、AIがまとめて処理します。</span>
-      </li>
-      <li>
-        <b>注目する数字で候補を抽出する</b>
-        <span><span class="tbd">分析方法・使用データ・基準日は、実際の提供内容に合わせて追記</span></span>
-      </li>
-      <li>
-        <b>3銘柄に絞り、根拠を言葉にする</b>
-        <span>なぜその銘柄なのかを、数字とあわせて説明します。納得できないものは、買わなくて構いません。</span>
-      </li>
-      <li>
-        <b>売買の目安を先に決める</b>
-        <span>購入を検討する価格、利益確定の目安、損切りの目安。上がったときも下がったときも、判断材料を手元に置いてから動けます。</span>
-      </li>
-    </ol>
+    <p class="lead">注目銘柄の名前だけなら、無料でも手に入ります。ですが、その銘柄を買うべきか判断するには、さらに多くの情報が必要です。</p>
 
-    <p class="lead">このレポートは、投資判断をご自身で行うための資料です。最終的な売買は、お客様ご自身の判断と責任において行ってください。</p>
+    <div class="cmpwrap">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th scope="col"><span class="vh">項目</span></th>
+          <th scope="col">銘柄名だけの<br>情報</th>
+          <th scope="col">スポット3銘柄<br>レポート</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">銘柄名・証券コード</th><td class="y">あり</td><td class="y">あり</td></tr>
+        <tr><th scope="row">なぜ、その株なのか</th><td class="n">—</td><td class="y">あり</td></tr>
+        <tr><th scope="row">いくらなら検討できるのか</th><td class="n">—</td><td class="y">あり</td></tr>
+        <tr><th scope="row">上がったら、どこで利益確定するのか</th><td class="n">—</td><td class="y">あり</td></tr>
+        <tr><th scope="row">下がったら、どこで撤退するのか</th><td class="n">—</td><td class="y">あり</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="lead">千里眼のスポット3銘柄レポートは、これらを1銘柄ごとに整理しています。単なる注目株の一覧ではありません。購入前に、投資の判断材料を揃えるためのレポートです。</p>
+
+    <p class="punch">名前を知ることと、<br>買えるようになることは違う。</p>
   </div>
 </section>
 
 
 <!-- ============================================================
-     7  含まれるもの・提供条件・価格
+     ⑦ 販売案内
      ※二重価格表示（128,000円→49,800円／78,200円OFF）は、
        比較対照価格の根拠が未確認のため掲載していない。
      ============================================================ -->
 <section class="sec pricesec" id="price">
   <div class="wrap">
-    <p class="eyebrow">WHAT'S INCLUDED</p>
-    <h2>お届けするもの</h2>
-
-    <ul class="incl">
-      <li>注目の日本株3銘柄（銘柄名・証券コード）</li>
-      <li>各銘柄の選定理由と、注目するデータ</li>
-      <li>購入を検討する価格の目安</li>
-      <li>利益確定を検討するライン</li>
-      <li>損切りを検討するライン</li>
-    </ul>
+    <p class="eyebrow">ORDER</p>
+    <h2>お申し込み</h2>
 
     <div class="spec">
       <dl>
@@ -349,6 +471,10 @@
         <p class="a">購入を検討する価格、利益確定・損切りの目安をそれぞれ記載します。必ずその価格で取引できるわけではありません。</p>
       </details>
       <details>
+        <summary>投資の初心者でも使えますか？</summary>
+        <p class="a">銘柄名だけでなく、なぜその銘柄なのかという理由と、売買の判断に使う価格の目安まで記載しています。ご自身で判断するための材料としてお使いください。</p>
+      </details>
+      <details>
         <summary>いつ情報を受け取れますか？</summary>
         <p class="a"><span class="tbd">提供日時・提供形式を確定後に記載</span></p>
       </details>
@@ -370,8 +496,8 @@
      ============================================================ -->
 <section class="final">
   <div class="wrap">
-    <h2>次に狙う株が、<br><em>ここで見つかる。</em></h2>
-    <p class="catch">年末相場に向けて、<br>注目の日本株3銘柄を確認する。</p>
+    <h2>年末相場、<br><em>次に注目するのはどの株だ。</em></h2>
+    <p class="catch">AIが約4,000社から選定した、<br>注目の日本株3銘柄。</p>
     <p class="lead">選定理由、購入価格の目安、<br>利益確定ラインと損切りラインまで。</p>
 
     <div class="pricebox">
