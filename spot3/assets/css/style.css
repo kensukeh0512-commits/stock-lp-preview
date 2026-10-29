@@ -144,6 +144,60 @@ h2 em{font-style:normal;color:var(--gold-l)}
 }
 
 
+/* ===== FVのコピー =====
+   ヘッダー画像の下に置く、ページの主見出し。
+   画像・ボタンが中央なので、ここも中央で揃える。
+   ※いまのヘッダー画像には近い文面が焼き込まれている。
+     本文を焼き込まない画像に差し替えたら、重なりが消える。 */
+.fvcopy{margin-top:26px;text-align:center}
+.fvcopy h1{font-size:30px;font-weight:900;line-height:1.45;
+  letter-spacing:-.02em;color:#fff}
+.fvcopy h1 em{font-style:normal;color:var(--gold-l)}
+.fvcopy .sub{margin-top:13px;font-size:16px;line-height:1.8;color:var(--tx2)}
+.fvcopy .sub + .sub{margin-top:3px}
+@media (max-width:359px){ .fvcopy h1{font-size:26px} }
+
+
+/* ===== 3つの観点（なぜこの3銘柄なのか） ===== */
+.pillars{list-style:none;counter-reset:p;margin-top:24px;display:grid;gap:10px}
+.pillars li{counter-increment:p;position:relative;
+  padding:15px 16px 15px 56px;border:1px solid var(--line);border-radius:11px;
+  background:rgba(255,255,255,.035)}
+.pillars li::before{content:counter(p,decimal-leading-zero);
+  position:absolute;left:17px;top:50%;transform:translateY(-50%);
+  font-size:17px;font-weight:900;color:var(--gold);letter-spacing:.02em}
+.pillars b{font-size:16.5px;font-weight:700;line-height:1.6;color:#fff}
+
+
+/* ===== 上昇シナリオの枠 =====
+   中身は未確定。埋まるまで .tbd が出たままになる。 */
+.scen{margin-top:26px;display:grid;gap:14px}
+.scard{border:1px solid var(--line);border-radius:12px;
+  background:rgba(0,0,0,.25);padding:18px 16px 16px}
+.scard .k{font-size:12.5px;font-weight:900;letter-spacing:.16em;
+  color:var(--gold);margin-bottom:12px}
+.scard dt{font-size:12.5px;font-weight:700;letter-spacing:.04em;
+  color:var(--tx3);margin-top:14px}
+.scard dt:first-of-type{margin-top:0}
+.scard dd{margin-top:6px;font-size:14.5px;line-height:1.8}
+@media (min-width:820px){ .scen{grid-template-columns:repeat(3,1fr)} }
+
+
+/* ===== 比較表（無料の情報との違い） ===== */
+.cmpwrap{margin-top:24px;border:1px solid var(--line);border-radius:12px;
+  overflow:hidden}
+.cmp{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.6}
+.cmp th,.cmp td{padding:12px 10px;border-bottom:1px solid rgba(255,255,255,.1)}
+.cmp thead th{font-size:11.5px;font-weight:700;letter-spacing:.03em;
+  color:var(--gold);background:rgba(255,255,255,.055);
+  text-align:center;line-height:1.5}
+.cmp tbody th{text-align:left;font-weight:700;color:#fff;line-height:1.65}
+.cmp td{text-align:center;width:21%;font-weight:900}
+.cmp td.y{color:var(--gold-l)}
+.cmp td.n{color:var(--tx3)}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+
+
 /* ===== 価格の表示 ===== */
 .pricebox{margin:26px auto 0;max-width:460px;
   border:1px solid var(--line);border-radius:14px;
@@ -225,16 +279,6 @@ h2 em{font-style:normal;color:var(--gold-l)}
 .pfig img{width:100%;border-radius:12px;border:1px solid var(--line)}
 
 
-/* ===== ファーストビュー直下の4項目（スマホのみ） =====
-   hero.webp の下段に同じ4項目が入っているが、390px幅では
-   説明文が実寸7〜8pxになって読めない。スマホではその下に
-   項目名だけを置く。説明は「4つの情報」セクションに任せ、ここでは繰り返さない。 */
-.hpts{margin:18px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none}
-.hpts li{padding:11px 10px;text-align:center;
-  border:1px solid var(--line);border-radius:9px;background:var(--navy2);
-  font-size:14.5px;font-weight:700;line-height:1.4;color:var(--gold-l)}
-@media (max-width:359px){ .hpts li{font-size:13px;padding:10px 6px} }
-
 .worry{margin-top:20px;display:grid;gap:10px;list-style:none}
 .worry li{position:relative;padding:13px 16px 13px 46px;
   border:1px solid var(--line);border-radius:10px;background:var(--navy2);
@@ -253,31 +297,6 @@ h2 em{font-style:normal;color:var(--gold-l)}
 .scards{margin-top:20px;display:grid;gap:14px}
 .scards img{width:100%;max-width:420px;margin:0 auto;border-radius:8px}
 
-
-/* ===== 選定ロジック ===== */
-.steps{list-style:none;margin-top:24px;display:grid;gap:0}
-.steps li{position:relative;padding:0 0 26px 52px}
-.steps li:last-child{padding-bottom:0}
-.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);
-  position:absolute;left:0;top:-2px;font-size:19px;font-weight:900;
-  color:var(--gold);letter-spacing:.02em;font-family:var(--sans)}
-.steps{counter-reset:s}
-.steps li::after{content:"";position:absolute;left:13px;top:26px;bottom:8px;width:1px;
-  background:linear-gradient(180deg,var(--line),transparent)}
-.steps li:last-child::after{display:none}
-.steps b{display:block;font-size:18px;font-weight:900;line-height:1.55;color:#fff;
-  margin-bottom:5px}
-.steps span{display:block;font-size:15.5px;line-height:1.95;color:var(--tx2)}
-
-
-/* ===== 含まれるもの ===== */
-.incl{list-style:none;margin-top:22px;display:grid;gap:1px;
-  background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.incl li{background:var(--navy);position:relative;
-  padding:15px 16px 15px 46px;font-size:16px;line-height:1.7}
-.incl li::before{content:"";position:absolute;left:18px;top:22px;
-  width:12px;height:7px;border-left:2.5px solid var(--gold);
-  border-bottom:2.5px solid var(--gold);transform:rotate(-45deg)}
 
 .spec{margin-top:22px;border:1px solid var(--line);border-radius:12px;padding:4px 16px}
 .spec dl{display:grid;grid-template-columns:1fr}
@@ -358,6 +377,7 @@ h2 em{font-style:normal;color:var(--gold-l)}
    幅の指定はここに置く。上の各コンポーネントより後ろに書かないと
    基本ルール（.pricebox / .btn の max-width:460px など）に負ける。 */
 @media (min-width:620px){
+  .fvcopy h1{font-size:36px}
   .final h2{font-size:36px}
   /* 460pxのままだと、中央に細い柱が立って見える */
   .pricebox,.btn{max-width:520px}
@@ -432,14 +452,6 @@ h2 em{font-style:normal;color:var(--gold-l)}
   .note,.btnnote,.bandcap{font-size:14px}
   .punch{font-size:26px;margin-top:28px;padding:16px 0 16px 20px;border-left-width:4px}
 
-  .steps{max-width:var(--measure);margin-top:30px}
-  .steps b{font-size:21px}
-  .steps span{font-size:16.5px}
-
-  .incl{max-width:var(--measure)}
-  .incl li{font-size:17px;padding:17px 20px 17px 50px}
-  .incl li::before{left:20px}
-
   .spec{max-width:var(--measure)}
   .spec dd{font-size:16.5px}
 
@@ -448,6 +460,23 @@ h2 em{font-style:normal;color:var(--gold-l)}
   .faq .a{font-size:16px}
 
   .hold{max-width:var(--measure);font-size:14px}
+
+  .fvcopy{max-width:var(--measure);margin-left:auto;margin-right:auto;margin-top:34px}
+  .fvcopy h1{font-size:46px;line-height:1.35}
+  .fvcopy .sub{font-size:19px}
+
+  .pillars{gap:12px}
+  .pillars li{padding:19px 20px 19px 64px}
+  .pillars li::before{left:20px;font-size:20px}
+  .pillars b{font-size:19px}
+
+  .sec > .wrap > .scen{max-width:900px}
+  .scard{padding:24px 20px 20px}
+  .scard dd{font-size:15.5px}
+
+  .cmp{font-size:15.5px}
+  .cmp th,.cmp td{padding:15px 14px}
+  .cmp thead th{font-size:12.5px}
 
 
   /* --- 価格と購入ボタン --- */
@@ -481,6 +510,7 @@ h2 em{font-style:normal;color:var(--gold-l)}
   .fvimg img{max-width:1180px}
   h2{font-size:38px}
   .final h2{font-size:46px}
+  .fvcopy h1{font-size:52px}
 }
 
 
