@@ -316,7 +316,20 @@ h2 em{font-style:normal;color:var(--gold-l)}
   .fvimg img{max-width:1100px}
   .fv{padding-bottom:44px}
   .band img{max-width:900px}
-  .fcards{max-width:880px;gap:18px}
+  .fcards{gap:18px}
+
+  /* --- 中央軸を1本にする ---
+     ヘッダー画像・帯画像・価格カードはすべて中央。本文だけ左に寄せると
+     軸が二本に見えるので、本文の列も同じ中央軸に置く。
+     中央に置くのは「列」であって、列の中の文字は左揃えのまま。 */
+  .sec > .wrap > *,.final > .wrap > *,.ft > .wrap > *{
+    max-width:var(--measure);margin-left:auto;margin-right:auto}
+  /* 本文より広く／狭く取るものは、同じ詳細度で書き戻す。
+     .fcards{...} のように書いても、上の指定のほうが強くて効かない。 */
+  .sec > .wrap > .fcards{max-width:880px}
+  .sec > .wrap > .pricecard{max-width:720px}
+  .sec > .wrap > .pricebox,.final > .wrap > .pricebox,
+  .sec > .wrap > .btn,.final > .wrap > .btn{max-width:620px}
 
   /* --- 見出しと本文 --- */
   .eyebrow{font-size:13px;margin-bottom:18px}
@@ -342,11 +355,6 @@ h2 em{font-style:normal;color:var(--gold-l)}
 
   .hold{max-width:var(--measure);font-size:14px}
 
-  /* 価格セクションだけは中央に寄せる。価格カードとボタンが中央なので、
-     リストだけ左に残ると列が二本に割れて見える。 */
-  .pricesec .eyebrow,.pricesec h2,.pricesec .incl,
-  .pricesec .spec,.pricesec .hold,.pricesec .btnnote{
-    max-width:var(--measure);margin-left:auto;margin-right:auto}
 
   /* --- 価格と購入ボタン --- */
   .pricebox{max-width:620px;padding:24px 22px 22px}
