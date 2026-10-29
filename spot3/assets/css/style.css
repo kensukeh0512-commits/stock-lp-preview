@@ -136,38 +136,12 @@ h2 em{font-style:normal;color:var(--gold-l)}
   var(--navy);
   padding:0 0 34px}
 .fvimg{line-height:0}
-/* 元画像は1983px。1100pxまでなら引き伸ばしにならない。 */
-.fvimg img{width:100%;max-width:1100px;margin:0 auto}
+/* 元画像は1672px。1280pxまでなら引き伸ばしにならない。 */
+.fvimg img{width:100%;max-width:1180px;margin:0 auto}
 @media (min-width:900px){
   .fv{padding-top:18px}
   .fvimg img{border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.6)}
 }
-
-
-/* ===== FVのコピー =====
-   ヘッダー画像の下に置く、ページの主見出し。
-   画像・ボタンが中央なので、ここも中央で揃える。
-   ※いまのヘッダー画像には近い文面が焼き込まれている。
-     本文を焼き込まない画像に差し替えたら、重なりが消える。 */
-.fvcopy{margin-top:26px;text-align:center}
-.fvcopy h1{font-size:30px;font-weight:900;line-height:1.45;
-  letter-spacing:-.02em;color:#fff}
-.fvcopy h1 em{font-style:normal;color:var(--gold-l)}
-.fvcopy .sub{margin-top:13px;font-size:16px;line-height:1.8;color:var(--tx2)}
-.fvcopy .sub + .sub{margin-top:3px}
-@media (max-width:359px){ .fvcopy h1{font-size:26px} }
-
-
-/* ===== 見出し・本文の横に図版を置く（②③④） =====
-   スマホは縦積み（見出し → 図版 → 本文）。
-   PCは左に文章、右に図版の2カラム。
-   図版は拡大素材なので、PCでも400px前後までしか広げない。 */
-.vgrid{display:grid;gap:18px}
-.vgrid > *{order:3;margin-top:0}
-.vgrid > h2{order:1}
-.vgrid > .vfig{order:2;margin:0}
-.vfig img{width:100%;max-width:520px;margin:0 auto;display:block;
-  border-radius:12px;border:1px solid var(--line)}
 
 
 /* ===== 3つの観点（なぜこの3銘柄なのか） ===== */
@@ -208,6 +182,25 @@ h2 em{font-style:normal;color:var(--gold-l)}
 .cmp td.y{color:var(--gold-l)}
 .cmp td.n{color:var(--tx3)}
 .cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+
+
+/* ===== ヘッダー直下（スマホのみ） =====
+   新しいヘッダー画像は下段2行の文字が小さく、390px幅だと
+   「どの株を狙うか。…」が8.6px、4項目のラベルが10.5pxになって読めない。
+   スマホ用画像ではその下段を落としてあるので、同じ内容をここで出す。
+   PCでは画像に入っているため hidden（.sponly）。 */
+.hname{margin:20px 0 0;text-align:center;
+  font-size:19px;font-weight:900;line-height:1.5;letter-spacing:.02em;
+  color:var(--gold-l)}
+.hpts{margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  list-style:none}
+.hpts li{padding:11px 10px;text-align:center;
+  border:1px solid var(--line);border-radius:9px;background:var(--navy2);
+  font-size:14.5px;font-weight:700;line-height:1.4;color:var(--gold-l)}
+@media (max-width:359px){
+  .hname{font-size:17px}
+  .hpts li{font-size:13px;padding:10px 6px}
+}
 
 
 /* ===== 価格の表示 ===== */
@@ -389,7 +382,6 @@ h2 em{font-style:normal;color:var(--gold-l)}
    幅の指定はここに置く。上の各コンポーネントより後ろに書かないと
    基本ルール（.pricebox / .btn の max-width:460px など）に負ける。 */
 @media (min-width:620px){
-  .fvcopy h1{font-size:36px}
   .final h2{font-size:36px}
   /* 460pxのままだと、中央に細い柱が立って見える */
   .pricebox,.btn{max-width:520px}
@@ -414,7 +406,7 @@ h2 em{font-style:normal;color:var(--gold-l)}
   .sec{padding:84px 0}
 
   /* --- 画像 --- */
-  .fvimg img{max-width:1100px}
+  .fvimg img{max-width:1180px}
   .fv{padding-bottom:44px}
   .band img{max-width:1180px}
   .fcards{gap:18px}
@@ -486,10 +478,6 @@ h2 em{font-style:normal;color:var(--gold-l)}
 
   .hold{max-width:var(--measure);font-size:14px}
 
-  .fvcopy{max-width:var(--measure);margin-left:auto;margin-right:auto;margin-top:34px}
-  .fvcopy h1{font-size:46px;line-height:1.35}
-  .fvcopy .sub{font-size:19px}
-
   .pillars{gap:12px}
   .pillars li{padding:19px 20px 19px 64px}
   .pillars li::before{left:20px;font-size:20px}
@@ -532,10 +520,9 @@ h2 em{font-style:normal;color:var(--gold-l)}
 
 @media (min-width:1400px){
   :root{--wrap:1180px}
-  .fvimg img{max-width:1180px}
+  .fvimg img{max-width:1280px}
   h2{font-size:38px}
   .final h2{font-size:46px}
-  .fvcopy h1{font-size:52px}
 }
 
 

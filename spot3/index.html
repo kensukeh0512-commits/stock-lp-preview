@@ -12,48 +12,53 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261030h">
-<link rel="preload" as="image" href="assets/img/hero.webp?v=20261030e" fetchpriority="high" media="(min-width:1000px)">
-<link rel="preload" as="image" href="assets/img/hero-sp.webp?v=20261030e" fetchpriority="high" media="(max-width:999px)">
+<link rel="stylesheet" href="assets/css/style.css?v=20261030i">
+<link rel="preload" as="image" href="assets/img/hero.webp?v=20261030i" fetchpriority="high" media="(min-width:1000px)">
+<link rel="preload" as="image" href="assets/img/hero-sp.webp?v=20261030i" fetchpriority="high" media="(max-width:999px)">
 </head>
 <body>
 
 <!-- ============================================================
      1  ファーストビュー
-     画像：assets/img/hero.webp（01_hero_text_baked.jpg）
-     ブランド名・タグライン・主見出し・4項目は画像に焼き込み済み。
-     HTMLで同じ文面を出さない。h1 は読み上げ用に隠して置く。
+     画像：assets/img/hero.webp（2026-10-30 差し替え。1672x940）
 
-     🔴 画像下段の4項目は、390px幅だと説明文が実寸7〜8pxになって読めない。
-        PCは画像のまま。スマホだけ、その下に項目名を4つ並べる（.hpts）。
-        説明文は付けない。詳しくは下の「4つの情報」セクションが受け持つ。
-        同じ説明を2回出さないため、ここは名前だけにとどめる。
+     主見出し・タグライン・商品名・4項目は、すべて画像に焼き込み済み。
+     同じ文面をHTMLで出さない。h1 は読み上げ用に隠して置く。
+
+     🔴 スマホは hero-sp.webp（1672x595）に差し替える。
+        元画像を390px幅に縮めると、下段2行の文字が実寸で
+          「どの株を狙うか。…」  8.6px
+          4項目のラベル          10.5px
+        になって読めない。その2行を含む下段を落とし、
+        同じ内容を下の .hname と .hpts でHTMLとして出す。
+        残した3行は390px幅でも 18.7px / 37.3px / 17.0px あり読める。
      ============================================================ -->
 <header class="fv">
+  <h1 class="vh">今年の年末で、資産を一気に増やしませんか？ 次に大きく伸びる可能性を秘めた日本株3銘柄を公開。千里眼 スポット3銘柄レポート</h1>
+
   <figure class="fvimg">
-    <!-- スマホは hero-sp.webp（下段の4項目を落としたもの）。
-         あの帯は390px幅だと説明文が7〜8pxで読めず、すぐ下の .hpts と
-         内容も重なる。読めない帯と読める項目を上下に並べても意味がないので外す。
-         picture にしているのは、PC用とスマホ用を二重に読み込ませないため。 -->
+    <!-- picture にしているのは、PC用とスマホ用を二重に読み込ませないため。 -->
     <picture>
-      <source media="(max-width:999px)" srcset="assets/img/hero-sp.webp?v=20261030e"
-              width="1983" height="572">
-      <img src="assets/img/hero.webp?v=20261030e"
-           alt="AI株式投資 千里眼トレーダーズクラブ。年末相場に向けて、注目の日本株3銘柄を公開。AIが約4,000社の日本株から厳選し、選定理由・購入価格の目安・利益確定ライン・損切りラインをお届けします。"
-           width="1983" height="793" fetchpriority="high" decoding="async">
+      <source media="(max-width:999px)" srcset="assets/img/hero-sp.webp?v=20261030i"
+              width="1672" height="595">
+      <img src="assets/img/hero.webp?v=20261030i"
+           alt="年末相場、本気で狙うなら今だ。今年の年末で、資産を一気に増やしませんか？ 次に大きく伸びる可能性を秘めた日本株3銘柄を公開。どの株を狙うか。どこで買うか。どこで利益を狙い、どこで撤退するか。千里眼 スポット3銘柄レポート。選定理由、購入価格の目安、利益確定ライン、損切りライン。"
+           width="1672" height="940" fetchpriority="high" decoding="async">
     </picture>
   </figure>
 
   <div class="wrap">
-    <!-- 主見出し。画像にも近い文面が焼き込まれているため、
-         本文を焼き込まないヘッダー画像への差し替えを依頼中。 -->
-    <div class="fvcopy">
-      <h1>年末相場、<br><em>次に注目するのはどの株だ。</em></h1>
-      <p class="sub">AIが約4,000社から選定する、注目の日本株3銘柄。</p>
-      <p class="sub">選定理由から購入価格・利益確定・損切りの目安まで。</p>
-    </div>
+    <!-- ここから2つはスマホだけ。PCでは画像に同じ文字が入っているため隠す。 -->
+    <p class="hname sponly">千里眼 スポット3銘柄レポート</p>
+    <ul class="hpts sponly">
+      <li>選定理由</li>
+      <li>購入価格の目安</li>
+      <li>利益確定ライン</li>
+      <li>損切りライン</li>
+    </ul>
+
     <p><a href="#price" class="btn">3銘柄レポートの内容を見る</a></p>
-    <p class="btnnote">※掲載図版はイメージです。将来の株価や利益を示すものではありません。</p>
+    <p class="btnnote">※掲載図版はイメージです。将来の株価や利益を示すもの、また利益を保証するものではありません。</p>
   </div>
 </header>
 
