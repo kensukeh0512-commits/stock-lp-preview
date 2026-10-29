@@ -12,8 +12,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261030d">
-<link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/style.css?v=20261030e">
+<link rel="preload" as="image" href="assets/img/hero.webp?v=20261030e" fetchpriority="high" media="(min-width:1000px)">
+<link rel="preload" as="image" href="assets/img/hero-sp.webp?v=20261030e" fetchpriority="high" media="(max-width:999px)">
 </head>
 <body>
 
@@ -22,17 +23,38 @@
      画像：assets/img/hero.webp（01_hero_text_baked.jpg）
      ブランド名・タグライン・主見出し・4項目は画像に焼き込み済み。
      HTMLで同じ文面を出さない。h1 は読み上げ用に隠して置く。
+
+     🔴 画像下段の4項目は、390px幅だと説明文が実寸7〜8pxになって読めない。
+        PCは画像のまま。スマホだけ、その下に項目名を4つ並べる（.hpts）。
+        説明文は付けない。詳しくは下の「4つの情報」セクションが受け持つ。
+        同じ説明を2回出さないため、ここは名前だけにとどめる。
      ============================================================ -->
 <header class="fv">
   <h1 class="vh">AI株式投資 千里眼トレーダーズクラブ｜年末相場に向けて、注目の日本株3銘柄を公開</h1>
 
   <figure class="fvimg">
-    <img src="assets/img/hero.webp"
-         alt="AI株式投資 千里眼トレーダーズクラブ。年末相場に向けて、注目の日本株3銘柄を公開。AIが約4,000社の日本株から厳選し、選定理由・買う価格の目安・利益確定ライン・損切りラインをお届けします。"
-         width="1983" height="793" fetchpriority="high" decoding="async">
+    <!-- スマホは hero-sp.webp（下段の4項目を落としたもの）。
+         あの帯は390px幅だと説明文が7〜8pxで読めず、すぐ下の .hpts と
+         内容も重なる。読めない帯と読める項目を上下に並べても意味がないので外す。
+         picture にしているのは、PC用とスマホ用を二重に読み込ませないため。 -->
+    <picture>
+      <source media="(max-width:999px)" srcset="assets/img/hero-sp.webp?v=20261030e"
+              width="1983" height="572">
+      <img src="assets/img/hero.webp?v=20261030e"
+           alt="AI株式投資 千里眼トレーダーズクラブ。年末相場に向けて、注目の日本株3銘柄を公開。AIが約4,000社の日本株から厳選し、選定理由・購入価格の目安・利益確定ライン・損切りラインをお届けします。"
+           width="1983" height="793" fetchpriority="high" decoding="async">
+    </picture>
   </figure>
 
   <div class="wrap">
+    <!-- スマホのみ。画像の文字が小さすぎるぶんをここで補う -->
+    <ul class="hpts sponly">
+      <li>選定理由</li>
+      <li>購入価格の目安</li>
+      <li>利益確定ライン</li>
+      <li>損切りライン</li>
+    </ul>
+
     <div class="pricebox">
       <p class="k">読者向け販売価格</p>
       <p class="v"><b>49,800</b><i>円</i></p>
@@ -68,12 +90,15 @@
     <div class="pgrid">
       <h2>株の情報は多い。<br><em>でも、売買は決められない。</em></h2>
 
-      <figure class="pfig" hidden>
-        <!-- 新画像が届いたら、この img を有効にして figure の hidden を外す
-        <img src="assets/img/problem-v2.webp?v=20261030d"
-             alt="暗いトレーディングルームで、株価チャートが並ぶモニターの前に立つ男性の後ろ姿。"
-             width="1200" height="1500" loading="lazy" decoding="async">
-        -->
+      <figure class="pfig">
+        <!-- 支給の「株式情報と夜のトレーディングデスク.png」(1536x1024) から
+             写真部分だけを切り出したもの（x980-1536 / y137-867 → 556x730）。
+             支給画像は左60%に見出しとチェック項目4つが焼き込まれていて、
+             そのまま置くと左のHTMLと二重になるため、文字のない右側だけを使う。
+             切り出し位置は文字の右端（約x935）より右。人物とモニターは欠けていない。 -->
+        <img src="assets/img/problem-photo.webp?v=20261030e"
+             alt="夜のトレーディングデスク。株価チャートが並ぶモニターの前で、頬杖をついて考え込む男性の後ろ姿。"
+             width="556" height="730" loading="lazy" decoding="async">
       </figure>
 
       <p class="psub">こんな悩みはありませんか？</p>
