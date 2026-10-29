@@ -59,6 +59,12 @@ a{color:inherit;text-decoration:none}
 .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
   overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
+/* 支給画像はすべて横長で文字が焼き込まれている。スマホ幅まで縮めると
+   その文字が読めないため、1000px を境に中身を入れ替える。
+   PC＝画像、スマホ＝テキストか、切り出した縦向きの画像。
+   切り替えの指定はファイル末尾に置いてある。.worry{display:grid} のような
+   後ろの指定に負けるため、ここには書けない。 */
+
 /* 未確定。公開前に必ず置き換える。画面上でも分かるようにしてある。 */
 .tbd{display:inline-block;background:rgba(246,221,171,.14);color:var(--gold-l);
   border:1px dashed rgba(230,189,103,.6);border-radius:5px;
@@ -110,9 +116,9 @@ h2 em{font-style:normal;color:var(--gold-l)}
 /* ===== 画像の帯 =====
    端まで使う。囲みを付けず、地に溶かして迫力を出す。 */
 .band{position:relative;line-height:0;background:var(--navy)}
-/* 元画像が619〜659pxしかない。1400pxまで伸ばすと2.2倍に引き伸ばされて
-   輪郭がぼやけるため、上限を設けて中央に置く。 */
-.band img{width:100%;max-width:900px;margin:0 auto}
+/* 2026-10-30 に素材を1920x760へ差し替えた。以前は619〜659pxしかなく、
+   引き伸ばしを避けるため900pxで止めていた。いまは1180pxまで原寸内に収まる。 */
+.band img{width:100%;max-width:1180px;margin:0 auto}
 /* 下端で地に溶かす。元画像の下端が詰まって見えるのを抑える。
    高さは % 指定。px で固定すると、画像が小さくなるスマホ幅で
    相対的に厚くなり、最後の行にかぶってしまう。 */
@@ -200,10 +206,29 @@ h2 em{font-style:normal;color:var(--gold-l)}
 @media (min-width:1000px){
   .fcards{display:none}
   .fimg{display:block;margin-top:26px}
-  /* 見出しは画像に焼き込まれている。二重に出さない。読み上げには残す。 */
-  .fhead{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
-    overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 }
+
+
+/* ===== 読者の悩み（スマホ） =====
+   problem.webp の左半分に焼き込まれている4項目を、そのままテキストにしたもの。
+   PCでは画像が同じ内容を出すので、このリストは隠れる。 */
+.worry{margin-top:20px;display:grid;gap:10px;list-style:none}
+.worry li{position:relative;padding:13px 16px 13px 46px;
+  border:1px solid var(--line);border-radius:10px;background:var(--navy2);
+  font-size:16.5px;font-weight:700;line-height:1.6;color:#fff}
+.worry li::before{content:"";position:absolute;left:17px;top:50%;
+  width:15px;height:15px;margin-top:-8px;
+  border:2px solid var(--gold);border-radius:3px}
+@media (max-width:359px){
+  .worry li{font-size:15px;padding:12px 14px 12px 42px}
+}
+
+
+/* ===== レポート構成イメージ（スマホ） =====
+   sample.webp のカード4枚を1枚ずつ切り出して縦に積む。
+   1枚435pxあるので、390px幅でも中の文字がほぼ原寸で出る。 */
+.scards{margin-top:20px;display:grid;gap:14px}
+.scards img{width:100%;max-width:420px;margin:0 auto;border-radius:8px}
 
 
 /* ===== 選定ロジック ===== */
@@ -336,7 +361,7 @@ h2 em{font-style:normal;color:var(--gold-l)}
   /* --- 画像 --- */
   .fvimg img{max-width:1100px}
   .fv{padding-bottom:44px}
-  .band img{max-width:900px}
+  .band img{max-width:1180px}
   .fcards{gap:18px}
 
   /* --- 中央軸を1本にする ---
@@ -418,4 +443,26 @@ h2 em{font-style:normal;color:var(--gold-l)}
 /* 最小幅。.final h2 は上で 30px を指定しているため、ここで落とす。 */
 @media (max-width:359px){
   .final h2{font-size:27px}
+}
+
+
+/* ============================================================
+   PC／スマホの出し分け
+   ------------------------------------------------------------
+   支給画像は横長で文字が焼き込まれている。1920pxを390pxまで縮めると
+   その文字が読めないため、1000px を境に出すものを入れ替える。
+     PC   … 支給画像をそのまま、幅1180pxで
+     スマホ … HTMLテキスト、または縦向きに切り出した画像
+   .worry や .scards など、後ろに書いたコンポーネントの display に
+   負けないよう、この塊はファイルの最後に置く。
+   ============================================================ */
+.pconly{display:none}
+
+@media (min-width:1000px){
+  .sponly{display:none}
+  section.pconly{display:block}
+  img.pconly{display:block}
+  /* 同じ文面が画像に焼き込まれている見出し。画面からは隠し、読み上げには残す。 */
+  .dup{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
+    overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 }

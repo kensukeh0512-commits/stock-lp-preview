@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261030b">
+<link rel="stylesheet" href="assets/css/style.css?v=20261030c">
 <link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
 </head>
 <body>
@@ -46,20 +46,34 @@
 
 <!-- ============================================================
      2  読者の悩み
-     画像：assets/img/problem.webp（02_problem_section.jpg）
-     ※元画像は5つ目の箇条書きが下端で切れているため、その行だけ落としている。
-       4つ目まではすべて表示する。
+     画像：assets/img/problem.webp（02_problem_1920x760.png）
+     左半分に見出しと4つの悩みが焼き込まれている。
+     PC（1000px〜）のみ表示。1920pxを390pxに縮めると文字が読めないため、
+     スマホでは画像を出さず、同じ4項目を下のセクションにテキストで置く。
+
+     🔴 支給画像の右半分は旧画像のはめ込みで、左端の「問題提起セクション」が
+        1文字欠け、最下行「情報が多すぎて、何を信じればいいか分からない」が
+        下端で切れている。差し替え前に要修正。ユーザーへ報告済み。
      ============================================================ -->
-<section class="band fade">
-  <img src="assets/img/problem.webp?v=20261029f"
-       alt="こんな悩みはありませんか。どの株を買えばいいか分からない。買うタイミングに迷ってしまう。利益確定の判断が難しい。損切りができずに損失を抱えてしまう。"
-       width="619" height="226" loading="lazy" decoding="async">
+<section class="band fade pconly">
+  <img src="assets/img/problem.webp?v=20261030c"
+       alt="株の情報は多い。でも、売買は決められない。こんな悩みはありませんか。どの銘柄を選べばいいかわからない。買う価格の目安がわからない。利益確定の判断に迷う。損切りができずに持ち続けてしまう。"
+       width="1920" height="760" loading="lazy" decoding="async">
 </section>
 
 <section class="sec deep">
   <div class="wrap">
     <p class="eyebrow">THE PROBLEM</p>
-    <h2>銘柄を知っただけでは、<br><em>売買は決められない。</em></h2>
+    <!-- 画像に同じ主旨の見出しが焼き込まれているため、PCでは隠す -->
+    <h2 class="dup">銘柄を知っただけでは、<br><em>売買は決められない。</em></h2>
+
+    <!-- スマホ用。画像の4項目をそのままテキストにしたもの -->
+    <ul class="worry sponly">
+      <li>どの銘柄を選べばいいかわからない</li>
+      <li>買う価格の目安がわからない</li>
+      <li>利益確定の判断に迷う</li>
+      <li>損切りができずに持ち続けてしまう</li>
+    </ul>
 
     <p class="lead">「この株が来る」という話は、毎日どこかで流れてきます。けれど銘柄名だけを受け取っても、実際に動けるとは限りません。いくらで買うのか。どこまで上がったら利益を確定するのか。下がったら、どこで手を引くのか。</p>
 
@@ -72,20 +86,27 @@
 
 <!-- ============================================================
      3  商品紹介
-     画像：assets/img/product.webp（03_product_report.jpg）
+     画像：assets/img/product.webp（03_product_1920x760.png）
+     右半分に商品名と説明が焼き込まれている。PCはこの1枚。
+     スマホは product-sp.webp（左のモックアップだけを切り出したもの）に差し替える。
+     焼き込み文字は390px幅では読めないため、文面は下のHTMLが受け持つ。
      実物の証明ではなくイメージである旨を隣に明記する。
      ============================================================ -->
 <section class="band">
-  <img src="assets/img/product.webp"
-       alt="千里眼 スポット3銘柄レポート。今、注目すべき日本株3銘柄の選定理由から売買の判断材料まで、1つのレポートにまとめてお届けします。"
-       width="659" height="249" loading="lazy" decoding="async">
+  <img class="pconly" src="assets/img/product.webp?v=20261030c"
+       alt="千里眼 スポット3銘柄レポート。AIが注目する日本株3銘柄。選定理由から売買の目安まで。銘柄名だけでは終わらない、3銘柄分の分析レポート。商品イメージです。"
+       width="1920" height="760" loading="lazy" decoding="async">
+  <img class="sponly" src="assets/img/product-sp.webp?v=20261030c"
+       alt="千里眼 スポット3銘柄レポートの商品イメージ。"
+       width="900" height="760" loading="lazy" decoding="async">
   <p class="bandcap">※上図はイメージ画像です。実際にお渡しする成果物の体裁・ページ数を示すものではありません。</p>
 </section>
 
 <section class="sec blue">
   <div class="wrap">
     <p class="eyebrow">THE PRODUCT</p>
-    <h2>千里眼 <em>スポット3銘柄レポート</em></h2>
+    <!-- 同じ商品名が画像に焼き込まれているため、PCでは隠す -->
+    <h2 class="dup">千里眼 <em>スポット3銘柄レポート</em></h2>
 
     <p class="lead">AIが日本株およそ4,000社の情報を分析し、注目候補を抽出。今回のスポットレポートは、その中から3銘柄に絞ってお届けするものです。</p>
 
@@ -110,7 +131,7 @@
 <section class="sec deep">
   <div class="wrap">
     <p class="eyebrow">WHAT YOU GET</p>
-    <h2 class="fhead">1つの銘柄につき、<br><em>4つの情報</em>をセットでお届け。</h2>
+    <h2 class="dup">1つの銘柄につき、<br><em>4つの情報</em>をセットでお届け。</h2>
 
     <figure class="fimg">
       <img src="assets/img/four-features.webp?v=20261030b"
@@ -148,13 +169,41 @@
 
 <!-- ============================================================
      5  レポート構成イメージ
-     画像：assets/img/sample.webp（05_report_sample.jpg）
+     画像：assets/img/sample.webp（05_sample_1920x760.png）
+     見出しと4枚のカードが1枚に収まっている。PCはこのまま。
+     スマホは同じ4枚を1枚ずつ切り出した sample-sp-01〜04.webp を縦に積む。
+     カード1枚が435pxあるので、390px幅でも中の文字が読める。
      ============================================================ -->
-<section class="band">
-  <img src="assets/img/sample.webp"
-       alt="レポートのサンプルイメージ。銘柄の選定理由、購入価格の目安、利益確定ライン、損切りラインの4部構成。"
-       width="620" height="242" loading="lazy" decoding="async">
+<section class="band pconly">
+  <img src="assets/img/sample.webp?v=20261030c"
+       alt="レポートでお届けする情報。各銘柄の選定理由と、3つの価格目安をまとめて確認できます。01 選定理由、注目した数字と根拠。02 購入価格の目安、検討する価格帯。03 利益確定ライン、上昇時の売却目安。04 損切りライン、下落時の撤退目安。掲載図は構成イメージです。"
+       width="1920" height="760" loading="lazy" decoding="async">
   <p class="bandcap">※掲載画像は構成イメージです。実際の銘柄・数値ではありません。</p>
+</section>
+
+<section class="sec deep sponly">
+  <div class="wrap">
+    <p class="eyebrow">REPORT SAMPLE</p>
+    <h2>レポートで<em>お届けする情報</em></h2>
+    <p class="lead">各銘柄の選定理由と、3つの価格目安をまとめて確認できます。</p>
+
+    <div class="scards">
+      <img src="assets/img/sample-sp-01.webp?v=20261030c"
+           alt="01 選定理由。注目した数字と根拠。実際の銘柄・価格は納品版に記載。"
+           width="435" height="436" loading="lazy" decoding="async">
+      <img src="assets/img/sample-sp-02.webp?v=20261030c"
+           alt="02 購入価格の目安。検討する価格帯。実際の銘柄・価格は納品版に記載。"
+           width="435" height="436" loading="lazy" decoding="async">
+      <img src="assets/img/sample-sp-03.webp?v=20261030c"
+           alt="03 利益確定ライン。上昇時の売却目安。実際の銘柄・価格は納品版に記載。"
+           width="435" height="436" loading="lazy" decoding="async">
+      <img src="assets/img/sample-sp-04.webp?v=20261030c"
+           alt="04 損切りライン。下落時の撤退目安。実際の銘柄・価格は納品版に記載。"
+           width="435" height="436" loading="lazy" decoding="async">
+    </div>
+
+    <p class="bandcap">※掲載画像は構成イメージです。実際の銘柄・数値ではありません。</p>
+  </div>
 </section>
 
 
