@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css?v=20261029c">
 <!-- 共有の style.css は A版・B版も読んでいる。このページの追加分だけ別ファイルに置く。 -->
-<link rel="stylesheet" href="assets/css/thanks.css?v=20261030d">
+<link rel="stylesheet" href="assets/css/thanks.css?v=20261030e">
 <link rel="preload" as="image" href="assets/img/thanks-01.webp?v=20261030a" fetchpriority="high">
 <!-- ▼▼ 「一度きり表示」の ON / OFF ▼▼
      false … 機能も、関連する文言も、まとめて非表示になります（現在の設定）
@@ -199,15 +199,18 @@ window.LP_CHANNEL = {
     </p>
 
     <!-- ③ なぜ50名限定なのか
-         画像：assets/img/thanks-02.webp（02_なぜ50名限定.png）
-         「人数が増えれば、相場そのものが動くからです」以下は画像に焼き込み済み。
-         同じ文面のHTML（旧 .reason ブロック）は外した。
-         🔴 元画像の本文に誤字がある（「意場のある情報です」）。要差し替え。
-         🔴 385pxしかないため、PCでは1.25倍までしか広げていない。 -->
-    <figure class="tfig narrow">
-      <img src="assets/img/thanks-02.webp?v=20261030a"
-           alt="なぜ、50名様だけなのか。人数が増えれば、相場そのものが動くからです。大勢が同じ銘柄に注目した瞬間、想定していた価格では買えなくなり、この情報の価値は一気に下がります。だから、今回のご案内は50名様に限定しています。今回の受付は50名様まで。受付枠が埋まり次第、募集を終了します。"
-           width="385" height="557" loading="lazy" decoding="async">
+         画像：assets/img/thanks-02m.webp（1080x1420）
+         2026-10-30 差し替え。旧 thanks-02.webp は横385pxで、
+         本文に誤字（「意場のある情報です」）があったため削除した。
+         見出しも本文もすべて画像に焼き込み済み。HTMLでは出さない。
+
+         🔴 画像の下端に「※50名上限と対象銘柄の流動性は要確認」という
+            制作用の注記が焼き込まれている。公開前に外すか、
+            読者向けの文面に直す必要がある。 -->
+    <figure class="tfig hi">
+      <img src="assets/img/thanks-02m.webp?v=20261030e"
+           alt="なぜ、50名様だけなのか。大勢が同時に注目すれば、株価に影響する可能性がある。注目する人が増えると、想定していた価格で買えなくなることもあります。だからこそ、ご案内する人数を絞ります。"
+           width="1080" height="1420" loading="lazy" decoding="async">
     </figure>
 
     <!-- ④ なぜ電話なのか
@@ -222,31 +225,16 @@ window.LP_CHANNEL = {
     </figure>
 
     <!-- ⑤ 電話で確認する3つのこと
-         支給画像 04_電話で確認する3項目.png は使っていない。
-         1312x294 と横に長く、PCの本文幅でも説明文が8px程度にしかならない。
-         さらに元画像の下端で2枚目と3枚目の説明が切れている。
-         文面はそのままHTMLに起こした。高解像度版が届いたら差し替える。 -->
-    <div class="chk3">
-      <p class="chk3-hd">電話で確認する<b>3つ</b>のこと</p>
-      <p class="chk3-s">あなたに合った情報をお届けするために、<br class="t-sp">以下の3つを中心にお話をうかがいます。</p>
-      <ol class="chk3-l">
-        <li>
-          <span class="n">1</span>
-          <b>投資経験</b>
-          <span class="d">現在の経験や、これまでの投資について確認します。</span>
-        </li>
-        <li>
-          <span class="n">2</span>
-          <b>無理のない資金</b>
-          <span class="d">生活費などを除いた、無理のない範囲で投資を考えているか確認します。</span>
-        </li>
-        <li>
-          <span class="n">3</span>
-          <b>投資方針</b>
-          <span class="d">どのような投資を希望しているかを確認します。</span>
-        </li>
-      </ol>
-    </div>
+         画像：assets/img/thanks-04m.webp（1080x1420）
+         2026-10-30 差し替え。これまでHTMLで組んでいた .chk3 は、
+         同じ3項目を画像が持つようになったため外した（二重表示を避ける）。
+         旧 04_電話で確認する3項目.png は横長で文字が切れていたが、
+         この縦長版では3項目とも全文が入っている。 -->
+    <figure class="tfig hi">
+      <img src="assets/img/thanks-04m.webp?v=20261030e"
+           alt="お電話で確認する3つのこと。01 投資経験。これまでの経験や、今の投資状況をうかがいます。02 無理のない資金。生活費を除いた範囲で、投資を考えているか確認します。03 投資方針。何を重視したいのか、ご希望を確認します。電話の所要時間は約5〜10分。"
+           width="1080" height="1420" loading="lazy" decoding="async">
+    </figure>
 
     <p class="ofr-sub" style="margin-bottom:30px">
       <span class="nb">お電話では、</span><br>
@@ -263,7 +251,7 @@ window.LP_CHANNEL = {
               実際の締切ではない
             実際の枠管理と締切が決まったら、この div の hidden を外す。
             なお「50名様が埋まり次第、この受付は終了します。」の一文は、
-            画像 thanks-02.webp の末尾にも同じ内容が入っている。 -->
+            画像 thanks-02m.webp の末尾にも同じ内容が入っている。 -->
     <div class="limit mb32" hidden>
       <div class="limit-hd">本日の審査通過枠</div>
       <div class="limit-bd">
@@ -283,25 +271,16 @@ window.LP_CHANNEL = {
     </div>
 
     <!-- ⑥ フォーム直前の訴求
-         画像：assets/img/thanks-05.webp（05_電話申込への誘導.png）
-         799pxしかないため、390px幅に縮めると本文が6px程度になって読めない。
-         PCは画像、スマホは同じ文面をHTMLで出す。どちらか一方しか表示しない。 -->
-    <div class="lead05">
-      <figure class="lead05-img t-pc">
-        <img src="assets/img/thanks-05.webp?v=20261030a"
-             alt="今回の3銘柄を、受け取る準備はできていますか？ 無料でお届けする5銘柄とは別に、千里眼が注目する3銘柄を特別にご案内します。銘柄名だけでなく、選定理由・購入の目安・利益確定ライン・損切りラインまで、今すぐ検討できる情報をお届けするために、まずはお電話でお話をさせてください。所要時間は約5〜10分。電話相談は無料です。"
-             width="799" height="346" loading="lazy" decoding="async">
-      </figure>
-
-      <div class="l05 t-sp">
-        <p class="l05-h">今回の3銘柄を、<br><em>受け取る準備</em>はできていますか？</p>
-        <p class="l05-b">無料でお届けする5銘柄とは別に、千里眼が注目する3銘柄を特別にご案内します。銘柄名だけでなく、選定理由・購入の目安・利益確定ライン・損切りラインまで、今すぐ検討できる情報をお届けするために、まずはお電話でお話をさせてください。</p>
-        <p class="l05-bar">
-          <span>所要時間は <b>約5〜10分</b></span>
-          <span>電話相談は <b>無料</b></span>
-        </p>
-      </div>
-    </div>
+         画像：assets/img/thanks-05m.webp（1080x1420）
+         2026-10-30 差し替え。PCは横長画像・スマホはHTMLという
+         二本立てだったが、縦長1枚で両方まかなえるようになった。
+         この画像のすぐ下が実際の申込フォーム（id="form"）。
+         画像はあくまで誘導で、入力欄はHTMLのまま。 -->
+    <figure class="tfig hi">
+      <img src="assets/img/thanks-05m.webp?v=20261030e"
+           alt="今すぐ電話でのご案内をお申し込みください。今回の3銘柄について、詳しく知りたい方へ。お名前・電話番号・連絡希望時間帯を入力してお申し込みください。電話でのご案内は無料です。入力フォームはこの画像の下に表示されます。"
+           width="1080" height="1420" loading="lazy" decoding="async">
+    </figure>
 
     <div class="arrows">▼▼▼</div>
   </div>
