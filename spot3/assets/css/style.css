@@ -171,17 +171,38 @@ h2 em{font-style:normal;color:var(--gold-l)}
 
 
 /* ===== 4つの情報 =====
-   支給画像は 1293x159 に4枚のカードが横並び。
-   そのまま縮めるとスマホで文字が4pxになるので、
-   カード1枚分（310x159）ずつ切り出して積む。
-   すべて比率指定なので、表示幅が変わっても崩れない。 */
-.fcards{margin-top:24px;display:grid;gap:12px}
-.fcard{position:relative;overflow:hidden;border-radius:10px;
-  aspect-ratio:310/159;border:1px solid var(--line);background:var(--navy2)}
-.fcard img{position:absolute;top:0;left:calc(var(--x) * -1%);
-  width:417.1%;max-width:none}
-@media (min-width:620px){
-  .fcards{grid-template-columns:1fr 1fr;gap:14px}
+   支給画像 four-features.webp は 1983x793。見出しと4項目が焼き込み済み。
+   PC（1000px〜）はこの画像を大きく出す。実寸の半分強で表示されるため、
+   焼き込み文字がそのまま読める。
+
+   1000px未満では画像を使わない。390pxまで縮めると焼き込み文字が5px以下になり、
+   拡大も切り出しも読める大きさにならないため、同じ4項目をHTML/CSSで組み直し、
+   文字サイズそのもので読ませる。2列には割らない。縦1列のほうが字を大きく取れる。 */
+.fimg{display:none}
+
+.fcards{margin-top:24px;display:grid;gap:12px;list-style:none}
+.fcard{position:relative;border:1px solid var(--line);border-radius:10px;
+  background:var(--navy2);padding:18px 20px 20px}
+.fcard__n{display:block;font-size:15px;font-weight:900;line-height:1;
+  letter-spacing:.09em;color:var(--gold);font-family:var(--sans)}
+.fcard b{display:block;margin-top:9px;font-size:25px;font-weight:900;
+  line-height:1.4;letter-spacing:-.01em;color:#fff}
+.fcard__s{display:block;margin-top:11px;padding-top:11px;
+  border-top:1px solid var(--line);
+  font-size:16px;line-height:1.75;color:var(--tx2)}
+
+@media (max-width:359px){
+  .fcard{padding:16px 16px 18px}
+  .fcard b{font-size:22px}
+  .fcard__s{font-size:15px}
+}
+
+@media (min-width:1000px){
+  .fcards{display:none}
+  .fimg{display:block;margin-top:26px}
+  /* 見出しは画像に焼き込まれている。二重に出さない。読み上げには残す。 */
+  .fhead{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
+    overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 }
 
 
@@ -327,6 +348,10 @@ h2 em{font-style:normal;color:var(--gold-l)}
   /* 本文より広く／狭く取るものは、同じ詳細度で書き戻す。
      .fcards{...} のように書いても、上の指定のほうが強くて効かない。 */
   .sec > .wrap > .fcards{max-width:880px}
+  /* 4つの情報の画像は本文より広く。--measure(780px) で止めると文字が小さくなる。
+     左右のガターぶんだけ外に出し、ファーストビューの画像と同じ幅に揃える。 */
+  .sec > .wrap > .fimg{max-width:none;
+    margin-left:calc(var(--gut) * -1);margin-right:calc(var(--gut) * -1)}
   .sec > .wrap > .pricecard{max-width:720px}
   .sec > .wrap > .pricebox,.final > .wrap > .pricebox,
   .sec > .wrap > .btn,.final > .wrap > .btn{max-width:620px}

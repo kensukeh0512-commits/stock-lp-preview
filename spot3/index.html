@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261030a">
+<link rel="stylesheet" href="assets/css/style.css?v=20261030b">
 <link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
 </head>
 <body>
@@ -96,39 +96,50 @@
 
 <!-- ============================================================
      4  4つの提供情報
-     画像：assets/img/features.webp（04_four_features.jpg）
-     1293x159 に4枚のカードが横並びの1枚絵。
-     そのまま縮めるとスマホで文字が4pxになるため、
-     カード1枚分ずつ切り出して積んでいる（--x が切り出し位置）。
-     元画像の上部にあった見出しは、ここではHTMLテキストで組んだ。
+     画像：assets/img/four-features.webp（04_four_features_1983x793.png）
+     1983x793。見出し「1つの銘柄につき、4つの情報をセットでお届け」と
+     4項目のタイトル・説明が焼き込み済み。旧 features.webp（1293x159）の
+     切り出し表示を差し替えた。損切りラインの文字欠けはこの新画像で解消。
+
+     PC（1000px〜）はこの画像を幅いっぱいに出す。実寸の半分強で表示されるので
+     焼き込み文字がそのまま読める。同じ文面の h2 は画面から隠す（読み上げには残す）。
+
+     1000px未満では画像を出さない。1983pxを390pxに縮めると焼き込み文字が
+     5px以下になって読めないため、同じ4項目をHTML/CSSのカードで縦に積む。
      ============================================================ -->
 <section class="sec deep">
   <div class="wrap">
     <p class="eyebrow">WHAT YOU GET</p>
-    <h2>1つの銘柄につき、<br><em>4つの情報</em>をセットでお届け。</h2>
+    <h2 class="fhead">1つの銘柄につき、<br><em>4つの情報</em>をセットでお届け。</h2>
 
-    <div class="fcards">
-      <div class="fcard" style="--x:2.6">
-        <img src="assets/img/features.webp"
-             alt="01 選定理由。なぜこの銘柄なのか、AIが注目した数字と選定の理由を解説。"
-             width="1293" height="159" loading="lazy" decoding="async">
-      </div>
-      <div class="fcard" style="--x:104.8">
-        <img src="assets/img/features.webp"
-             alt="02 購入価格の目安。どの価格で購入を検討するか、具体的な価格帯の目安を提示。"
-             width="1293" height="159" loading="lazy" decoding="async">
-      </div>
-      <div class="fcard" style="--x:208.1">
-        <img src="assets/img/features.webp"
-             alt="03 利益確定ライン。どこで売るか、株価が上がったときの利益確定の目安を解説。"
-             width="1293" height="159" loading="lazy" decoding="async">
-      </div>
-      <div class="fcard" style="--x:311.3">
-        <img src="assets/img/features.webp"
-             alt="04 損切りライン。どこで撤退するか、株価が下がったときの損切りの目安を解説。"
-             width="1293" height="159" loading="lazy" decoding="async">
-      </div>
-    </div>
+    <figure class="fimg">
+      <img src="assets/img/four-features.webp?v=20261030b"
+           alt="1つの銘柄につき、4つの情報をセットでお届けします。01 選定理由、なぜ選んだのか。02 購入価格の目安、いくらで検討するか。03 利益確定ライン、上がったときの目安。04 損切りライン、下がったときの目安。"
+           width="1983" height="793" loading="lazy" decoding="async">
+    </figure>
+
+    <ul class="fcards">
+      <li class="fcard">
+        <span class="fcard__n">01</span>
+        <b>選定理由</b>
+        <span class="fcard__s">なぜ選んだのか</span>
+      </li>
+      <li class="fcard">
+        <span class="fcard__n">02</span>
+        <b>購入価格の目安</b>
+        <span class="fcard__s">いくらで検討するか</span>
+      </li>
+      <li class="fcard">
+        <span class="fcard__n">03</span>
+        <b>利益確定ライン</b>
+        <span class="fcard__s">上がったときの目安</span>
+      </li>
+      <li class="fcard">
+        <span class="fcard__n">04</span>
+        <b>損切りライン</b>
+        <span class="fcard__s">下がったときの目安</span>
+      </li>
+    </ul>
 
     <p class="punch">銘柄選びから、<br>出口の準備まで。</p>
   </div>
