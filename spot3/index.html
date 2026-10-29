@@ -12,44 +12,59 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261030i">
-<link rel="preload" as="image" href="assets/img/hero.webp?v=20261030i" fetchpriority="high" media="(min-width:1000px)">
-<link rel="preload" as="image" href="assets/img/hero-sp.webp?v=20261030i" fetchpriority="high" media="(max-width:999px)">
+<link rel="stylesheet" href="assets/css/style.css?v=20261030k">
+<link rel="preload" as="image" href="assets/img/hero.webp?v=20261030j" fetchpriority="high" media="(min-width:1000px)">
 </head>
 <body>
 
 <!-- ============================================================
      1  ファーストビュー
-     画像：assets/img/hero.webp（2026-10-30 差し替え。1672x940）
 
-     主見出し・タグライン・商品名・4項目は、すべて画像に焼き込み済み。
-     同じ文面をHTMLで出さない。h1 は読み上げ用に隠して置く。
+     PC   assets/img/hero.webp（1672x940、文字焼き込み済み）。
+          <img> は display:none でも読み込まれてしまうので、
+          背景画像で出している。見た目はこれまでと同じ。
 
-     🔴 スマホは hero-sp.webp（1672x595）に差し替える。
-        元画像を390px幅に縮めると、下段2行の文字が実寸で
-          「どの株を狙うか。…」  8.6px
-          4項目のラベル          10.5px
-        になって読めない。その2行を含む下段を落とし、
-        同じ内容を下の .hname と .hpts でHTMLとして出す。
-        残した3行は390px幅でも 18.7px / 37.3px / 17.0px あり読める。
+     スマホ 文字をHTMLで組む。横長画像を390px幅に縮めると
+          下段2行が 8.6px / 10.5px になって読めず、全体も高さ139pxの
+          帯にしかならなかった。
+          ★ChatGPTの縦長画像（1080x1350）が届いたら、
+            .fvsp に hidden を付け、その下の .fvsp-img の
+            コメントを外して src を差し替えるだけで入れ替わる。
+            4項目（.hpts）も画像に焼き込むなら同じく hidden にする。
      ============================================================ -->
 <header class="fv">
   <h1 class="vh">今年の年末で、資産を一気に増やしませんか？ 次に大きく伸びる可能性を秘めた日本株3銘柄を公開。千里眼 スポット3銘柄レポート</h1>
 
-  <figure class="fvimg">
-    <!-- picture にしているのは、PC用とスマホ用を二重に読み込ませないため。 -->
-    <picture>
-      <source media="(max-width:999px)" srcset="assets/img/hero-sp.webp?v=20261030i"
-              width="1672" height="595">
-      <img src="assets/img/hero.webp?v=20261030i"
-           alt="年末相場、本気で狙うなら今だ。今年の年末で、資産を一気に増やしませんか？ 次に大きく伸びる可能性を秘めた日本株3銘柄を公開。どの株を狙うか。どこで買うか。どこで利益を狙い、どこで撤退するか。千里眼 スポット3銘柄レポート。選定理由、購入価格の目安、利益確定ライン、損切りライン。"
-           width="1672" height="940" fetchpriority="high" decoding="async">
-    </picture>
+  <div class="fvimg pconly" aria-hidden="true"></div>
+
+  <div class="fvsp sponly">
+    <p class="fvsp__eye">年末相場、本気で狙うなら今だ。</p>
+
+    <p class="fvsp__main">
+      <span>今年の年末で、</span>
+      <span class="hl"><em>資産を一気に</em></span>
+      <span>増やしませんか？</span>
+    </p>
+
+    <p class="fvsp__sub">次に大きく伸びる可能性を秘めた<br><b>日本株3銘柄</b>を公開。</p>
+
+    <div class="fvsp__plate">
+      <img class="mk" src="assets/img/mark.webp" alt=""
+           width="128" height="128" decoding="async">
+      <p><span>千里眼</span><b>スポット3銘柄レポート</b></p>
+    </div>
+  </div>
+
+  <!-- 縦長画像が届いたらここを使う（.fvsp は hidden にする）
+  <figure class="fvsp-img sponly">
+    <img src="assets/img/hero-sp-v2.webp"
+         alt="年末相場、本気で狙うなら今だ。今年の年末で、資産を一気に増やしませんか？ 次に大きく伸びる可能性を秘めた日本株3銘柄を公開。千里眼 スポット3銘柄レポート。"
+         width="1080" height="1350" fetchpriority="high" decoding="async">
   </figure>
+  -->
 
   <div class="wrap">
-    <!-- ここから2つはスマホだけ。PCでは画像に同じ文字が入っているため隠す。 -->
-    <p class="hname sponly">千里眼 スポット3銘柄レポート</p>
+    <!-- スマホのみ。画像に焼き込む場合はここを hidden にする。 -->
     <ul class="hpts sponly">
       <li>選定理由</li>
       <li>購入価格の目安</li>

@@ -135,12 +135,96 @@ h2 em{font-style:normal;color:var(--gold-l)}
   radial-gradient(900px 400px at 50% 0%,rgba(18,70,122,.6),transparent 72%),
   var(--navy);
   padding:0 0 34px}
-.fvimg{line-height:0}
-/* 元画像は1672px。1280pxまでなら引き伸ばしにならない。 */
-.fvimg img{width:100%;max-width:1180px;margin:0 auto}
-@media (min-width:900px){
+/* PC用のヘッダー画像。<img> ではなく背景で出している。
+   display:none の <img> もブラウザは読み込むため、そのままだと
+   スマホで318KBを無駄に落とすことになる。表示は 1180px、
+   1400px以上で 1280px。元が1672pxなので引き伸ばしにならない。 */
+.fvimg{width:100%;max-width:1180px;margin:0 auto;
+  aspect-ratio:1672 / 940;
+  background:url(../img/hero.webp?v=20261030j) center / contain no-repeat}
+@media (min-width:1000px){
   .fv{padding-top:18px}
-  .fvimg img{border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.6)}
+  .fvimg{border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.6)}
+}
+
+
+/* ===== スマホのファーストビュー =====
+   横長画像を縮めると高さ139pxの帯にしかならず、下段の文字も読めない。
+   スマホだけ、文字をHTMLで組む。幅に応じて vw で伸縮するので、
+   375〜430pxのどこでも欠けない。
+   縦長の焼き込み画像が届いたら、.fvsp を hidden にして
+   .fvsp-img に差し替える。 */
+.fvsp{position:relative;isolation:isolate;overflow:hidden;
+  padding:34px 18px 32px;text-align:center;
+  background:
+    radial-gradient(130% 62% at 50% -6%,rgba(22,86,150,.80),transparent 62%),
+    radial-gradient(100% 46% at 50% 108%,rgba(230,189,103,.22),transparent 64%),
+    linear-gradient(180deg,#07192f 0%,#04101f 55%,#030a16 100%)}
+/* 上昇を思わせる光の軌跡。斜めの金の細線を薄く重ねる。 */
+.fvsp::before{content:"";position:absolute;inset:-25% -35%;z-index:-1;
+  background:repeating-linear-gradient(72deg,
+    rgba(230,189,103,.17) 0 1px,transparent 1px 44px);
+  transform:rotate(-4deg);pointer-events:none}
+.fvsp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+.fvsp__eye{display:inline-block;padding:7px 16px;border-radius:5px;
+  border:1px solid rgba(230,189,103,.55);
+  background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.32));
+  font-size:clamp(12.5px,3.6vw,16px);font-weight:900;
+  letter-spacing:.02em;line-height:1.4;color:var(--gold-l)}
+
+.fvsp__main{margin-top:20px;font-weight:900;line-height:1.26;
+  letter-spacing:-.02em}
+.fvsp__main span{display:block}
+.fvsp__main span:first-child{font-size:clamp(30px,9.2vw,42px);color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.65)}
+.fvsp__main span:last-child{font-size:clamp(32px,10.2vw,46px);color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.65)}
+.fvsp__main .hl{position:relative;padding:3px 0 7px}
+/* 赤い筆文字風のアクセント。文字の後ろに斜めに敷く。
+   文字が読みにくくならないよう、濃い赤は中央から右だけに寄せている。 */
+.fvsp__main .hl::before{content:"";position:absolute;left:-5%;right:-5%;
+  top:24%;bottom:19%;z-index:-1;
+  transform:rotate(-1.6deg) skewX(-7deg);border-radius:9px / 20px;
+  background:radial-gradient(72% 130% at 20% 48%,
+    rgba(168,24,24,.55) 0%,rgba(195,37,37,.96) 40%,rgba(128,15,15,.92) 100%);
+  /* 両端を薄くして、箱ではなく筆の運びに見せる */
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%);
+  opacity:.9}
+.fvsp__main em{font-style:normal;font-size:clamp(40px,13vw,58px);
+  color:var(--gold-l);
+  background:linear-gradient(176deg,#fff6de 0%,#f0cd85 34%,#e6bd67 52%,
+    #a67c28 72%,#f6ddab 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.85)) drop-shadow(0 3px 7px rgba(0,0,0,.6))}
+
+.fvsp__sub{margin-top:18px;font-size:clamp(15px,4.3vw,19px);font-weight:700;
+  line-height:1.6;color:#dce6f2;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.fvsp__sub b{display:inline-block;margin-top:2px;font-size:1.45em;
+  font-weight:900;letter-spacing:-.01em;color:var(--gold-l)}
+
+.fvsp__plate{margin:24px auto 0;max-width:420px;
+  display:flex;align-items:center;justify-content:center;gap:13px;
+  padding:13px 18px;border-radius:12px;border:1px solid var(--gold);
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(0,0,0,.5));
+  box-shadow:0 0 0 1px rgba(230,189,103,.25) inset,0 10px 26px rgba(0,0,0,.5)}
+.fvsp__plate .mk{width:38px;height:38px;flex:none}
+.fvsp__plate p{text-align:left;line-height:1.3}
+.fvsp__plate span{display:block;font-size:clamp(12px,3.3vw,14px);
+  font-weight:700;letter-spacing:.14em;color:var(--gold)}
+.fvsp__plate b{display:block;margin-top:3px;font-size:clamp(17px,5vw,22px);
+  font-weight:900;letter-spacing:-.01em;color:#fff}
+
+.fvsp-img{line-height:0}
+.fvsp-img img{width:100%;margin:0 auto}
+
+@media (max-width:359px){
+  .fvsp{padding:28px 14px 26px}
+  .fvsp__plate{gap:10px;padding:11px 14px}
+  .fvsp__plate .mk{width:32px;height:32px}
 }
 
 
@@ -189,18 +273,12 @@ h2 em{font-style:normal;color:var(--gold-l)}
    「どの株を狙うか。…」が8.6px、4項目のラベルが10.5pxになって読めない。
    スマホ用画像ではその下段を落としてあるので、同じ内容をここで出す。
    PCでは画像に入っているため hidden（.sponly）。 */
-.hname{margin:20px 0 0;text-align:center;
-  font-size:19px;font-weight:900;line-height:1.5;letter-spacing:.02em;
-  color:var(--gold-l)}
 .hpts{margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;
   list-style:none}
 .hpts li{padding:11px 10px;text-align:center;
   border:1px solid var(--line);border-radius:9px;background:var(--navy2);
   font-size:14.5px;font-weight:700;line-height:1.4;color:var(--gold-l)}
-@media (max-width:359px){
-  .hname{font-size:17px}
-  .hpts li{font-size:13px;padding:10px 6px}
-}
+@media (max-width:359px){ .hpts li{font-size:13px;padding:10px 6px} }
 
 
 /* ===== 価格の表示 ===== */
@@ -406,7 +484,6 @@ h2 em{font-style:normal;color:var(--gold-l)}
   .sec{padding:84px 0}
 
   /* --- 画像 --- */
-  .fvimg img{max-width:1180px}
   .fv{padding-bottom:44px}
   .band img{max-width:1180px}
   .fcards{gap:18px}
@@ -520,7 +597,7 @@ h2 em{font-style:normal;color:var(--gold-l)}
 
 @media (min-width:1400px){
   :root{--wrap:1180px}
-  .fvimg img{max-width:1280px}
+  .fvimg{max-width:1280px}
   h2{font-size:38px}
   .final h2{font-size:46px}
 }
@@ -548,6 +625,7 @@ h2 em{font-style:normal;color:var(--gold-l)}
   .sponly{display:none}
   section.pconly{display:block}
   img.pconly{display:block}
+  div.pconly{display:block}
   /* 同じ文面が画像に焼き込まれている見出し。画面からは隠し、読み上げには残す。 */
   .dup{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
     overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
