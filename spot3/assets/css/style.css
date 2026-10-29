@@ -158,6 +158,18 @@ h2 em{font-style:normal;color:var(--gold-l)}
 @media (max-width:359px){ .fvcopy h1{font-size:26px} }
 
 
+/* ===== 見出し・本文の横に図版を置く（②③④） =====
+   スマホは縦積み（見出し → 図版 → 本文）。
+   PCは左に文章、右に図版の2カラム。
+   図版は拡大素材なので、PCでも400px前後までしか広げない。 */
+.vgrid{display:grid;gap:18px}
+.vgrid > *{order:3;margin-top:0}
+.vgrid > h2{order:1}
+.vgrid > .vfig{order:2;margin:0}
+.vfig img{width:100%;max-width:520px;margin:0 auto;display:block;
+  border-radius:12px;border:1px solid var(--line)}
+
+
 /* ===== 3つの観点（なぜこの3銘柄なのか） ===== */
 .pillars{list-style:none;counter-reset:p;margin-top:24px;display:grid;gap:10px}
 .pillars li{counter-increment:p;position:relative;
@@ -421,6 +433,19 @@ h2 em{font-style:normal;color:var(--gold-l)}
      画像が入っていないあいだ（figure に hidden が付いている）は
      この指定に当たらないので、1カラムのまま崩れない。 */
   .sec > .wrap > .pgrid{max-width:1000px}
+
+  /* 左に文章、右に図版。図版は文章の高さの中央に置く。
+     一括指定（.sec > .wrap > *）に負けないよう、同じ詳細度で書く。 */
+  .sec > .wrap > .vgrid{max-width:1000px;
+    grid-template-columns:minmax(0,1fr) minmax(0,.72fr);
+    column-gap:46px;row-gap:0;align-items:start}
+  /* row-gap を 0 にしてあるのは、図版が span で多くの行にまたがるため。
+     gap を残すと、中身のない行の分だけ下に余白が積み上がる。
+     行の間隔は各要素の margin で取る。 */
+  .vgrid > *{grid-column:1;margin-top:18px}
+  .vgrid > h2{margin-top:0}
+  .vgrid > .vfig{grid-column:2;grid-row:1 / span 30;align-self:center;margin-top:0}
+  .vfig img{max-width:none}
   .pgrid:has(> .pfig:not([hidden])){
     grid-template-columns:3fr 2fr;column-gap:40px;row-gap:14px;
     grid-template-rows:auto auto 1fr}
