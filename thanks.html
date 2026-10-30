@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css?v=20261029c">
 <!-- 共有の style.css は A版・B版も読んでいる。このページの追加分だけ別ファイルに置く。 -->
-<link rel="stylesheet" href="assets/css/thanks.css?v=20261030g">
+<link rel="stylesheet" href="assets/css/thanks.css?v=20261030i">
 <link rel="preload" as="image" href="assets/img/thanks-01.webp?v=20261030a" fetchpriority="high">
 <!-- ▼▼ 「一度きり表示」の ON / OFF ▼▼
      false … 機能も、関連する文言も、まとめて非表示になります（現在の設定）
@@ -45,6 +45,27 @@ window.LP_CHANNEL = {
 };
 </script>
 <script src="assets/js/channel.js?v=20261029c" defer></script>
+
+<!-- ▼▼ 電話申込フォームの送信先 ▼▼
+     endpoint … Apps Script のウェブアプリURL（末尾が /exec）
+                サーバー側のコードと設置手順は、公開リポジトリの外の
+                form-backend/ にあります。
+     siteKey  … Apps Script 側のスクリプトプロパティ SITE_KEY と同じ値。
+                空でも動きます。設定すると、無関係なプログラムからの
+                素の送信を減らせます（JSに書く値なので秘密ではありません）。
+     consent  … 同意欄の文面。「何に同意したか」を申込と一緒に保存します。
+
+     endpoint が空のあいだは送信しません。ボタンは disabled のままで
+     「準備中」の案内が出ます。受け付けられないのに「受け付けました」と
+     見せないための作りです。URLを入れるとボタンは自動で有効になります。 -->
+<script>
+window.APPLY_FORM = {
+  endpoint: '',
+  siteKey : '',
+  consent : '個人情報の取扱いに同意のうえ、電話でのご連絡を希望します（2026-10-30版）'
+};
+</script>
+<script src="assets/js/apply-form.js?v=20261030a" defer></script>
 </head>
 <body>
 
@@ -328,7 +349,10 @@ window.LP_CHANNEL = {
       入力は<span class="mk">30秒</span>。<br>
       そのあと〈開発者名〉が、<br><span class="mk-g">直接お電話します。</span>
     </p>
-    <!-- ▼ action属性を自社フォーム／CRMのエンドポイントに差し替えてください -->
+    <!-- 送信先は <head> の APPLY_FORM.endpoint で設定します。
+         action="#" のままなのは、URLが未設定のときに
+         素の送信でページが飛ばないようにするためです。
+         URLを設定すると apply-form.js が action を書き換えます。 -->
     <form class="fm" id="applyForm" action="#" method="post" novalidate>
 
       <div class="fm-row">
@@ -402,11 +426,30 @@ window.LP_CHANNEL = {
         <p class="err" data-for="fAgree">ご同意がない場合はお申し込みいただけません</p>
       </div>
 
-      <!-- 🔴 action が "#" のままで、送信先が設定されていない。
-              以前はここで「お申し込みを受け付けました」と出していたが、
-              実際には何も送られていないため、その表示は外した。
-              送信先が決まったら form の action を設定し、
-              このボタンから disabled を外す。 -->
+      <!-- おとり欄。人には見えない位置に置いてある。
+           自動プログラムはこうした欄も埋めるため、見分けに使う。
+           埋まっていても申込は捨てず、別シートに「要確認」として保存する。
+           自動入力の拡張機能を使っている方の申込を失わないようにするため。 -->
+      <div class="fm-hp" aria-hidden="true">
+        <label for="fCompany">会社名</label>
+        <input type="text" id="fCompany" name="company" tabindex="-1" autocomplete="off">
+      </div>
+
+      <!-- 送信に失敗したときの表示。成功したように見せない。 -->
+      <p class="fm-msg" id="applyMsg" role="alert" aria-live="polite" hidden></p>
+
+      <!-- 保存できたことを確かめてから出す表示。
+           送信前・送信中には出さない。 -->
+      <div class="fm-done" id="applyDone" hidden>
+        <b>お申し込みを受け付けました</b>
+        <p>ご入力いただいた内容を確認のうえ、〈開発者名〉より、ご希望の時間帯にお電話いたします。</p>
+        <p class="fm-done-s">※お電話は〈市外局番を記載〉より発信いたします<br>
+        ※このページを閉じても、お申し込みは有効です</p>
+      </div>
+
+      <!-- 🔴 送信先が未設定のあいだの案内。
+              APPLY_FORM.endpoint にURLを入れると、
+              apply-form.js がこの案内を隠してボタンを有効にする。 -->
       <div class="notready">
         <b>ただいま電話受付の準備中です</b>
         送信先の設定が完了していないため、お申し込みを受け付けられません。
@@ -595,41 +638,8 @@ window.LP_CHANNEL = {
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
-  /* ── フォームのバリデーション ───────────────────── */
-  var f = document.getElementById('applyForm');
-  function showErr(el, on){
-    var e = document.querySelector('.err[data-for="' + el.id + '"]');
-    if (e) e.style.display = on ? 'block' : 'none';
-    el.closest('.fm-row, .fm-agree').classList.toggle('ng', on);
-  }
-  function validTel(v){ return /^0\d{9,10}$/.test(v.replace(/[-\s]/g, '')); }
-
-  f.addEventListener('submit', function(ev){
-    var ok = true;
-    var name = document.getElementById('fName');
-    var tel  = document.getElementById('fTel');
-    var time = document.getElementById('fTime');
-    var agr  = document.getElementById('fAgree');
-
-    if (!name.value.trim()){ showErr(name, true); ok = false; } else showErr(name, false);
-    if (!validTel(tel.value)){ showErr(tel, true); ok = false; } else showErr(tel, false);
-    if (!time.value){ showErr(time, true); ok = false; } else showErr(time, false);
-    if (!agr.checked){ showErr(agr, true); ok = false; } else showErr(agr, false);
-
-    if (!ok){
-      ev.preventDefault();
-      var bad = f.querySelector('.ng');
-      if (bad) bad.scrollIntoView({behavior:'smooth', block:'center'});
-      return;
-    }
-
-    /* 送信先が未設定のあいだは送信しない。
-       「受け付けました」と見せるのは誤りなので、何も起こさない。
-       送信ボタン自体も disabled にしてある。 */
-    if (f.getAttribute('action') === '#'){
-      ev.preventDefault();
-    }
-  });
+  /* 入力チェックと送信は assets/js/apply-form.js に移しました。
+     同じ処理を2か所に置くと、片方だけ直して食い違うためです。 */
 
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();

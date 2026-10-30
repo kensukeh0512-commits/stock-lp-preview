@@ -48,7 +48,44 @@
 .fm .btn[disabled]{background:linear-gradient(180deg,#6a7384,#4b5361);
   color:#e3e8ef;box-shadow:0 5px 0 #353c47;cursor:not-allowed}
 .fm .btn[disabled]:active{transform:none}
+/* フォームは白地のセクションにある。
+   以前は暗い背景の配色のままで、灰色の箱に淡い金文字になっていた。
+   読みづらかったので、明るい地に合う配色に直した。 */
 .notready{margin:0 0 18px;padding:14px 16px;border-radius:11px;
-  border:1px dashed rgba(212,175,55,.6);background:rgba(0,0,0,.3);
-  font-size:13.5px;line-height:1.85;color:#e7d9a8}
-.notready b{display:block;margin-bottom:4px;color:#f3d98c;font-size:14px}
+  border:1px dashed var(--brass-d);background:#fbf6e6;
+  font-size:13.5px;line-height:1.85;color:#6b541a}
+.notready b{display:block;margin-bottom:4px;color:#4a3a10;font-size:14px}
+
+
+/* ===== 申込フォームの送信まわり =====
+   フォームは白地のセクションの中にあるので、明るい配色で組む。 */
+
+/* おとり欄。人には見せないが、display:none にはしない。
+   自動プログラムは display:none の欄を飛ばすことがあるため、
+   画面の外に出すだけにしてある。 */
+.fm-hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* 送信中・送信失敗の表示。成功したようには見せない配色。
+   pre-line は、本文に改行を入れて2行で出しているため。 */
+.fm-msg{margin:0 0 16px;padding:13px 15px;border-radius:10px;
+  font-size:14px;font-weight:700;line-height:1.8;white-space:pre-line}
+.fm-msg.is-wait{background:var(--paper2);border:1px solid var(--line);
+  color:var(--tx2)}
+.fm-msg.is-ng{background:#fdf6f5;border:1px solid var(--ox-l);color:var(--ox)}
+
+/* 保存できたことを確かめてから出す表示。 */
+.fm-done{padding:24px 20px;border-radius:12px;background:var(--paper2);
+  border:1px solid var(--line);border-top:4px solid var(--green);
+  text-align:center;outline:none}
+.fm-done b{display:block;font-size:20px;font-weight:900;color:var(--tx);
+  line-height:1.5;margin-bottom:12px}
+.fm-done p{font-size:15px;line-height:1.95;color:var(--tx2)}
+.fm-done .fm-done-s{margin-top:14px;font-size:12.5px;line-height:1.75;
+  color:var(--muted)}
+@media (min-width:860px){
+  .fm-done{padding:30px 26px}
+  .fm-done b{font-size:22px}
+}
+
+/* 送信中はボタンを押せなくする。見た目も変える。 */
+.fm .btn[aria-busy="true"]{opacity:.85}
