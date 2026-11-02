@@ -19,9 +19,15 @@
    GTM 側では dataLayer の lp_view / lp_cta_click をトリガーにし、
    variant を GA4 のカスタムディメンションへ渡してください。
 
-   ※Aパターン（ルートの index.html）には一切読み込ませていません。
-     A と比較するには、A 側にも同じ2行を追加する必要があります。
-     その作業は「Aを変更しない」という指示の対象のため保留しています。
+   読み込んでいるページ
+     /          LP_VARIANT = 'A'
+     /b/        LP_VARIANT = 'B'
+     /thanks.html  LP_VARIANT なし（?variant= と同じタブの記録から判定）
+
+   判定した値は登録フォーム（entry-form.js）と
+   電話申込フォーム（apply-form.js）が一緒に保存します。
+   そのため、このファイルだけでは外部送信は起きませんが、
+   自前のスプレッドシートには登録元として残ります。
    ========================================================= */
 (function () {
   'use strict';
@@ -118,6 +124,10 @@
   window.LP_TRACK = {
     variant: variant,
     device: device,
+    /* 登録フォームが一緒に保存する。同じ判定を2か所に書かないため、
+       sessionStorage から読み直すのではなくここから渡す。 */
+    src: src || load('lp_src') || '',
+    campaign: cmp || load('lp_cmp') || '',
     push: push
   };
 })();

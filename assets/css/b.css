@@ -160,6 +160,8 @@ a.bshot-cta:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green-d)}
 .bform input:focus{outline:2px solid var(--navy-l);outline-offset:1px;border-color:var(--navy-l)}
 .bform input[aria-invalid="true"]{border-color:#c62828;background:#fff8f8}
 .bform .err{margin-top:6px;font-size:13px;line-height:1.6;font-weight:700;color:#c62828}
+/* 送信中の案内。同じ場所に出すが、赤のままだと失敗したように見えるので落ち着いた色にする。 */
+.bform .err.is-wait{color:var(--tx2)}
 .bform .bbtn{width:100%;border:0;cursor:pointer;font-family:inherit;margin-top:4px}
 .bform .sub{margin-top:11px;text-align:center;font-size:13.5px;color:var(--tx2)}
 .bform .pp{margin-top:13px;font-size:12.5px;line-height:1.8;color:var(--muted)}

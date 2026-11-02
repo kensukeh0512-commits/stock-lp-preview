@@ -20,25 +20,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/b.css?v=20261029c">
+<link rel="stylesheet" href="../assets/css/b.css?v=20261103a">
 
 <!-- ▼▼ A/Bの識別。?variant=B が無いときはこの値が使われます ▼▼ -->
 <script>window.LP_VARIANT = 'B';</script>
 
 <!-- ▼▼ メール登録フォームの設定 ▼▼
-     action … 配信スタンドの受信URL。
-              空のあいだは送信せず、サンキューページへ遷移するだけです。
-     fields … 配信スタンド側の項目名。サービスごとに違います。 -->
+     A版（/）と同じ受け口・同じステップメールに登録します。
+     違うのは variant だけです。
+
+     endpoint … Apps Script のウェブアプリURL（末尾が /exec）。
+                A版と同じURLを入れてください。
+     siteKey  … Apps Script 側のスクリプトプロパティ SITE_KEY と同じ値。
+     variant  … 登録元。このページは 'B'。
+     thanks   … 登録できたときだけ、ここへ進みます。 -->
 <script>
 window.LP_FORM = {
-  action : '',
-  method : 'post',
-  fields : { name: 'name', email: 'email' },
-  thanks : '../thanks.html'
+  endpoint : '',
+  siteKey  : '',
+  variant  : 'B',
+  thanks   : '../thanks.html'
 };
 </script>
-<script src="../assets/js/ab-track.js?v=20261023" defer></script>
-<script src="../assets/js/entry-form.js?v=20261029b" defer></script>
+<script src="../assets/js/ab-track.js?v=20261103a" defer></script>
+<script src="../assets/js/entry-form.js?v=20261103b" defer></script>
 </head>
 <body>
 
@@ -263,8 +268,9 @@ window.LP_FORM = {
 
 <!-- ============================================================
      登録フォーム
-     ※送信先は LP_FORM.action。空のあいだは、入力内容は
-       どこにも送られません。
+     ※送信先は LP_FORM.endpoint。登録できたときだけ
+       サンキューページへ進みます。
+       空のあいだは、入力内容はどこにも送られません。
      ============================================================ -->
 <section class="bentry" id="entry">
   <div class="wrap">
@@ -285,6 +291,12 @@ window.LP_FORM = {
                autocomplete="email" inputmode="email" enterkeyhint="go"
                placeholder="example@example.com" aria-describedby="e-mail">
         <p class="err" id="e-mail" hidden></p>
+      </div>
+
+      <!-- 送信中・登録できなかったときの表示。
+           項目ごとのエラーと同じ見た目を使っている。 -->
+      <div class="row" data-entry-msg hidden>
+        <p class="err" role="alert" aria-live="polite"></p>
       </div>
 
       <button type="submit" class="bbtn" data-cta data-cta-pos="4" data-cta-name="entry-form">

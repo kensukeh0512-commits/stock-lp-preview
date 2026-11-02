@@ -46,6 +46,15 @@ window.LP_CHANNEL = {
 </script>
 <script src="assets/js/channel.js?v=20261029c" defer></script>
 
+<!-- ▼▼ 登録元（A / B）の引き継ぎ ▼▼
+     LP①（A）／LP②（B）のどちらから来たかを読み取り、
+     電話申込と一緒に保存します。どちらのLPから電話申込まで
+     進んだのかを数えられるようにするためです。
+
+     読む順番は ?variant= → 同じタブの記録 → メール登録時の記録。
+     このページ自体には登録元がないので、LP_VARIANT は置いていません。 -->
+<script src="assets/js/ab-track.js?v=20261103a" defer></script>
+
 <!-- ▼▼ 電話申込フォームの送信先 ▼▼
      endpoint … Apps Script のウェブアプリURL（末尾が /exec）
                 サーバー側のコードと設置手順は、公開リポジトリの外の
@@ -65,7 +74,7 @@ window.APPLY_FORM = {
   consent : '個人情報の取扱いに同意のうえ、電話でのご連絡を希望します（2026-10-30版）'
 };
 </script>
-<script src="assets/js/apply-form.js?v=20261030a" defer></script>
+<script src="assets/js/apply-form.js?v=20261103a" defer></script>
 </head>
 <body>
 

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261029c">
+<link rel="stylesheet" href="assets/css/style.css?v=20261103a">
 <link rel="preload" as="image" href="assets/img/hero-bg.jpg" fetchpriority="high">
 <!-- ▼▼ 登録チャネルの切り替え（LINE / メール）▼▼
      mode を 'line' か 'mail' に変えるだけで、ボタン文言・本文の言い回し・
@@ -32,19 +32,36 @@ window.LP_CHANNEL = {
 };
 </script>
 <script src="assets/js/channel.js?v=20261029c" defer></script>
+
+<!-- ▼▼ 登録元の識別（このページは A）▼▼
+     B版（/b/）と同じ仕組みで、どちらから登録されたかを記録します。
+     ?variant= が付いていればそちらが優先されます。 -->
+<script>window.LP_VARIANT = 'A';</script>
+<script src="assets/js/ab-track.js?v=20261103a" defer></script>
+
 <!-- ▼▼ メール登録フォームの設定 ▼▼
-     action … 配信スタンドの受信URL。
-              空のあいだは送信せず、サンキューページへ遷移するだけです。
-     fields … 配信スタンド側の項目名。サービスごとに違います。 -->
+     endpoint … Apps Script のウェブアプリURL（末尾が /exec）。
+                ここが配信スタンドへ中継し、同時にスプレッドシートへ保存します。
+                サーバー側のコードと設置手順は、公開リポジトリの外の
+                form-backend/ にあります。
+     siteKey  … Apps Script 側のスクリプトプロパティ SITE_KEY と同じ値。
+                空でも動きます（JSに書く値なので秘密ではありません）。
+     variant  … 登録元。このページは 'A'。
+     thanks   … 登録できたときだけ、ここへ進みます。
+
+     endpoint が設定されると、登録できたときだけサンキューページへ進み、
+     失敗したときは進まずに理由を表示します。
+     空のあいだは、送信せずにサンキューページへ進むだけです
+     （配信スタンドが決まる前からの挙動をそのまま残しています）。 -->
 <script>
 window.LP_FORM = {
-  action : '',
-  method : 'post',
-  fields : { name: 'name', email: 'email' },
-  thanks : 'thanks.html'
+  endpoint : '',
+  siteKey  : '',
+  variant  : 'A',
+  thanks   : 'thanks.html'
 };
 </script>
-<script src="assets/js/entry-form.js?v=20261029b" defer></script>
+<script src="assets/js/entry-form.js?v=20261103b" defer></script>
 </head>
 <body>
 
@@ -1438,7 +1455,8 @@ window.LP_FORM = {
     </p>
 
     <!-- ▼▼ 登録フォーム ▼▼
-         送信先は LP_FORM.action。空のあいだは、入力内容は
+         送信先は LP_FORM.endpoint。登録できたときだけ
+         サンキューページへ進みます。空のあいだは、入力内容は
          どこにも送られず、サンキューページへ遷移するだけです。
     -->
     <form class="eform" data-entry novalidate>
@@ -1455,6 +1473,11 @@ window.LP_FORM = {
                autocomplete="email" inputmode="email" enterkeyhint="go"
                placeholder="example@example.com" aria-describedby="e-mail">
         <p class="err" id="e-mail" hidden></p>
+      </div>
+      <!-- 送信中・登録できなかったときの表示。
+           項目ごとのエラーと同じ見た目を使っている。 -->
+      <div class="row" data-entry-msg hidden>
+        <p class="err" role="alert" aria-live="polite"></p>
       </div>
       <button type="submit" class="btn" id="mainCta" data-cta>
         <small>＼ たった1分・誰でも無料で受け取れます ／</small>

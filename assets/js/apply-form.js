@@ -58,6 +58,9 @@
 
   var TOKEN_KEY = 'apply_token_v1';
   var DONE_KEY  = 'apply_done_v1';
+  /* entry-form.js がメール登録に成功したときに書く。
+     {variant, token, at} が入っている。 */
+  var ENTRY_KEY = 'lp_entry_v1';
 
   var MSG = {
     sending : '送信しています…',
@@ -101,6 +104,42 @@
 
   function clearToken() {
     try { sessionStorage.removeItem(TOKEN_KEY); } catch (e) {}
+  }
+
+
+  /* ===== 登録元（A / B）の引き継ぎ ======================= */
+
+  /**
+   * どちらのLPから来たかを求める。
+   *
+   * 読む順番
+   *   1. ab-track.js（?variant= → 同じタブの sessionStorage）
+   *   2. メール登録に成功したときの記録（localStorage）
+   *
+   * 1 は同じタブで登録 → サンキューページと進んだ場合に当たります。
+   * 2 は、あとで別のタブやブックマークから開いた場合の控えです。
+   * どちらも分からないときは空にします。推測で埋めません。
+   */
+  function entry() {
+    var rec = {};
+    try {
+      var raw = localStorage.getItem(ENTRY_KEY);
+      if (raw) rec = JSON.parse(raw) || {};
+    } catch (e) {}
+
+    var v = '';
+    var t = window.LP_TRACK;
+    if (t && t.variant && t.variant !== 'unknown') v = String(t.variant);
+    if (!v && rec.variant) v = String(rec.variant);
+
+    return {
+      variant: v,
+      /* メール登録の受付ID。2つのシートを突き合わせるために持たせる。 */
+      entryId: rec.token ? String(rec.token) : '',
+      src    : (t && t.src) || '',
+      campaign: (t && t.campaign) || '',
+      device : (t && t.device) || ''
+    };
   }
 
 
@@ -191,7 +230,15 @@
       var el = document.getElementById(id);
       return el ? el.value : '';
     };
+    var e = entry();
     return {
+      /* どちらのLPから来たかと、メール登録の受付ID。
+         メールアドレスは持ち回していない（ここでは使わないため）。 */
+      variant : e.variant,
+      entryId : e.entryId,
+      src     : e.src,
+      campaign: e.campaign,
+      device  : e.device,
       token   : token(),
       siteKey : String(cfg.siteKey || ''),
       name    : g('fName').trim(),
